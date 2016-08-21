@@ -23,9 +23,9 @@ public class OrdenadorTest {
 		colecao.add( new Double(22));
 		
 		try {
-			Double maior = Ordenador.getMaiorValor(colecao);
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
 			
-			Assert.assertEquals(new Double(40.0), maior);
+			Assert.assertEquals(new Double(40.0), resultado.get(1));
 		} catch (Exception e) {
 			Assert.fail();
 		}
@@ -36,7 +36,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = null;
 		
 		try {
-			Double maior = Ordenador.getMaiorValor(colecao);
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
 		} catch ( ColecaoNulaException cne) {
 			// Teste realizado com Sucesso!
 		} catch ( ColecaoVaziaException cve ) {
@@ -49,7 +49,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = new HashSet<Double>();
 		
 		try {
-			Double maior = Ordenador.getMaiorValor(colecao);
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
 		} catch ( ColecaoVaziaException cve) {
 			// Teste realizado com Sucesso!
 		} catch ( ColecaoNulaException cne ) {
