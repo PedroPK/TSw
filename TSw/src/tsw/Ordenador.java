@@ -9,6 +9,10 @@ import tsw.excecoes.ColecaoVaziaException;
 public class Ordenador {
 	
 	public static Double getMaiorValor(Collection<Double> pColecao) throws ColecaoNulaException, ColecaoVaziaException {
+		if ( pColecao == null ) {
+			throw new ColecaoNulaException();
+		}
+		
 		Iterator<Double> iterator = pColecao.iterator();
 		Double maior = iterator.next();
 		
