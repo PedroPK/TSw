@@ -12,6 +12,9 @@ public class Ordenador {
 		if ( pColecao == null ) {
 			throw new ColecaoNulaException();
 		}
+		if ( pColecao.isEmpty() ) {
+			throw new ColecaoVaziaException();
+		}
 		
 		Iterator<Double> iterator = pColecao.iterator();
 		Double maior = iterator.next();
