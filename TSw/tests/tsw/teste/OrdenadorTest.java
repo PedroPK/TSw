@@ -32,6 +32,32 @@ public class OrdenadorTest {
 	}
 	
 	@Test
+	public void testarColecaoNula() {
+		Collection<Double> colecao = null;
+		
+		try {
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
+		} catch ( ColecaoNulaException cne) {
+			// Teste realizado com Sucesso!
+		} catch ( ColecaoVaziaException cve ) {
+			Assert.fail();
+		}
+	}
+	
+	@Test
+	public void testarColecaoVazia() {
+		Collection<Double> colecao = new HashSet<Double>();
+		
+		try {
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
+		} catch ( ColecaoVaziaException cve) {
+			// Teste realizado com Sucesso!
+		} catch ( ColecaoNulaException cne ) {
+			Assert.fail();
+		}
+	}
+	
+	@Test
 	public void getMaiorValorColecaoOrdenadaCrescenteTest() {
 		Collection<Double> colecao = getColecaoOrdenadaCrescente();
 		
@@ -82,6 +108,19 @@ public class OrdenadorTest {
 			Assert.fail();
 		}
 	}
+	
+	@Test
+	public void getMenorValorColecaoComNullTest() {
+		Collection<Double> colecao = getColecaoComNull();
+		
+		try {
+			List<Double> resultado = Ordenador.getMaiorValor(colecao);
+			
+			Assert.assertEquals(new Double(20.0), resultado.get(0));
+		} catch (Exception e) {
+			Assert.fail();
+		}
+	}
 
 	private Collection<Double> getColecaoOrdenadaCrescente() {
 		Collection<Double> colecao = new HashSet<Double>();
@@ -106,29 +145,17 @@ public class OrdenadorTest {
 		return colecao;
 	}
 	
-	@Test
-	public void testarColecaoNula() {
-		Collection<Double> colecao = null;
-		
-		try {
-			List<Double> resultado = Ordenador.getMaiorValor(colecao);
-		} catch ( ColecaoNulaException cne) {
-			// Teste realizado com Sucesso!
-		} catch ( ColecaoVaziaException cve ) {
-			Assert.fail();
-		}
-	}
-	
-	@Test
-	public void testarColecaoVazia() {
+	private Collection<Double> getColecaoComNull() {
 		Collection<Double> colecao = new HashSet<Double>();
 		
-		try {
-			List<Double> resultado = Ordenador.getMaiorValor(colecao);
-		} catch ( ColecaoVaziaException cve) {
-			// Teste realizado com Sucesso!
-		} catch ( ColecaoNulaException cne ) {
-			Assert.fail();
-		}
+		colecao.add( new Double(40.0));
+		colecao.add( null);
+		colecao.add( new Double(25.0));
+		colecao.add( null );
+		colecao.add( new Double(20.0));
+		
+		return colecao;
 	}
+	
+	
 }
