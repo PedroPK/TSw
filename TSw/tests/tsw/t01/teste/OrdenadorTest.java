@@ -1,4 +1,4 @@
-package tsw.teste;
+package tsw.t01.teste;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import tsw.Ordenador;
 import tsw.excecoes.ColecaoNulaException;
 import tsw.excecoes.ColecaoVaziaException;
+import tsw.t01.Ordenador;
 
 public class OrdenadorTest {
 	

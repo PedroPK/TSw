@@ -1,4 +1,4 @@
-package tsw;
+package tsw.t01;
 
 import java.util.ArrayList;
 import java.util.Collection;
