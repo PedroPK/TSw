@@ -1,4 +1,4 @@
-package tsw.interfaces;
+package tsw.t03;
 
 import tsw.excecoes.ParametroInvalidoException;
 

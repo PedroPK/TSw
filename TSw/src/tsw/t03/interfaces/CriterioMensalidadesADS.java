@@ -1,6 +1,7 @@
-package tsw.interfaces;
+package tsw.t03.interfaces;
 
 import tsw.excecoes.ParametroInvalidoException;
+import tsw.t03.CriterioMensalidades;
 
 public class CriterioMensalidadesADS implements CriterioMensalidades {
 	

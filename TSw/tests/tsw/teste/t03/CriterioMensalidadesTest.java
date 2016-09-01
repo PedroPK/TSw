@@ -5,8 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tsw.excecoes.ParametroInvalidoException;
-import tsw.interfaces.CriterioMensalidades;
-import tsw.interfaces.CriterioMensalidadesADS;
+import tsw.t03.CriterioMensalidades;
+import tsw.t03.interfaces.CriterioMensalidadesADS;
 
 public class CriterioMensalidadesTest {
 	
