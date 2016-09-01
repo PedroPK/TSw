@@ -1,4 +1,4 @@
-package tsw.teste;
+package tsw.teste.t03;
 
 import org.junit.Assert;
 import org.junit.Before;

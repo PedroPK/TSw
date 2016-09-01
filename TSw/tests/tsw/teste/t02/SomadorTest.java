@@ -1,7 +1,10 @@
-package tsw.t02;
+package tsw.teste.t02;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import tsw.t02.Somador;
+import tsw.t02.SomadorConcreto;
 
 import static org.junit.Assert.assertEquals;
 
