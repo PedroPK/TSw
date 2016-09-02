@@ -29,6 +29,17 @@ public class FibbonaciTest {
 	}
 	
 	@Test
+	public void getNumeroFibbonaciNegativoTest() {
+		try {
+			int resultado = this.aFibbonaci.getNumeroFibbonaci(-1);
+			
+			Assert.fail();
+		} catch ( ParametroInvalidoException pie ) {
+			// Exceção lançada corretamente
+		}
+	}
+	
+	@Test
 	public void getQuintoNumeroFibbonaciTest() {
 		try {
 			int resultado = this.aFibbonaci.getNumeroFibbonaci(5);
