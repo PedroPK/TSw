@@ -10,7 +10,7 @@ import tsw.excecoes.ColecaoVaziaException;
 
 public class Ordenador {
 	
-	public static List<Double> getMaiorValor(Collection<Double> pColecao) throws ColecaoNulaException, ColecaoVaziaException {
+	public static List<Double> getMenorMaiorValor(Collection<Double> pColecao) throws ColecaoNulaException, ColecaoVaziaException {
 		if ( pColecao == null ) {
 			throw new ColecaoNulaException();
 		}
@@ -19,8 +19,8 @@ public class Ordenador {
 		}
 		
 		Iterator<Double> iterator = pColecao.iterator();
-		Double maior = iterator.next();
-		Double menor = maior;
+		Double maior = Double.NEGATIVE_INFINITY;
+		Double menor = Double.POSITIVE_INFINITY;
 		
 		while ( iterator.hasNext() ) {
 			Double vlAtual = iterator.next();
