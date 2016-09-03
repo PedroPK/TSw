@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tsw.t02.Calculadora;
-import tsw.t02.SomadorConcreto;
+import tsw.t02.CalculadoraConcreta;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +14,7 @@ public class CalculadoraTest {
 	
 	@Before
 	public void inicializarSomador() {
-		this.aCalculadora = new SomadorConcreto();
+		this.aCalculadora = new CalculadoraConcreta();
 	}
 	
 	@Test
