@@ -3,18 +3,18 @@ package tsw.teste.t02;
 import org.junit.Before;
 import org.junit.Test;
 
-import tsw.t02.Somador;
+import tsw.t02.Calculadora;
 import tsw.t02.SomadorConcreto;
 
 import static org.junit.Assert.assertEquals;
 
-public class SomadorTest {
+public class CalculadoraTest {
 	
-	private Somador aSomador;
+	private Calculadora aCalculadora;
 	
 	@Before
 	public void inicializarSomador() {
-		this.aSomador = new SomadorConcreto();
+		this.aCalculadora = new SomadorConcreto();
 	}
 	
 	@Test
@@ -22,7 +22,7 @@ public class SomadorTest {
 		double valor01 = 0.1;
 		double valor02 = 0.2;
 		
-		double resultado = this.aSomador.somar(valor01, valor02);
+		double resultado = this.aCalculadora.somar(valor01, valor02);
 		
 		assertEquals(0.3, resultado, 0.0000000000000001);
 	}
@@ -32,7 +32,7 @@ public class SomadorTest {
 		double valor01 = 0.1;
 		double valor02 = 0.2;
 		
-		double resultado = this.aSomador.somar(valor01, valor02);
+		double resultado = this.aCalculadora.somar(valor01, valor02);
 		
 		assertEquals(0.3, resultado, 0.00000000000000001);
 	}

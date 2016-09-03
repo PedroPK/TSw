@@ -24,7 +24,7 @@ public class FibbonaciTest {
 			
 			Assert.fail();
 		} catch ( ParametroInvalidoException pie ) {
-			// Exceção lançada corretamente
+			// Exceï¿½ï¿½o lanï¿½ada corretamente
 		}
 	}
 	
@@ -35,7 +35,7 @@ public class FibbonaciTest {
 			
 			Assert.fail();
 		} catch ( ParametroInvalidoException pie ) {
-			// Exceção lançada corretamente
+			// Exceï¿½ï¿½o lanï¿½ada corretamente
 		}
 	}
 	
@@ -116,7 +116,6 @@ public class FibbonaciTest {
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
 	public void getQuadragezimoQuintoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
