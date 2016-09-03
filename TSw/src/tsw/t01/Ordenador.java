@@ -10,7 +10,19 @@ import tsw.excecoes.ColecaoVaziaException;
 
 public class Ordenador {
 	
-	public static List<Double> getMenorMaiorValor(Collection<Double> pColecao) throws ColecaoNulaException, ColecaoVaziaException {
+	private static Ordenador aOrdenador;
+	
+	private Ordenador() {}
+	
+	public static Ordenador getInstancia() {
+		if ( aOrdenador == null ) {
+			aOrdenador = new Ordenador();
+		}
+		
+		return aOrdenador;
+	}
+	
+	public List<Double> getMenorMaiorValor(Collection<Double> pColecao) throws ColecaoNulaException, ColecaoVaziaException {
 		if ( pColecao == null ) {
 			throw new ColecaoNulaException();
 		}
@@ -35,4 +47,27 @@ public class Ordenador {
 		
 		return resultado;
 	}
+	
+	public void lancarExcecaoEmColecaoNula() {
+		Collection<Double> colecao = null;
+		colecao.add(Double.valueOf(0.0));
+	}
+	
+	public void lancarExcecaoEmListaVazia() {
+		List<Double> colecao = new ArrayList<Double>();
+		colecao.get(0);
+	}
+	
+	public boolean isColecaoVazia(Collection<Double> pColecao) {
+		boolean resposta = false;
+		
+		return resposta;
+	}
+	
+	public int getTamanhoColecao(Collection<Double> pColecao) {
+		int resposta = -1;
+		
+		return resposta;
+	}
+	
 }

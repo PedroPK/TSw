@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -16,12 +17,19 @@ import tsw.t01.Ordenador;
 
 public class OrdenadorTest {
 	
+	Ordenador aOrdenador;
+	
+	@Before
+	public void inicializarOrdenador() {
+		this.aOrdenador = Ordenador.getInstancia();
+	}
+	
 	@Test
 	public void getMaiorValorTest() {
 		Collection<Double> colecao = getColecaoSemOrdem();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(40.0), resultado.get(1));
 		} catch (Exception e) {
@@ -34,7 +42,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = null;
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			this.aOrdenador.getMenorMaiorValor(colecao);
 		} catch ( ColecaoNulaException cne) {
 			// Teste realizado com Sucesso!
 		} catch ( ColecaoVaziaException cve ) {
@@ -47,7 +55,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = new HashSet<Double>();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			this.aOrdenador.getMenorMaiorValor(colecao);
 		} catch ( ColecaoVaziaException cve) {
 			// Teste realizado com Sucesso!
 		} catch ( ColecaoNulaException cne ) {
@@ -60,7 +68,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoOrdenadaCrescente();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(40.0), resultado.get(1));
 		} catch (Exception e) {
@@ -73,7 +81,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoOrdenadaDecrescente();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(40.0), resultado.get(1));
 		} catch (Exception e) {
@@ -86,7 +94,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoOrdenadaCrescente();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(20.0), resultado.get(0));
 		} catch (Exception e) {
@@ -100,7 +108,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoOrdenadaDecrescente();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(20.0), resultado.get(0));
 		} catch (Exception e) {
@@ -114,7 +122,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoComNull();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			Assert.assertEquals(new Double(20.0), resultado.get(0));
 		} catch (Exception e) {
@@ -128,7 +136,7 @@ public class OrdenadorTest {
 		colecaoDadosEntrada.add(new Double("Vida Loka!"));
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecaoDadosEntrada);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecaoDadosEntrada);
 			
 			Assert.assertEquals(new Double(20.0), resultado.get(0));
 		} catch (Exception e) {
@@ -136,7 +144,7 @@ public class OrdenadorTest {
 		}
 	}
 	
-	
+	@Ignore
 	@Test
 	public void testeVariavel(){
 		String valor = JOptionPane.showInputDialog("Insira um Valor");
@@ -146,7 +154,7 @@ public class OrdenadorTest {
 		colecaoDadosEntrada.add(d);
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecaoDadosEntrada);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecaoDadosEntrada);
 			
 			Assert.assertEquals(new Double(20.0), resultado.get(0));
 		} catch (Exception e) {
@@ -159,7 +167,7 @@ public class OrdenadorTest {
 		Collection<Double> colecao = getColecaoOrdenadaCrescente();
 		
 		try {
-			List<Double> resultado = Ordenador.getMenorMaiorValor(colecao);
+			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
 			String print = "testeImprimindoResultados Falhou";
 			if ( new Double(20.0) == resultado.get(0) ) {
@@ -173,7 +181,32 @@ public class OrdenadorTest {
 		}
 	}
 	
-	// Métodos privados auxiliares
+	@Test
+	public void getInstanciaTest() {
+		Ordenador ord1 = aOrdenador.getInstancia();
+		Ordenador ord2 = aOrdenador.getInstancia();
+		
+		Assert.assertSame(ord1, ord2);
+	}
+	
+	@Test
+	public void getInstanciaNaoNulaTest() {
+		Ordenador ord1 = aOrdenador.getInstancia();
+		Assert.assertNotNull(ord1);
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void lancarExcecaoEmColecaoNulaTest() {
+		aOrdenador.lancarExcecaoEmColecaoNula();
+	}
+	
+	//@Test(expected=NullPointerException.class)
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void lancarExcecaoEmListaVaziaTest() {
+		aOrdenador.lancarExcecaoEmListaVazia();
+	}
+	
+	// MÃ©todos privados auxiliares
 	
 	private Collection<Double> getColecaoOrdenadaCrescente() {
 		Collection<Double> colecao = new HashSet<Double>();
