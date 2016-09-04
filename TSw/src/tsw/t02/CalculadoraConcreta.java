@@ -7,5 +7,11 @@ public class CalculadoraConcreta implements Calculadora {
 		
 		return resultado;
 	}
+
+	public double dividir(double pDividendo, double pDivisor) {
+		return pDividendo / pDivisor;
+	}
+	
+	
 	
 }
