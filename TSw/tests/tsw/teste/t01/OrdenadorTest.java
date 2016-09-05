@@ -1,5 +1,7 @@
 package tsw.teste.t01;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -31,7 +33,7 @@ public class OrdenadorTest {
 		try {
 			List<Double> resultado = this.aOrdenador.getMenorMaiorValor(colecao);
 			
-			Assert.assertEquals(new Double(40.0), resultado.get(1));
+			assertEquals(new Double(40.0), resultado.get(1));
 		} catch (Exception e) {
 			Assert.fail();
 		}
