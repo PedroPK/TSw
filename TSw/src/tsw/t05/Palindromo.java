@@ -8,7 +8,7 @@ public class Palindromo {
 		
 		for ( int i = 0; i < fraseTratada.length(); i++) {
 			if ( fraseTratada.charAt(i) != 
-					fraseTratada.charAt(fraseTratada.length() - i)
+					fraseTratada.charAt(fraseTratada.length() -1 - i)
 			) {
 				return false;
 			}
