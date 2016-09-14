@@ -1,9 +1,8 @@
 package tsw.teste.t05;
 
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import tsw.t05.Palindromo;
