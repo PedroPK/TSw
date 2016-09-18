@@ -36,12 +36,13 @@ public class Ordenador {
 		
 		while ( iterator.hasNext() ) {
 			Double vlAtual = iterator.next();
+			
 			if ( vlAtual > maior ) {
 				maior = vlAtual;
-			} else {
-				if ( vlAtual < menor ) {
-					menor = vlAtual;
-				}
+			}
+			
+			if ( vlAtual < menor ) {
+				menor = vlAtual;
 			}
 		}
 		
