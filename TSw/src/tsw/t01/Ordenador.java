@@ -38,6 +38,10 @@ public class Ordenador {
 			Double vlAtual = iterator.next();
 			if ( vlAtual > maior ) {
 				maior = vlAtual;
+			} else {
+				if ( vlAtual < menor ) {
+					menor = vlAtual;
+				}
 			}
 		}
 		
