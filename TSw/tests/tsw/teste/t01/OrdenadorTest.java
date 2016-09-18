@@ -79,7 +79,7 @@ public class OrdenadorTest {
 	}
 	
 	@Test
-	public void getMaiorValorColecaoOrdenadaDeCrescenteTest() {
+	public void getMaiorValorColecaoOrdenadaDecrescenteTest() {
 		Collection<Double> colecao = getColecaoOrdenadaDecrescente();
 		
 		try {
@@ -132,6 +132,7 @@ public class OrdenadorTest {
 		}
 	}
 	
+	@Ignore
 	@Test
 	public void testeNonSense() {
 		Collection<Double> colecaoDadosEntrada = getColecaoSemOrdem();
