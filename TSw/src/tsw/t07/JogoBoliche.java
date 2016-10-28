@@ -23,7 +23,7 @@ public class JogoBoliche {
 		) {
 			RodadaBoliche rodadaAtual = this.aRodadas[indiceRodadas]; 
 			if ( rodadaAtual != null ) {
-				rodadaAtual.getPontuacaoRodada();
+				resposta = (byte) (resposta + rodadaAtual.getPontuacaoRodada());
 			} else {
 				break;
 			}
@@ -48,7 +48,25 @@ public class JogoBoliche {
 	}
 	
 	public boolean isJogoCompletado() {
+		boolean resposta = true;
 		
+		if ( this.aIndiceRodadaAtual < 9 ) {
+			resposta = false;
+		} else {
+			for (byte indiceRodadas = 0; indiceRodadas < 10; indiceRodadas = (byte) (indiceRodadas + 1)) {
+				if ( this.aRodadas[indiceRodadas] == null ) {
+					resposta = false;
+					break;
+				} else {
+					if ( !this.aRodadas[indiceRodadas].isRodadaCompletada() ) {
+						resposta = false;
+						break;
+					}
+				}
+			}
+		}
+		
+		return resposta;
 	}
 	
 }
