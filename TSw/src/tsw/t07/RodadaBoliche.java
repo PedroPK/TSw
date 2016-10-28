@@ -2,28 +2,62 @@ package tsw.t07;
 
 public class RodadaBoliche {
 	
-	private short aJogada01 = -1;
-	private short aJogada02 = -1;
+	// Atributos
 	
-	private short aPontuacaoRodada;
+	private byte aJogada01 = -1;
+	private byte aJogada02 = -1;
+	
+	private byte aJogada03 = -1;
+	private boolean aIsDecimaRodada = false;
+	
+	// Métodos
 	
 	public short getJogada01() {
 		return aJogada01;
 	}
-	public void setJogada01(short pJogada01) {
+	public void setJogada01(byte pJogada01) {
 		this.aJogada01 = pJogada01;
 	}
-	public short getJogada02() {
+	public byte getJogada02() {
 		return aJogada02;
 	}
-	public void setJogada02(short pJogada02) {
+	public void setJogada02(byte pJogada02) {
 		this.aJogada02 = pJogada02;
 	}
-	public short getPontuacaoRodada() {
-		return aPontuacaoRodada;
+	
+	public void adicionarJogada(byte pQtPinosDerrubados) {
+		// 1ª Jogada
+		if ( this.aJogada01 == -1 ) {
+			this.aJogada01 = pQtPinosDerrubados;
+		} else {
+			// 2ª Jogada
+			if ( this.aJogada02 == -1 ) {
+				this.aJogada02 = pQtPinosDerrubados;
+			} else {
+				// 3ª Jogada, se for a 10ª Rodada
+				if ( this.aIsDecimaRodada && this.aJogada03 == -1 ) {
+					this.aJogada03 = pQtPinosDerrubados;
+				}
+			}
+		}
 	}
-	public void setPontuacaoRodada(short pPontuacaoRodada) {
-		this.aPontuacaoRodada = pPontuacaoRodada;
+	
+	public byte getPontuacaoRodada() {
+		byte resposta = 0;
+		
+		if ( this.aJogada01 != -1 ) {
+			resposta = this.aJogada01;
+		}
+		
+		if ( this.aJogada02 != -1 ) {
+			resposta = (byte) (resposta + this.aJogada02);
+		}
+		
+		if ( this.aIsDecimaRodada && this.aJogada03 != -1 ) {
+			resposta = (byte) (resposta + this.aJogada03);
+		}
+		
+		return resposta;
 	}
 	
 }

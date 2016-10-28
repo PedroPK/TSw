@@ -10,6 +10,9 @@ public class JogoBoliche {
 		return this.aPontuacao;
 	}
 	
-	public void inserirJogada()
+	public void inserirJogada(byte pQtPinosDerrubados) {
+		RodadaBoliche rodadaAtual = this.aRodadas[this.aIndiceRodadaAtual];
+		rodadaAtual.adicionarJogada(pQtPinosDerrubados);
+	}
 	
 }
