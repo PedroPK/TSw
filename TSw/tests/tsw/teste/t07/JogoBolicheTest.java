@@ -42,7 +42,6 @@ public class JogoBolicheTest {
 		boliche.inserirJogada((byte) 5);
 		
 		assertEquals(20, boliche.getPontuacao());
-		assertTrue(boliche.isJogoCompletado());
 	}
 	
 	@Test

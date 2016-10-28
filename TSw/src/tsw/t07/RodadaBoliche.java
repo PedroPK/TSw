@@ -16,7 +16,7 @@ public class RodadaBoliche {
 	
 	// Métodos
 	
-	public short getJogada01() {
+	public byte getJogada01() {
 		return aJogada01;
 	}
 	public void setJogada01(byte pJogada01) {
@@ -27,6 +27,13 @@ public class RodadaBoliche {
 	}
 	public void setJogada02(byte pJogada02) {
 		this.aJogada02 = pJogada02;
+	}
+	
+	public byte getBonus() {
+		return this.aBonus;
+	}
+	public void setBonus( byte pBonus ) {
+		this.aBonus = pBonus;
 	}
 	
 	public RodadaBoliche getRodadaAnterior() {
@@ -60,7 +67,13 @@ public class RodadaBoliche {
 					this.aRodadaAnterior.isStrike()
 				)
 		) {
-			// CONTINUAR AQUI
+			if ( this.aRodadaAnterior.isSpare() ) {
+				this.aRodadaAnterior.setBonus(aJogada01);
+			}
+			
+			if ( this.aRodadaAnterior.isStrike() ) {
+				this.aRodadaAnterior.setBonus(this.getPontuacaoRodada());
+			}
 		}
 	}
 	
@@ -77,6 +90,10 @@ public class RodadaBoliche {
 		
 		if ( this.aIsDecimaRodada && this.aJogada03 != -1 ) {
 			resposta = (byte) (resposta + this.aJogada03);
+		}
+		
+		if ( this.aBonus != -1 ) {
+			resposta = (byte) (resposta + this.aBonus);
 		}
 		
 		return resposta;
