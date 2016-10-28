@@ -52,6 +52,11 @@ public class JogoBoliche {
 			
 			// Inicializa a Rodada Atual, 
 			this.aRodadas.add(this.aIndiceRodadaAtual, new RodadaBoliche());
+			
+			// Linkará a Rodada Anterior à Atual
+			this.aRodadas.get(this.aIndiceRodadaAtual).setRodadaAnterior(
+				this.aRodadas.get(this.aIndiceRodadaAtual - 1)
+			);
 		}
 		
 		// Se a Rodada ainda não tiver sido inicializada, será aqui

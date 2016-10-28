@@ -32,9 +32,9 @@ public class RodadaBoliche {
 	public byte getBonus() {
 		return this.aBonus;
 	}
-	public void setBonus( byte pBonus ) {
+	/*public void setBonus( byte pBonus ) {
 		this.aBonus = pBonus;
-	}
+	}*/
 	
 	public RodadaBoliche getRodadaAnterior() {
 		return this.aRodadaAnterior;
@@ -74,6 +74,21 @@ public class RodadaBoliche {
 			if ( this.aRodadaAnterior.isStrike() ) {
 				this.aRodadaAnterior.setBonus(this.getPontuacaoRodada());
 			}
+		}
+	}
+	
+	public void setBonus(byte pPontuacaoRodadaSeguinte) {
+		this.aBonus = pPontuacaoRodadaSeguinte;
+		
+		// Se houver uma Rodada anterior, vai verificar se foi um Spare ou Strike e atualizará o valor dela
+		if ( 
+				this.aRodadaAnterior != null	&&
+				(
+					this.aRodadaAnterior.isSpare()		||
+					this.aRodadaAnterior.isStrike()
+				)
+		) {
+				this.aRodadaAnterior.setBonus(this.getPontuacaoRodada());
 		}
 	}
 	
