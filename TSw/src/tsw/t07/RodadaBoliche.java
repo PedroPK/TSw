@@ -60,4 +60,24 @@ public class RodadaBoliche {
 		return resposta;
 	}
 	
+	public boolean isRodadaCompletada() {
+		boolean resposta = false;
+		// Se não for a 10ª  Rodada
+		if ( !this.aIsDecimaRodada ) {
+			resposta = 
+				this.aJogada01 != -1	&&
+				this.aJogada02 != -1
+			;
+		} else {
+			// Se for a 10ª Rodada
+			resposta = 
+				this.aJogada01 != -1	&&
+				this.aJogada02 != -1	&&
+				this.aJogada03 != -1
+			;
+		}
+		
+		return resposta;
+	}
+	
 }
