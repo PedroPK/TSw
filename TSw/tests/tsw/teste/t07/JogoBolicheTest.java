@@ -32,5 +32,29 @@ public class JogoBolicheTest {
 		assertEquals(10, boliche.getPontuacao());
 		assertTrue(boliche.isJogoCompletado());
 	}
+	
+	@Test
+	public void testarSparePrimeiraRodadaComPontosNaSegundaRodada() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		boliche.inserirJogada((byte) 5);
+		boliche.inserirJogada((byte) 5);
+		boliche.inserirJogada((byte) 5);
+		
+		assertEquals(20, boliche.getPontuacao());
+		assertTrue(boliche.isJogoCompletado());
+	}
+	
+	@Test
+	public void testarSeJogoFoiCompletado() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		for (byte qtJogadas = 0; qtJogadas < 18; qtJogadas = (byte) (qtJogadas + 1)) {
+			boliche.inserirJogada((byte) 1);
+		}
+		
+		assertEquals(18, boliche.getPontuacao());
+		assertFalse(boliche.isJogoCompletado());
+	}
 
 }

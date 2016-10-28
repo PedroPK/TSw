@@ -1,10 +1,13 @@
 package tsw.t07;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class JogoBoliche {
 	
 	// Atributos
 	
-	private RodadaBoliche[] aRodadas = new RodadaBoliche[10];
+	private List<RodadaBoliche> aRodadas = new LinkedList<RodadaBoliche>();
 	private byte aIndiceRodadaAtual = 0;
 	
 	
@@ -21,7 +24,7 @@ public class JogoBoliche {
 					indiceRodadas < 10;
 				indiceRodadas = (byte) (indiceRodadas + 1)
 		) {
-			RodadaBoliche rodadaAtual = this.aRodadas[indiceRodadas]; 
+			RodadaBoliche rodadaAtual = this.aRodadas.get(indiceRodadas); 
 			if ( rodadaAtual != null ) {
 				resposta = (byte) (resposta + rodadaAtual.getPontuacaoRodada());
 			} else {
@@ -33,17 +36,25 @@ public class JogoBoliche {
 	}
 	
 	public void inserirJogada(byte pQtPinosDerrubados) {
-		if ( this.aRodadas[this.aIndiceRodadaAtual] != null &&
-				this.aRodadas[this.aIndiceRodadaAtual].isRodadaCompletada() 
+		// Se a Rodada atual já tiver sido completada, irá passar para a Próxima
+		if ( this.aRodadas.get(this.aIndiceRodadaAtual) != null &&
+				this.aRodadas.get(this.aIndiceRodadaAtual).isRodadaCompletada() 
 		) {
 			this.aIndiceRodadaAtual = (byte) (this.aIndiceRodadaAtual + 1);
+			
 		}
 		
-		if ( this.aRodadas[this.aIndiceRodadaAtual] == null ) {
-			this.aRodadas[this.aIndiceRodadaAtual] = new RodadaBoliche();
+		// Se a Rodada ainda não tiver sido inicializada, será aqui
+		if ( this.aRodadas.get(this.aIndiceRodadaAtual) == null ) {
+			this.aRodadas.add(this.aIndiceRodadaAtual, new RodadaBoliche());
 		}
 		
-		RodadaBoliche rodadaAtual = this.aRodadas[this.aIndiceRodadaAtual];
+		// Se for a 2ª Rodada em diante, associar as Rodadas atuais com as anteriores
+		if ( this.aIndiceRodadaAtual > 0 ) {
+			this.aRodadas.get(this.aIndiceRodadaAtual).setRodadaAnterior(this.aRodadas.get(this.aIndiceRodadaAtual - 1));
+		}
+		
+		RodadaBoliche rodadaAtual = this.aRodadas.get(this.aIndiceRodadaAtual);
 		rodadaAtual.adicionarJogada(pQtPinosDerrubados);
 	}
 	
@@ -54,11 +65,11 @@ public class JogoBoliche {
 			resposta = false;
 		} else {
 			for (byte indiceRodadas = 0; indiceRodadas < 10; indiceRodadas = (byte) (indiceRodadas + 1)) {
-				if ( this.aRodadas[indiceRodadas] == null ) {
+				if ( this.aRodadas.get(indiceRodadas) == null ) {
 					resposta = false;
 					break;
 				} else {
-					if ( !this.aRodadas[indiceRodadas].isRodadaCompletada() ) {
+					if ( !this.aRodadas.get(indiceRodadas).isRodadaCompletada() ) {
 						resposta = false;
 						break;
 					}

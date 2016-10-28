@@ -7,8 +7,12 @@ public class RodadaBoliche {
 	private byte aJogada01 = -1;
 	private byte aJogada02 = -1;
 	
+	private byte aBonus = -1;
+	
 	private byte aJogada03 = -1;
 	private boolean aIsDecimaRodada = false;
+	
+	private RodadaBoliche aRodadaAnterior;
 	
 	// Métodos
 	
@@ -25,6 +29,13 @@ public class RodadaBoliche {
 		this.aJogada02 = pJogada02;
 	}
 	
+	public RodadaBoliche getRodadaAnterior() {
+		return this.aRodadaAnterior;
+	}
+	public void setRodadaAnterior(RodadaBoliche pRodadaAnterior) {
+		this.aRodadaAnterior = pRodadaAnterior;
+	}
+	
 	public void adicionarJogada(byte pQtPinosDerrubados) {
 		// 1ª Jogada
 		if ( this.aJogada01 == -1 ) {
@@ -39,6 +50,17 @@ public class RodadaBoliche {
 					this.aJogada03 = pQtPinosDerrubados;
 				}
 			}
+		}
+		
+		// Verificar se a Rodada anterior tem Bonus a receber desta Rodada
+		if ( 
+				this.aRodadaAnterior != null && 
+				(
+					this.aRodadaAnterior.isSpare()	||
+					this.aRodadaAnterior.isStrike()
+				)
+		) {
+			// CONTINUAR AQUI
 		}
 	}
 	
@@ -65,8 +87,11 @@ public class RodadaBoliche {
 		// Se não for a 10ª  Rodada
 		if ( !this.aIsDecimaRodada ) {
 			resposta = 
-				this.aJogada01 != -1	&&
-				this.aJogada02 != -1
+				(this.aJogada01 != -1	&&
+				 this.aJogada02 != -1)
+				||
+				(this.aJogada01 == 10	&&
+				 this.aJogada02 == -1)
 			;
 		} else {
 			// Se for a 10ª Rodada
@@ -75,6 +100,29 @@ public class RodadaBoliche {
 				this.aJogada02 != -1	&&
 				this.aJogada03 != -1
 			;
+		}
+		
+		return resposta;
+	}
+	
+	public boolean isSpare() {
+		boolean resposta = false;
+		
+		if ( 
+				this.aJogada01 != 10 &&
+				(this.aJogada01 + this.aJogada02) == 10
+		) {
+			resposta = true;
+		}
+		
+		return resposta;
+	}
+	
+	public boolean isStrike() {
+		boolean resposta = false;
+		
+		if (  this.aJogada01 == 10 ) {
+			resposta = true;
 		}
 		
 		return resposta;
