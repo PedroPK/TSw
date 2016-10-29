@@ -1,8 +1,6 @@
 package tsw.t07;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 
 public class JogoBoliche {
@@ -10,21 +8,21 @@ public class JogoBoliche {
 	// Atributos
 	
 	private List<RodadaBoliche> aRodadas = new ArrayList<RodadaBoliche>();
-	private byte aIndiceRodadaAtual = 0;
+	private int aIndiceRodadaAtual = 0;
 	
 	// Métodos
 	
-	public byte getPontuacao() {
-		byte resposta = 0;
+	public int getPontuacao() {
+		int resposta = 0;
 		
-		for (	byte indiceRodadas = 0;
+		for (	int indiceRodadas = 0;
 					indiceRodadas <= this.aIndiceRodadaAtual	&&
 					indiceRodadas < 10;
-				indiceRodadas = (byte) (indiceRodadas + 1)
+				indiceRodadas = indiceRodadas + 1
 		) {
 			RodadaBoliche rodadaAtual = this.aRodadas.get(indiceRodadas); 
 			if ( rodadaAtual != null ) {
-				resposta = (byte) (resposta + rodadaAtual.getPontuacaoRodada());
+				resposta = resposta + rodadaAtual.getPontuacaoRodada();
 			} else {
 				break;
 			}
@@ -33,7 +31,7 @@ public class JogoBoliche {
 		return resposta;
 	}
 	
-	public void inserirJogada(byte pQtPinosDerrubados) {
+	public void inserirJogada(int pQtPinosDerrubados) {
 		// Verifica se a Coleção de Rodadas já foi inicializada
 		if ( this.aRodadas == null ) {
 			this.aRodadas = new ArrayList<RodadaBoliche>();
@@ -48,15 +46,14 @@ public class JogoBoliche {
 		if ( this.aRodadas.get(this.aIndiceRodadaAtual) != null &&
 				this.aRodadas.get(this.aIndiceRodadaAtual).isRodadaCompletada() 
 		) {
-			this.aIndiceRodadaAtual = (byte) (this.aIndiceRodadaAtual + 1);
+			this.aIndiceRodadaAtual = this.aIndiceRodadaAtual + 1;
 			
-			// Inicializa a Rodada Atual, 
-			this.aRodadas.add(this.aIndiceRodadaAtual, new RodadaBoliche());
-			
-			// Linkará a Rodada Anterior à Atual
-			this.aRodadas.get(this.aIndiceRodadaAtual).setRodadaAnterior(
-				this.aRodadas.get(this.aIndiceRodadaAtual - 1)
-			);
+			// Inicializa a Rodada Atual
+			RodadaBoliche rodadaAtual = new RodadaBoliche();
+			if ( this.aIndiceRodadaAtual == 9 ) {
+				rodadaAtual.setDecimaRodada(true);
+			}
+			this.aRodadas.add(this.aIndiceRodadaAtual, rodadaAtual);
 		}
 		
 		// Se a Rodada ainda não tiver sido inicializada, será aqui
@@ -79,7 +76,7 @@ public class JogoBoliche {
 		if ( this.aIndiceRodadaAtual < 9 ) {
 			resposta = false;
 		} else {
-			for (byte indiceRodadas = 0; indiceRodadas < 10; indiceRodadas = (byte) (indiceRodadas + 1)) {
+			for (int indiceRodadas = 0; indiceRodadas < 10; indiceRodadas = indiceRodadas + 1 ) {
 				if ( this.aRodadas.get(indiceRodadas) == null ) {
 					resposta = false;
 					break;

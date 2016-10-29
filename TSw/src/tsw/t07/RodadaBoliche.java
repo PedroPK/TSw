@@ -4,37 +4,41 @@ public class RodadaBoliche {
 	
 	// Atributos
 	
-	private byte aJogada01 = -1;
-	private byte aJogada02 = -1;
+	private int aJogada01 = -1;
+	private int aJogada02 = -1;
 	
-	private byte aBonus = -1;
+	private int aBonus = -1;
 	
-	private byte aJogada03 = -1;
+	private int aJogada03 = -1;
 	private boolean aIsDecimaRodada = false;
 	
 	private RodadaBoliche aRodadaAnterior;
 	
 	// Métodos
 	
-	public byte getJogada01() {
+	public int getJogada01() {
 		return aJogada01;
 	}
-	public void setJogada01(byte pJogada01) {
+	public void setJogada01(int pJogada01) {
 		this.aJogada01 = pJogada01;
 	}
-	public byte getJogada02() {
+	public int getJogada02() {
 		return aJogada02;
 	}
-	public void setJogada02(byte pJogada02) {
+	public void setJogada02(int pJogada02) {
 		this.aJogada02 = pJogada02;
 	}
 	
-	public byte getBonus() {
+	public int getBonus() {
 		return this.aBonus;
 	}
-	/*public void setBonus( byte pBonus ) {
-		this.aBonus = pBonus;
-	}*/
+	
+	public boolean isDecimaRodada() {
+		return this.aIsDecimaRodada;
+	}
+	public void setDecimaRodada(boolean pIsDecimaRodada) {
+		this.aIsDecimaRodada = pIsDecimaRodada;
+	}
 	
 	public RodadaBoliche getRodadaAnterior() {
 		return this.aRodadaAnterior;
@@ -43,7 +47,7 @@ public class RodadaBoliche {
 		this.aRodadaAnterior = pRodadaAnterior;
 	}
 	
-	public void adicionarJogada(byte pQtPinosDerrubados) {
+	public void adicionarJogada(int pQtPinosDerrubados) {
 		// 1ª Jogada
 		if ( this.aJogada01 == -1 ) {
 			this.aJogada01 = pQtPinosDerrubados;
@@ -77,8 +81,13 @@ public class RodadaBoliche {
 		}
 	}
 	
-	public void setBonus(byte pPontuacaoRodadaSeguinte) {
-		this.aBonus = pPontuacaoRodadaSeguinte;
+	public void setBonus(int pPontuacaoRodadaSeguinte) {
+		// Bonus Máximo é de 20
+		if ( pPontuacaoRodadaSeguinte > 20 ) {
+			this.aBonus = 20;
+		} else {
+			this.aBonus = pPontuacaoRodadaSeguinte;
+		}
 		
 		// Se houver uma Rodada anterior, vai verificar se foi um Spare ou Strike e atualizará o valor dela
 		if ( 
@@ -92,23 +101,23 @@ public class RodadaBoliche {
 		}
 	}
 	
-	public byte getPontuacaoRodada() {
-		byte resposta = 0;
+	public int getPontuacaoRodada() {
+		int resposta = 0;
 		
 		if ( this.aJogada01 != -1 ) {
 			resposta = this.aJogada01;
 		}
 		
 		if ( this.aJogada02 != -1 ) {
-			resposta = (byte) (resposta + this.aJogada02);
+			resposta = resposta + this.aJogada02;
 		}
 		
 		if ( this.aIsDecimaRodada && this.aJogada03 != -1 ) {
-			resposta = (byte) (resposta + this.aJogada03);
+			resposta = resposta + this.aJogada03;
 		}
 		
 		if ( this.aBonus != -1 ) {
-			resposta = (byte) (resposta + this.aBonus);
+			resposta = resposta + this.aBonus;
 		}
 		
 		return resposta;

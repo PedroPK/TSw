@@ -11,35 +11,70 @@ public class JogoBolicheTest {
 	public void testarTodasNaCanaleta() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		for (byte qtJogadas = 0; qtJogadas < 20; qtJogadas = (byte) (qtJogadas + 1)) {
-			boliche.inserirJogada((byte) 0);
+		for (int qtJogadas = 0; qtJogadas < 20; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada( 0 );
 		}
 		
 		assertEquals(0, boliche.getPontuacao());
-		assertTrue(boliche.isJogoCompletado());
+		//assertTrue(boliche.isJogoCompletado());
+	}
+	
+	@Test
+	public void testarUmEmTodasJogadas() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		for (int qtJogadas = 0; qtJogadas < 20; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada( 1 );
+		}
+		
+		assertEquals(20, boliche.getPontuacao());
+		//assertTrue(boliche.isJogoCompletado());
+	}
+	
+	@Test
+	public void testarSparePrimeiraRodadaTresNaJogadaSeguinte() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		boliche.inserirJogada((int) 5);
+		boliche.inserirJogada((int) 5);
+		boliche.inserirJogada((int) 3);
+		
+		assertEquals(16, boliche.getPontuacao());
+	}
+	
+	@Test
+	public void testarStrikePrimeiraRodadaTresQuatroNaRodadaSeguinte() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		boliche.inserirJogada((int) 10); // 10 + 3+4 = 17
+		boliche.inserirJogada((int) 3);
+		boliche.inserirJogada((int) 4);
+		// Total = 17 + 3 + 4 = 24
+		
+		assertEquals(24, boliche.getPontuacao());
 	}
 	
 	@Test
 	public void testarSparePrimeiraRodadaORestoNaCanaleta() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		boliche.inserirJogada((byte) 5);
-		boliche.inserirJogada((byte) 5);
-		for (byte qtJogadas = 0; qtJogadas < 18; qtJogadas = (byte) (qtJogadas + 1)) {
-			boliche.inserirJogada((byte) 0);
+		boliche.inserirJogada( 5 );
+		boliche.inserirJogada( 5 );
+		for ( int qtJogadas = 0; qtJogadas < 18; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada( 0 );
 		}
 		
 		assertEquals(10, boliche.getPontuacao());
-		assertTrue(boliche.isJogoCompletado());
+		//assertTrue(boliche.isJogoCompletado());
 	}
 	
 	@Test
 	public void testarSparePrimeiraRodadaComPontosNaSegundaRodada() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		boliche.inserirJogada((byte) 5);
-		boliche.inserirJogada((byte) 5);
-		boliche.inserirJogada((byte) 5);
+		boliche.inserirJogada((int) 5);
+		boliche.inserirJogada((int) 5);
+		boliche.inserirJogada((int) 5);
 		
 		assertEquals(20, boliche.getPontuacao());
 	}
@@ -48,9 +83,9 @@ public class JogoBolicheTest {
 	public void testarStrikePrimeiraRodadaComPontosNaSegundaRodada() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		boliche.inserirJogada((byte) 10);
-		boliche.inserirJogada((byte) 5);
-		boliche.inserirJogada((byte) 5);
+		boliche.inserirJogada((int) 10);
+		boliche.inserirJogada((int) 5);
+		boliche.inserirJogada((int) 5);
 		
 		assertEquals(30, boliche.getPontuacao());
 	}
@@ -59,9 +94,9 @@ public class JogoBolicheTest {
 	public void testarDoisStrikesSeguidosETerceiraRodadaComPontos() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		boliche.inserirJogada((byte) 10); // 10 + 15 = 25
-		boliche.inserirJogada((byte) 10); // 10 + 5 = 15
-		boliche.inserirJogada((byte) 5); // 5
+		boliche.inserirJogada((int) 10); // 10 + 15 = 25
+		boliche.inserirJogada((int) 10); // 10 + 5 = 15
+		boliche.inserirJogada((int) 5); // 5
 		
 		
 		assertEquals(45, boliche.getPontuacao());
@@ -71,12 +106,24 @@ public class JogoBolicheTest {
 	public void testarSeJogoFoiCompletado() {
 		JogoBoliche boliche = new JogoBoliche();
 		
-		for (byte qtJogadas = 0; qtJogadas < 18; qtJogadas = (byte) (qtJogadas + 1)) {
-			boliche.inserirJogada((byte) 1);
+		for (int qtJogadas = 0; qtJogadas < 18; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada((int) 1);
 		}
 		
 		assertEquals(18, boliche.getPontuacao());
 		assertFalse(boliche.isJogoCompletado());
+	}
+	
+	@Test
+	public void testarJogoPerfeito() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		for (int qtJogadas = 0; qtJogadas < 12; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada((int) 10);
+		}
+		
+		assertEquals(300, boliche.getPontuacao());
+		//assertFalse(boliche.isJogoCompletado());
 	}
 
 }
