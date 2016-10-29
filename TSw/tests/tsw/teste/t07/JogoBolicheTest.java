@@ -125,5 +125,17 @@ public class JogoBolicheTest {
 		assertEquals(300, boliche.getPontuacao());
 		//assertFalse(boliche.isJogoCompletado());
 	}
+	
+	@Test
+	public void testarJogoPerfeitoComOnzeRodadas() {
+		JogoBoliche boliche = new JogoBoliche();
+		
+		for (int qtJogadas = 0; qtJogadas < 13; qtJogadas = qtJogadas + 1 ) {
+			boliche.inserirJogada((int) 10);
+		}
+		
+		assertEquals(300, boliche.getPontuacao());
+		//assertFalse(boliche.isJogoCompletado());
+	}
 
 }
