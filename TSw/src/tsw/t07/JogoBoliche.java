@@ -44,7 +44,8 @@ public class JogoBoliche {
 		
 		// Se a Rodada atual já tiver sido completada, irá passar para a Próxima
 		if ( this.aRodadas.get(this.aIndiceRodadaAtual) != null &&
-				this.aRodadas.get(this.aIndiceRodadaAtual).isRodadaCompletada() 
+				this.aRodadas.get(this.aIndiceRodadaAtual).isRodadaCompletada() &&
+				this.aIndiceRodadaAtual < 9
 		) {
 			this.aIndiceRodadaAtual = this.aIndiceRodadaAtual + 1;
 			
