@@ -1,9 +1,14 @@
 package tsw.util;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+
+import tsw.t06.BibliotecaFuncoesPrincipal;
 
 public class BibliotecaFuncoes {
 	
@@ -92,6 +97,22 @@ public class BibliotecaFuncoes {
 		}
 		
 		return resposta;
+	}
+	
+	public static Object clone(Serializable pObjeto) throws IOException, ClassNotFoundException {
+		return desserializar(BibliotecaFuncoesPrincipal.serializar(pObjeto));
+	}
+	
+	public static Object desserializar(byte[] pObjectData)
+	throws IOException, ClassNotFoundException {
+		if ( pObjectData == null ) {
+			throw new IllegalArgumentException("pObjectData não pode ser null | Classe: " +
+				BibliotecaFuncoesPrincipal.class.getName() + " | Método: desserializar");
+		}
+		
+		ByteArrayInputStream bais = new ByteArrayInputStream(pObjectData);
+		
+		return BibliotecaFuncoesPrincipal.desserializar(bais);
 	}
 	
 }

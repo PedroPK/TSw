@@ -1,6 +1,8 @@
 package tsw.t08.entidades;
 
-public interface Entidade {
+import java.io.Serializable;
+
+public interface Entidade extends Serializable {
 	
 	public Object getChavePrimaria();
 	

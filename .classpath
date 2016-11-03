@@ -16,5 +16,8 @@
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/Hibernate/hibernate-release-4.2.21.Final/lib/required/javassist-3.18.1-GA.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/Hibernate/hibernate-release-4.2.21.Final/lib/required/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/Hibernate/hibernate-release-4.2.21.Final/lib/required/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/mockito-core-2.2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/byte-buddy-1.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/objenesis-tck-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
