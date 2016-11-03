@@ -12,6 +12,15 @@ import tsw.t08.entidades.Passageiro;
 import tsw.t08.persistencia.PassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
+/**
+ * Dependências do Mockito:
+ *  - Byte-Buddy
+ *  - Objenesis
+ *  - http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
+ *  
+ * @author pedro.f-santos
+ *
+ */
 public class PassageiroDAOTest {
 
 	@Test
