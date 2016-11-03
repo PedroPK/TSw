@@ -17,12 +17,9 @@ public class PRAdicionarPassageiro {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public PRAdicionarPassageiro() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	public PRAdicionarPassageiro() {}
 	
-	protected void service() throws IOException {
+	public void inserirPassageiro() {
 		String nome								= ConstantesGerais.ID_REQ_Nome;
 		String email							= ConstantesGerais.ID_REQ_eMail;
 		String cpf 								= ConstantesGerais.ID_REQ_CPF;
@@ -49,9 +46,6 @@ public class PRAdicionarPassageiro {
 		} else {
 			sb = getMensagemHTML("Dados para criação de Passageiro inconsistentes");
 		}
-		
-		//RequestDispatcher rd = pRequest.getRequestDispatcher("/visualizar.jsp");
-		//rd.forward(pRequest, pResponse);
 	}
 
 	private StringBuffer getMensagemHTML(String pMensagem) {
