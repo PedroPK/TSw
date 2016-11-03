@@ -1,8 +1,15 @@
 package tsw.teste.t06;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import tsw.t06.ConstantesPLOServico05;
+import tsw.t06.ExcecaoAtributoInvalido;
+import tsw.t06.ExcecaoParametroInvalido;
+import tsw.t06.ExcecaoValorNuloNaoPermitido;
+import tsw.t06.UtilServico05;
+import tsw.t06.VOBloqueioDotacao;
 
 public class CodigoAnoSequencialTest {
 	
