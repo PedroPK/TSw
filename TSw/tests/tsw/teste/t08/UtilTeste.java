@@ -1,6 +1,10 @@
 package tsw.teste.t08;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import tsw.t08.entidades.Passageiro;
+import tsw.t08.persistencia.PassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
 public class UtilTeste {
@@ -14,5 +18,26 @@ public class UtilTeste {
 		ticoSantaCruz.setDataNascimento( BibliotecaFuncoes.getData("01/02/1980") );
 		return ticoSantaCruz;
 	}
+	
+	public static PassageiroDAO getMockPassageiroDAO() {
+		PassageiroDAO daoFalso = mock(PassageiroDAO.class);
+		return daoFalso;
+	}
+	
+	public static void prepararMockConsultarPassageiro(
+		Passageiro		pPassageiroConsultado, 
+		Passageiro		pPassageiroRetornado,
+		PassageiroDAO	pMockDAOFalso
+	) {
+		when(pMockDAOFalso.consultar(pPassageiroConsultado)).thenReturn(pPassageiroRetornado);
+	}
+	
+	public static void prepararMockConsultarPassageiroPorChavePrimaria(
+			Passageiro		pPassageiroConsultado, 
+			Passageiro		pPassageiroRetornado,
+			PassageiroDAO	pMockDAOFalso
+		) {
+			when(pMockDAOFalso.consultar(pPassageiroConsultado.getChavePrimaria())).thenReturn(pPassageiroRetornado);
+		}
 	
 }

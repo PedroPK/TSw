@@ -99,15 +99,22 @@ public class BibliotecaFuncoes {
 		return resposta;
 	}
 	
-	public static Object clone(Serializable pObjeto) throws IOException, ClassNotFoundException {
-		return desserializar(BibliotecaFuncoesPrincipal.serializar(pObjeto));
+	public static Object clone(Serializable pObjeto) {
+		Object retorno = null;
+		try {
+			retorno = desserializar(BibliotecaFuncoesPrincipal.serializar(pObjeto));
+		} catch (ClassNotFoundException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return retorno;
 	}
 	
 	public static Object desserializar(byte[] pObjectData)
 	throws IOException, ClassNotFoundException {
 		if ( pObjectData == null ) {
-			throw new IllegalArgumentException("pObjectData não pode ser null | Classe: " +
-				BibliotecaFuncoesPrincipal.class.getName() + " | Método: desserializar");
+			throw new IllegalArgumentException("pObjectData nï¿½o pode ser null | Classe: " +
+				BibliotecaFuncoesPrincipal.class.getName() + " | Mï¿½todo: desserializar");
 		}
 		
 		ByteArrayInputStream bais = new ByteArrayInputStream(pObjectData);

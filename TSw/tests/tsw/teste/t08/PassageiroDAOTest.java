@@ -27,27 +27,20 @@ public class PassageiroDAOTest {
 	public void testarInserirDAO() {
 		Passageiro ticoSantaCruz = UtilTeste.instancializarNovoPassageiro();
 		
+		Passageiro tico = 
+			/* Equivalente a invocar as instru��es abaoxp
+			 * 
+			 * PassageiroDAO dao = new PassageiroDAO();
+			 *dao.inserir(ticoSantaCruz);
+			 */
+			(Passageiro) BibliotecaFuncoes.clone(ticoSantaCruz);
 		
-		try {
-			Passageiro tico = 
-				/* Equivalente a invocar as instru��es abaoxp
-				 * 
-				 * PassageiroDAO dao = new PassageiroDAO();
-				 *dao.inserir(ticoSantaCruz);
-				 */
-				(Passageiro) BibliotecaFuncoes.clone(ticoSantaCruz);
-			
-			PassageiroDAO daoFalso = mock(PassageiroDAO.class);
-			when(daoFalso.consultar(ticoSantaCruz)).thenReturn(tico);
-			
-			Passageiro passageiro = daoFalso.consultar(ticoSantaCruz);
-			
-			assertEquals(ticoSantaCruz.getChavePrimaria(), passageiro.getChavePrimaria());
-		} catch (ClassNotFoundException e) {
-			fail();
-		} catch (IOException e) {
-			fail();
-		}
+		PassageiroDAO daoFalso = UtilTeste.getMockPassageiroDAO();
+		UtilTeste.prepararMockConsultarPassageiro(ticoSantaCruz, tico, daoFalso);
+		
+		Passageiro passageiro = daoFalso.consultar(ticoSantaCruz);
+		
+		assertEquals(ticoSantaCruz.getChavePrimaria(), passageiro.getChavePrimaria());
 	}
 
 }
