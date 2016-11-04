@@ -10,6 +10,20 @@ import tsw.util.BibliotecaFuncoes;
 
 public class ControladorPassageiro implements IControladorPassageiro {
 	
+	// Atributos
+	
+	private IPassageiroDAO aPassageiroDAO;
+	
+	// Controladores
+	
+	public ControladorPassageiro() {}
+	
+	public ControladorPassageiro(PassageiroDAO pPassageiroDAO) {
+		this.aPassageiroDAO = pPassageiroDAO;
+	}
+	
+	// Métodos
+	
 	public void inserirPassageiro(
 		String	pNome,
 		String	pCPF,
@@ -39,24 +53,34 @@ public class ControladorPassageiro implements IControladorPassageiro {
 					isPortadorNecessidadesEspeciais
 			);
 		
-		IPassageiroDAO passageiroDAO = new PassageiroDAO();
-		passageiroDAO.inserir(passageiro);
+		preValidarDAO();
+		aPassageiroDAO.inserir(passageiro);
 	}
 	
 	public void inserir(Passageiro pPassageiro) {
-		IPassageiroDAO passageiroDAO = new PassageiroDAO();
-		passageiroDAO.inserir(pPassageiro);
+		preValidarDAO();
+		aPassageiroDAO.inserir(pPassageiro);
 	}
 	
 	public Passageiro consultar(Object pChavePrimaria) {
-		IPassageiroDAO passageiroDAO = new PassageiroDAO();
-		Passageiro registro = passageiroDAO.consultar(pChavePrimaria);
+		preValidarDAO();
+		Passageiro registro = aPassageiroDAO.consultar(pChavePrimaria);
 		return registro;
 	}
 	
 	public Collection<Passageiro> consultar() {
-		IPassageiroDAO passageiroDAO = new PassageiroDAO();
-		return passageiroDAO.consultar();
+		preValidarDAO();
+		return aPassageiroDAO.consultar();
+	}
+	
+	/**
+	 * Valida se o DAO está inicializado.
+	 * Caso negativo, irá inicializa-lo
+	 */
+	private void preValidarDAO() {
+		if ( this.aPassageiroDAO == null ) {
+			aPassageiroDAO = new PassageiroDAO();
+		}
 	}
 	
 }

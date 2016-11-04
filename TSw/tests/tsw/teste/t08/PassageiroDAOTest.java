@@ -13,7 +13,7 @@ import tsw.t08.persistencia.PassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
 /**
- * Dependências do Mockito:
+ * Dependï¿½ncias do Mockito:
  *  - Byte-Buddy
  *  - Objenesis
  *  - http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
@@ -25,17 +25,12 @@ public class PassageiroDAOTest {
 
 	@Test
 	public void testarInserirDAO() {
-		Passageiro ticoSantaCruz = new Passageiro();
-		ticoSantaCruz.setNome("Tico Santa Cruz");
-		ticoSantaCruz.setCPF("123.456.789-0");
-		ticoSantaCruz.setEMail("tico.revoltado@detonaltas.com.br");
-		ticoSantaCruz.setIsPortadorNecessidadesEspeciais(true);
-		ticoSantaCruz.setDataNascimento( BibliotecaFuncoes.getData("01/02/1980") );
+		Passageiro ticoSantaCruz = UtilTeste.instancializarNovoPassageiro();
 		
 		
 		try {
 			Passageiro tico = 
-				/* Equivalente a invocar as instruções abaoxp
+				/* Equivalente a invocar as instruï¿½ï¿½es abaoxp
 				 * 
 				 * PassageiroDAO dao = new PassageiroDAO();
 				 *dao.inserir(ticoSantaCruz);
@@ -54,5 +49,5 @@ public class PassageiroDAOTest {
 			fail();
 		}
 	}
-	
+
 }
