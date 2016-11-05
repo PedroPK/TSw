@@ -1,15 +1,11 @@
 package tsw.teste.t08;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import java.io.IOException;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import tsw.t08.entidades.Passageiro;
-import tsw.t08.persistencia.PassageiroDAO;
+import tsw.t08.persistencia.IPassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
 /**
@@ -35,7 +31,7 @@ public class PassageiroDAOTest {
 			 */
 			(Passageiro) BibliotecaFuncoes.clone(ticoSantaCruz);
 		
-		PassageiroDAO daoFalso = UtilTeste.getMockPassageiroDAO();
+		IPassageiroDAO daoFalso = UtilTeste.getMockPassageiroDAO();
 		UtilTeste.prepararMockConsultarPassageiro(ticoSantaCruz, tico, daoFalso);
 		
 		Passageiro passageiro = daoFalso.consultar(ticoSantaCruz);

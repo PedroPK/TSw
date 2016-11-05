@@ -1,11 +1,12 @@
 package tsw.teste.t08;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import tsw.t08.controlador.ControladorPassageiro;
 import tsw.t08.entidades.Passageiro;
-import tsw.t08.persistencia.PassageiroDAO;
+import tsw.t08.persistencia.IPassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
 public class ControladorPassageiroTest {
@@ -14,7 +15,7 @@ public class ControladorPassageiroTest {
 	public void testarInclusaoPassageiro() {
 		Passageiro passageiro = UtilTeste.instancializarNovoPassageiro();
 		
-		PassageiroDAO mockDAO = UtilTeste.getMockPassageiroDAO();
+		IPassageiroDAO mockDAO = UtilTeste.getMockPassageiroDAO();
 		UtilTeste.prepararMockConsultarPassageiroPorChavePrimaria(
 			passageiro, 
 			(Passageiro) BibliotecaFuncoes.clone(passageiro), 

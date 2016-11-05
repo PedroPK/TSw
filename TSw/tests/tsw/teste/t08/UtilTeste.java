@@ -4,6 +4,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import tsw.t08.entidades.Passageiro;
+import tsw.t08.persistencia.IPassageiroDAO;
 import tsw.t08.persistencia.PassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
@@ -19,15 +20,15 @@ public class UtilTeste {
 		return ticoSantaCruz;
 	}
 	
-	public static PassageiroDAO getMockPassageiroDAO() {
-		PassageiroDAO daoFalso = mock(PassageiroDAO.class);
+	public static IPassageiroDAO getMockPassageiroDAO() {
+		IPassageiroDAO daoFalso = mock(PassageiroDAO.class);
 		return daoFalso;
 	}
 	
 	public static void prepararMockConsultarPassageiro(
 		Passageiro		pPassageiroConsultado, 
 		Passageiro		pPassageiroRetornado,
-		PassageiroDAO	pMockDAOFalso
+		IPassageiroDAO	pMockDAOFalso
 	) {
 		when(pMockDAOFalso.consultar(pPassageiroConsultado)).thenReturn(pPassageiroRetornado);
 	}
@@ -35,7 +36,7 @@ public class UtilTeste {
 	public static void prepararMockConsultarPassageiroPorChavePrimaria(
 			Passageiro		pPassageiroConsultado, 
 			Passageiro		pPassageiroRetornado,
-			PassageiroDAO	pMockDAOFalso
+			IPassageiroDAO	pMockDAOFalso
 		) {
 			when(pMockDAOFalso.consultar(pPassageiroConsultado.getChavePrimaria())).thenReturn(pPassageiroRetornado);
 		}
