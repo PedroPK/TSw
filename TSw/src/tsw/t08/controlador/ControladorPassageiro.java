@@ -18,7 +18,7 @@ public class ControladorPassageiro implements IControladorPassageiro {
 	
 	public ControladorPassageiro() {}
 	
-	public ControladorPassageiro(PassageiroDAO pPassageiroDAO) {
+	public ControladorPassageiro(IPassageiroDAO pPassageiroDAO) {
 		this.aPassageiroDAO = pPassageiroDAO;
 	}
 	
