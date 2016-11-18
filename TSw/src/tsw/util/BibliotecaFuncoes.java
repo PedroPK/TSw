@@ -103,10 +103,14 @@ public class BibliotecaFuncoes {
 		Object retorno = null;
 		try {
 			retorno = desserializar(BibliotecaFuncoesPrincipal.serializar(pObjeto));
-		} catch (ClassNotFoundException | IOException e) {
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch ( IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return retorno;
 	}
 	
