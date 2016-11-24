@@ -1,5 +1,8 @@
 package tsw.t11;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Regras
  * 
@@ -28,11 +31,55 @@ package tsw.t11;
  */
 public class TecladoT9 {
 	
+	private Map<String, String> aMapeamentoTeclas = new HashMap<String, String>();
+	
+	public TecladoT9() {
+		aMapeamentoTeclas.put("A", "2");
+		aMapeamentoTeclas.put("B", "22");
+		aMapeamentoTeclas.put("C", "222");
+		
+		aMapeamentoTeclas.put("D", "3");
+		aMapeamentoTeclas.put("E", "33");
+		aMapeamentoTeclas.put("F", "33");
+		
+		aMapeamentoTeclas.put("G", "4");
+		aMapeamentoTeclas.put("H", "44");
+		aMapeamentoTeclas.put("I", "44");
+		
+		aMapeamentoTeclas.put("J", "5");
+		aMapeamentoTeclas.put("K", "55");
+		aMapeamentoTeclas.put("L", "55");
+		
+		aMapeamentoTeclas.put("M", "6");
+		aMapeamentoTeclas.put("N", "66");
+		aMapeamentoTeclas.put("O", "666");
+		
+		aMapeamentoTeclas.put("P", "7");
+		aMapeamentoTeclas.put("Q", "77");
+		aMapeamentoTeclas.put("R", "777");
+		aMapeamentoTeclas.put("S", "7777");
+		
+		aMapeamentoTeclas.put("T", "8");
+		aMapeamentoTeclas.put("U", "88");
+		aMapeamentoTeclas.put("V", "888");
+		
+		aMapeamentoTeclas.put("W", "9");
+		aMapeamentoTeclas.put("X", "99");
+		aMapeamentoTeclas.put("Y", "999");
+		aMapeamentoTeclas.put("Z", "9999");
+		
+		aMapeamentoTeclas.put(" ", "0");
+	}
+	
 	public String converterTextoParaTecladoNumerico( String pTexto ) {
 		String resposta = null;
 		
 		if ( pTexto != null ) {
 			resposta = "";
+			
+			for ( int i = 0; i < pTexto.length(); i = i + 1 ) {
+				resposta = resposta + aMapeamentoTeclas.get(pTexto.charAt(i));
+			}
 		}
 		
 		return resposta;
