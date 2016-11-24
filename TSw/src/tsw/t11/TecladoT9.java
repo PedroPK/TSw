@@ -34,41 +34,41 @@ public class TecladoT9 {
 	private Map<String, String> aMapeamentoTeclas = new HashMap<String, String>();
 	
 	public TecladoT9() {
-		aMapeamentoTeclas.put("A", "2");
-		aMapeamentoTeclas.put("B", "22");
-		aMapeamentoTeclas.put("C", "222");
+		this.aMapeamentoTeclas.put("A", "2");
+		this.aMapeamentoTeclas.put("B", "22");
+		this.aMapeamentoTeclas.put("C", "222");
 		
-		aMapeamentoTeclas.put("D", "3");
-		aMapeamentoTeclas.put("E", "33");
-		aMapeamentoTeclas.put("F", "33");
+		this.aMapeamentoTeclas.put("D", "3");
+		this.aMapeamentoTeclas.put("E", "33");
+		this.aMapeamentoTeclas.put("F", "33");
 		
-		aMapeamentoTeclas.put("G", "4");
-		aMapeamentoTeclas.put("H", "44");
-		aMapeamentoTeclas.put("I", "44");
+		this.aMapeamentoTeclas.put("G", "4");
+		this.aMapeamentoTeclas.put("H", "44");
+		this.aMapeamentoTeclas.put("I", "44");
 		
-		aMapeamentoTeclas.put("J", "5");
-		aMapeamentoTeclas.put("K", "55");
-		aMapeamentoTeclas.put("L", "55");
+		this.aMapeamentoTeclas.put("J", "5");
+		this.aMapeamentoTeclas.put("K", "55");
+		this.aMapeamentoTeclas.put("L", "55");
 		
-		aMapeamentoTeclas.put("M", "6");
-		aMapeamentoTeclas.put("N", "66");
-		aMapeamentoTeclas.put("O", "666");
+		this.aMapeamentoTeclas.put("M", "6");
+		this.aMapeamentoTeclas.put("N", "66");
+		this.aMapeamentoTeclas.put("O", "666");
 		
-		aMapeamentoTeclas.put("P", "7");
-		aMapeamentoTeclas.put("Q", "77");
-		aMapeamentoTeclas.put("R", "777");
-		aMapeamentoTeclas.put("S", "7777");
+		this.aMapeamentoTeclas.put("P", "7");
+		this.aMapeamentoTeclas.put("Q", "77");
+		this.aMapeamentoTeclas.put("R", "777");
+		this.aMapeamentoTeclas.put("S", "7777");
 		
-		aMapeamentoTeclas.put("T", "8");
-		aMapeamentoTeclas.put("U", "88");
-		aMapeamentoTeclas.put("V", "888");
+		this.aMapeamentoTeclas.put("T", "8");
+		this.aMapeamentoTeclas.put("U", "88");
+		this.aMapeamentoTeclas.put("V", "888");
 		
-		aMapeamentoTeclas.put("W", "9");
-		aMapeamentoTeclas.put("X", "99");
-		aMapeamentoTeclas.put("Y", "999");
-		aMapeamentoTeclas.put("Z", "9999");
+		this.aMapeamentoTeclas.put("W", "9");
+		this.aMapeamentoTeclas.put("X", "99");
+		this.aMapeamentoTeclas.put("Y", "999");
+		this.aMapeamentoTeclas.put("Z", "9999");
 		
-		aMapeamentoTeclas.put(" ", "0");
+		this.aMapeamentoTeclas.put(" ", "0");
 	}
 	
 	public String converterTextoParaTecladoNumerico( String pTexto ) {
@@ -78,7 +78,7 @@ public class TecladoT9 {
 			resposta = "";
 			
 			for ( int i = 0; i < pTexto.length(); i = i + 1 ) {
-				resposta = resposta + aMapeamentoTeclas.get(pTexto.charAt(i));
+				resposta = resposta + this.aMapeamentoTeclas.get(pTexto.charAt(i));
 			}
 		}
 		
