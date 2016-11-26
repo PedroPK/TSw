@@ -1,6 +1,7 @@
 package tsw.teste.t08;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
 
@@ -27,6 +28,10 @@ public class ControladorPassageiroTest {
 			controlador.consultar(passageiro.getChavePrimaria());
 		
 		assertEquals(passageiro.getChavePrimaria(), passageiroConsultado.getChavePrimaria());
+		verify(mockDAO).inserir(passageiro);
+		verify(mockDAO, times(1) ).inserir(passageiro);
+		verify(mockDAO, atLeast(1)).inserir(passageiro);
+		verify(mockDAO, atMost(1)).inserir(passageiro);
 	}
 
 }
