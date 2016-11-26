@@ -8,7 +8,7 @@ import tsw.t11.TecladoT9;
 /**
  * Regras
  * 
- * Um dos servi�os mais utilizados pelos usu�rios de aparelhos celulares s�o os SMS (Short Message Service), que permite o envio de mensagens curtas (at� 255 caracteres em redes GSM e 160 caracteres em redes CDMA).
+ * Um dos serviços mais utilizados pelos usuários de aparelhos celulares são os SMS (Short Message Service), que permite o envio de mensagens curtas (até 255 caracteres em redes GSM e 160 caracteres em redes CDMA).
  * Para digitar uma mensagem em um aparelho que n�o possui um teclado QWERTY embutido � necess�rio fazer algumas combina��es das 10 teclas num�ricas do aparelho para conseguir digitar. Cada n�mero � associado a um conjunto de letras como a seguir:
  * Letras  ->  N�mero
  * 
@@ -31,35 +31,33 @@ import tsw.t11.TecladoT9;
  */
 public class TecladoT9Test {
 	
+	TecladoT9 aT9 = new TecladoT9();
+	
 	@Test
 	public void testeNulo() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico(null);
+			this.aT9.converterTextoParaTecladoNumerico(null);
 		assertNull(numerico);
 	}
 	
 	@Test
 	public void testeVazio() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico("");
+			this.aT9.converterTextoParaTecladoNumerico("");
 		assertTrue(numerico.isEmpty());
 	}
 	
 	@Test
 	public void testeTudoMaiusculoPEDRO() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico("PEDRO");
+			this.aT9.converterTextoParaTecladoNumerico("PEDRO");
 		assertEquals("7333777666", numerico);
 	}
 	
 	@Test
 	public void testeTudoMinusculoPedro() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico("pedro");
+			this.aT9.converterTextoParaTecladoNumerico("pedro");
 		assertEquals("7333777666", numerico);
 	}
 	
@@ -70,5 +68,34 @@ public class TecladoT9Test {
 			t9.converterTextoParaTecladoNumerico("Pedro");
 		assertEquals("7333777666", numerico);
 	}
-
+	
+	@Test
+	public void testeComMaiusculoEMinusculoMaisEspacoPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos");
+		assertEquals("7333777666022227775556667777", numerico);
+	}
+	
+	@Test
+	public void testeComMaiusculoEMinusculoMaisEspacoComPontuacaoPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos.");
+		assertEquals("73337776660222277755566677771", numerico);
+	}
+	
+	@Test
+	public void testeComMaiusculoEMinusculoMaisEspacoComVirgulaPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro, Carlos.");
+		assertEquals("7333777666110222277755566677771", numerico);
+	}
+	
+	@Test
+	public void teste12345() {
+		String texto = 
+			this.aT9.converterTecladoNumericoParaTexto("12345");
+		
+		assertEquals(".ADGJ", texto);
+	}
+	
 }
