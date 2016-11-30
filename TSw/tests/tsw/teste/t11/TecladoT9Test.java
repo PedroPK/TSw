@@ -8,9 +8,9 @@ import tsw.t11.TecladoT9;
 /**
  * Regras
  * 
- * Um dos serviços mais utilizados pelos usuários de aparelhos celulares são os SMS (Short Message Service), que permite o envio de mensagens curtas (até 255 caracteres em redes GSM e 160 caracteres em redes CDMA).
- * Para digitar uma mensagem em um aparelho que não possui um teclado QWERTY embutido é necessário fazer algumas combinações das 10 teclas numéricas do aparelho para conseguir digitar. Cada número é associado a um conjunto de letras como a seguir:
- * Letras  ->  Número
+ * Um dos serviÃ§os mais utilizados pelos usuÃ¡rios de aparelhos celulares sÃ£o os SMS (Short Message Service), que permite o envio de mensagens curtas (atÃ© 255 caracteres em redes GSM e 160 caracteres em redes CDMA).
+ * Para digitar uma mensagem em um aparelho que nï¿½o possui um teclado QWERTY embutido ï¿½ necessï¿½rio fazer algumas combinaï¿½ï¿½es das 10 teclas numï¿½ricas do aparelho para conseguir digitar. Cada nï¿½mero ï¿½ associado a um conjunto de letras como a seguir:
+ * Letras  ->  Nï¿½mero
  * 
  *  ABC    ->  2
  *  DEF    ->  3
@@ -20,10 +20,10 @@ import tsw.t11.TecladoT9;
  *  PQRS    ->  7
  *  TUV    ->  8
  *  WXYZ   ->  9
- *  Espaço -> 0
+ *  Espaco, Ponto, Virgula -> 0
  *  
- * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a seqüência de números que precisa ser digitada. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, deve ser indicada como _.
- * Por exemplo, para digitar "SEMPRE ACESSO O DOJOPUZZLES", você precisa digitar:
+ * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a seqï¿½ï¿½ncia de nï¿½meros que precisa ser digitada. Uma pausa, para ser possï¿½vel obter duas letras referenciadas pelo mesmo nï¿½mero, deve ser indicada como _.
+ * Por exemplo, para digitar "SEMPRE ACESSO O DOJOPUZZLES", vocï¿½ precisa digitar:
  * 77773367_7773302_222337777_777766606660366656667889999_9999555337777
  * 
  * @author pedro.f-santos
@@ -31,24 +31,31 @@ import tsw.t11.TecladoT9;
  */
 public class TecladoT9Test {
 	
+	TecladoT9 aT9 = new TecladoT9();
+	
 	@Test
 	public void testeNulo() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico(null);
+			this.aT9.converterTextoParaTecladoNumerico(null);
 		assertNull(numerico);
 	}
 	
 	@Test
 	public void testeVazio() {
-		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
-			t9.converterTextoParaTecladoNumerico("");
+			this.aT9.converterTextoParaTecladoNumerico("");
 		assertTrue(numerico.isEmpty());
 	}
 	
 	@Test
-	public void testePedro() {
+	public void testeTudoMinusculoPedro() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("pedro");
+		assertEquals("7333777666", numerico);
+	}
+	
+	@Test
+	public void testeComMaiusculoEMinusculoPedro() {
 		TecladoT9 t9 = new TecladoT9();
 		String numerico = 
 			t9.converterTextoParaTecladoNumerico("Pedro");
@@ -62,5 +69,33 @@ public class TecladoT9Test {
 			t9.converterTextoParaTecladoNumerico("PEDRO");
 		assertEquals("7333777666", numerico);
 	}
-
+	
+	public void testeComMaiusculoEMinusculoMaisEspacoPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos");
+		assertEquals("7333777666022227775556667777", numerico);
+	}
+	
+	@Test
+	public void testeComMaiusculoEMinusculoMaisEspacoComPontuacaoPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos.");
+		assertEquals("73337776660222277755566677771", numerico);
+	}
+	
+	@Test
+	public void testeComMaiusculoEMinusculoMaisEspacoComVirgulaPedroCarlos() {
+		String numerico = 
+			this.aT9.converterTextoParaTecladoNumerico("Pedro, Carlos.");
+		assertEquals("7333777666110222277755566677771", numerico);
+	}
+	
+	@Test
+	public void teste12345() {
+		String texto = 
+			this.aT9.converterTecladoNumericoParaTexto("12345");
+		
+		assertEquals(".ADGJ", texto);
+	}
+	
 }
