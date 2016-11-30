@@ -64,7 +64,7 @@ public class OperacoesBigDecimalTest {
 		OperacoesBigDecimal operacoes = new OperacoesBigDecimal();
 		
 		try {
-			BigDecimal resultado = operacoes.subtrairComMinuendoSubtraendoSerializados(minuendo, subtraendo);
+			BigDecimal resultado = operacoes.subtrairComMinuendoSubtraendoResultadoSerializados(minuendo, subtraendo);
 			
 			BigDecimal resultadoEsperado = new BigDecimal("1999500");
 			

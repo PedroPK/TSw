@@ -54,5 +54,13 @@ public class TecladoT9Test {
 			t9.converterTextoParaTecladoNumerico("Pedro");
 		assertEquals("7333777666", numerico);
 	}
+	
+	@Test
+	public void testeTudoMaiusculoPEDRO() {
+		TecladoT9 t9 = new TecladoT9();
+		String numerico = 
+			t9.converterTextoParaTecladoNumerico("PEDRO");
+		assertEquals("7333777666", numerico);
+	}
 
 }
