@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="/Users/pedropk/Dropbox/Unibratec/01 - Aulas/ADS - Análise e Desenvolvimento de Sistemas/TSw - Testes de Software/08 - Bibliotecas, Frameworks e JARs/byte-buddy-1.5.3.jar"/>
 	<classpathentry kind="lib" path="/Users/pedropk/Dropbox/Unibratec/01 - Aulas/ADS - Análise e Desenvolvimento de Sistemas/TSw - Testes de Software/08 - Bibliotecas, Frameworks e JARs/objenesis-tck-2.4.jar"/>
 	<classpathentry kind="lib" path="/Users/pedropk/Dropbox/Unibratec/01 - Aulas/ADS - Análise e Desenvolvimento de Sistemas/TSw - Testes de Software/08 - Bibliotecas, Frameworks e JARs/mockito-core-2.2.10.jar"/>
+	<classpathentry kind="lib" path="libs/selenium-server-standalone-3.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
