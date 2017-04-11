@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/mockito-core-2.2.10.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/byte-buddy-1.5.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/pedro.f-santos/Downloads/Software/Desenvolvimento/Java/JUnit/objenesis-tck-2.4.jar"/>
+	<classpathentry kind="lib" path="TSw/libs/selenium-server-standalone-3.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
