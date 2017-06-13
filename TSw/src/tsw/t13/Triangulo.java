@@ -1,6 +1,6 @@
 package tsw.t13;
 
-public class Triangulo {
+public class Triangulo implements iTriangulo {
 	
 	private Double aLadoA;
 	private Double aLadoB;
@@ -49,13 +49,13 @@ public class Triangulo {
 		this.aLadoC = pLadoC;
 	}
 	
-	private void validarTamanhoLado(Double pTamanhoLado) {
+	public void validarTamanhoLado(Double pTamanhoLado) {
 		if ( isTamanhoLadoValido(pTamanhoLado) ) {
 			throw new ExcecaoTamanhoInvalido();
 		}
 	}
 	
-	private void validarTresLadosTriangulo() {
+	public void validarTresLadosTriangulo() {
 		if ( 
 				!isTamanhoLadoValido(this.aLadoA)	||
 				!isTamanhoLadoValido(this.aLadoB)	||
@@ -73,7 +73,7 @@ public class Triangulo {
 		}
 	}
 	
-	private boolean isTamanhoLadoValido(Double pTamanhoLado) {
+	public boolean isTamanhoLadoValido(Double pTamanhoLado) {
 		return pTamanhoLado != null && pTamanhoLado.doubleValue() > 0;
 	}
 	
@@ -179,7 +179,7 @@ public class Triangulo {
 		return resposta;
 	}
 	
-	private boolean isTresLadosValidos() {
+	public boolean isTresLadosValidos() {
 		boolean resposta = true;
 		
 		if ( !isTamanhoLadoValido(this.aLadoA) ) {
