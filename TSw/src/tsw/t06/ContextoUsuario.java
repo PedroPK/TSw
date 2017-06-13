@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.Timestamp;
 
-import javax.transaction.UserTransaction;
+//import javax.transaction.UserTransaction;
 
 /**
  * Classe que representa o contexto do usu�rio dentro do Sistema.
@@ -52,7 +52,7 @@ public class ContextoUsuario implements Serializable {
 	private String aNmUsuarioSistemaOperacional;
 	private Timestamp aDhUltimaAcao;
 	private Timestamp aDhUltimoLogin;
-	private transient UserTransaction aUserTransaction = null;
+	//private transient UserTransaction aUserTransaction = null;
 	private transient int aTpNivelIsolamentoTransacao = 0;
 	private transient short aTpTransacao = Constantes.TP_TRANSACAO_JTA;
 	private boolean aInJob = false;
@@ -499,20 +499,20 @@ public class ContextoUsuario implements Serializable {
 	 * -
 	 *
 	 * @param pUserTransaction
-	 */
+	 * /
 	public void setUserTransaction(UserTransaction pUserTransaction) {
 		this.aUserTransaction = pUserTransaction;
-	}
-
+	}*/
+	
 	/**
 	 * -
 	 *
 	 * @return
-	 */
+	 * /
 	public UserTransaction getUserTransaction() {
 		return this.aUserTransaction;
-	}
-
+	}*/
+	
 	/**
 	 * Utilizado em transa��es do tipo JDBC_RGC e JDBC_CRGC para controlar que PreparedStatements devem ser fechados. Deve ser
 	 * chamado imediatamente antes do acesso ao DAO que retorna um OTDResultSet. O m�todo DAO_BD.fecharConexao � respons�vel por
