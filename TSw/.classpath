@@ -8,5 +8,8 @@
 	<classpathentry kind="lib" path="/Users/pedropk/Dropbox/Unibratec/01 - Aulas/ADS - Análise e Desenvolvimento de Sistemas/TSw - Testes de Software/08 - Bibliotecas, Frameworks e JARs/objenesis-tck-2.4.jar"/>
 	<classpathentry kind="lib" path="/Users/pedropk/Dropbox/Unibratec/01 - Aulas/ADS - Análise e Desenvolvimento de Sistemas/TSw - Testes de Software/08 - Bibliotecas, Frameworks e JARs/mockito-core-2.2.10.jar"/>
 	<classpathentry kind="lib" path="libs/selenium-server-standalone-3.3.1.jar"/>
+	<classpathentry kind="lib" path="libs/hibernate-entitymanager-4.2.21.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hibernate-core-5.2.9.Final.jar"/>
+	<classpathentry kind="lib" path="libs/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,10 +1,6 @@
 package tsw.teste.t12;
 
 import static org.junit.Assert.*;
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/master
 import org.junit.Test;
 
 import tsw.t12.Aleatorio;
