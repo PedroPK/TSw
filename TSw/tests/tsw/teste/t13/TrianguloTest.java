@@ -9,7 +9,7 @@ import tsw.t13.Triangulo;
 public class TrianguloTest {
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCriacaoTrianguloVazio() {
+	public void testarCT01CriacaoTrianguloVazio() {
 		Triangulo t = 
 			new Triangulo(
 				new Double(0),
@@ -19,7 +19,7 @@ public class TrianguloTest {
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCriacaoTrianguloComLadosNulos() {
+	public void testarCT02CriacaoTrianguloComLadosNulos() {
 		Triangulo t = 
 			new Triangulo(
 				null,
@@ -29,7 +29,7 @@ public class TrianguloTest {
 	}
 	
 	@Test
-	public void testarCriacaoTrianguloEquilatero() {
+	public void testarCT03CriacaoTrianguloEquilatero() {
 		Double lados = new Double(1);
 		
 		Triangulo t = new Triangulo(lados, lados, lados);
@@ -39,7 +39,7 @@ public class TrianguloTest {
 	}
 	
 	@Test
-	public void testarCriacaoTrianguloIsoceles() {
+	public void testarCT04CriacaoTrianguloIsoceles() {
 		Double ladosUmDois = new Double(1);
 		Double ladoTres = new Double(1.5);
 		
@@ -50,7 +50,7 @@ public class TrianguloTest {
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCriacaoTrianguloIsocelesInvalido() {
+	public void testarCT05CriacaoTrianguloIsocelesInvalido() {
 		Double ladosUmDois = new Double(1);
 		Double ladoTres = new Double(2);
 		
@@ -61,7 +61,7 @@ public class TrianguloTest {
 	}
 	
 	@Test
-	public void testarCriacaoTrianguloEscaleno() {
+	public void testarCT06CriacaoTrianguloEscaleno() {
 		Double ladosUm = new Double(1);
 		Double ladosDois = new Double(2);
 		Double ladoTres = new Double(2.5);
@@ -73,7 +73,7 @@ public class TrianguloTest {
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCriacaoTrianguloEscalenoInvalido() {
+	public void testarCT07CriacaoTrianguloEscalenoInvalido() {
 		Double ladosUm = new Double(1);
 		Double ladosDois = new Double(2);
 		Double ladoTres = new Double(3);
