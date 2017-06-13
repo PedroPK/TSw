@@ -63,10 +63,18 @@ public class Triangulo {
 		) {
 			throw new ExcecaoTamanhoInvalido();
 		}
+		
+		if ( 
+				this.aLadoA + this.aLadoB <= this.aLadoC	||
+				this.aLadoB + this.aLadoC <= this.aLadoA	||
+				this.aLadoC + this.aLadoA <= this.aLadoB
+		) {
+			throw new ExcecaoTamanhoInvalido();
+		}
 	}
 	
 	private boolean isTamanhoLadoValido(Double pTamanhoLado) {
-		return pTamanhoLado == null || pTamanhoLado.doubleValue() <= 0;
+		return pTamanhoLado != null && pTamanhoLado.doubleValue() > 0;
 	}
 	
 	/**
@@ -99,20 +107,20 @@ public class Triangulo {
 		}
 		
 		if ( resposta &&
-				(
-					!(
+				!(
+					(
 						this.aLadoA.doubleValue()		==		this.aLadoB.doubleValue()	
 						&&
 						this.aLadoB.doubleValue()	!=		this.aLadoC.doubleValue()
 					)
 					||
-					!(
+					(
 						this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()	
 						&&
 						this.aLadoC.doubleValue()	!=		this.aLadoA.doubleValue()
 					)
 					||
-					!(
+					(
 						this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()	
 						&&
 						this.aLadoA.doubleValue()		!=		this.aLadoB.doubleValue()

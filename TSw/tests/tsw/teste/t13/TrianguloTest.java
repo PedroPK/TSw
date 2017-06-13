@@ -44,12 +44,12 @@ public class TrianguloTest {
 		Double ladoTres = new Double(1.5);
 		
 		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
-		assertTrue( t.isEquilatero() );
-		assertFalse( t.isIsoceles() );
+		assertFalse( t.isEquilatero() );
+		assertTrue( t.isIsoceles() );
 		assertFalse( t.isEscaleno() );
 	}
 	
-	@Test
+	@Test(expected=ExcecaoTamanhoInvalido.class)
 	public void testarCriacaoTrianguloIsocelesInvalido() {
 		Double ladosUmDois = new Double(1);
 		Double ladoTres = new Double(2);
@@ -72,7 +72,7 @@ public class TrianguloTest {
 		assertTrue( t.isEscaleno() );
 	}
 	
-	@Test
+	@Test(expected=ExcecaoTamanhoInvalido.class)
 	public void testarCriacaoTrianguloEscalenoInvalido() {
 		Double ladosUm = new Double(1);
 		Double ladosDois = new Double(2);
