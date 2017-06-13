@@ -15,6 +15,8 @@ public class Triangulo {
 		this.aLadoA = pLadoA;
 		this.aLadoB = pLadoB;
 		this.aLadoC = pLadoC;
+		
+		this.validarTresLadosTriangulo();
 	}
 	
 	/**
@@ -52,7 +54,17 @@ public class Triangulo {
 			throw new ExcecaoTamanhoInvalido();
 		}
 	}
-
+	
+	private void validarTresLadosTriangulo() {
+		if ( 
+				!isTamanhoLadoValido(this.aLadoA)	||
+				!isTamanhoLadoValido(this.aLadoB)	||
+				!isTamanhoLadoValido(this.aLadoC)
+		) {
+			throw new ExcecaoTamanhoInvalido();
+		}
+	}
+	
 	private boolean isTamanhoLadoValido(Double pTamanhoLado) {
 		return pTamanhoLado == null || pTamanhoLado.doubleValue() <= 0;
 	}

@@ -1,6 +1,7 @@
 package tsw.teste.t12;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 import tsw.t12.Aleatorio;
