@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo ï¿½ propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaï¿½ï¿½o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissï¿½o escrita da Sefaz-PE.
  */
 package tsw.t06;
 
@@ -27,12 +27,12 @@ public class Constantes {
 	public static final String NM_LOCALHOST;
 
 	/**
-	 * Endereço IP do servidor local
+	 * Endereï¿½o IP do servidor local
 	 */
 	public static final String NU_IP_LOCALHOST;
 
 	/**
-	 * Endereço IP do servidor local
+	 * Endereï¿½o IP do servidor local
 	 */
 	public static final byte[] NU_IP_RAW_LOCALHOST;
 
@@ -42,7 +42,7 @@ public class Constantes {
 		try {
 			localHost = InetAddress.getLocalHost();
 		} catch (UnknownHostException e) {
-			throw new IllegalStateException("Não foi possível obter o objeto host local | " + e);
+			throw new IllegalStateException("Nï¿½o foi possï¿½vel obter o objeto host local | " + e);
 		}
 
 		NM_LOCALHOST = localHost.getHostName();
@@ -51,7 +51,7 @@ public class Constantes {
 	}
 
 	/**
-	 * Constantes que representam os operadores booleanos (utilizados em parâmetros do request e no banco de dados)
+	 * Constantes que representam os operadores booleanos (utilizados em parï¿½metros do request e no banco de dados)
 	 */
 	public static final String CD_VERDADEIRO = "S";
 
@@ -76,7 +76,7 @@ public class Constantes {
 	public static final int CD_MENOR = -1;
 
 	/**
-	 * Constantes de comparadores matemáticos
+	 * Constantes de comparadores matemï¿½ticos
 	 */
 	public static final String CD_COMPARADOR_IGUAL = "=";
 
@@ -116,13 +116,13 @@ public class Constantes {
 	public static final int QT_REGISTROS_POR_PAGINA_TODOS = 999999;
 
 	/**
-	 * Quantidade máxima de registros que uma transação pode manipular envolvendo tabela com CLOB ou BLOB.<BR> È uma
-	 * restrição imposta pelo DB2.
+	 * Quantidade mï¿½xima de registros que uma transaï¿½ï¿½o pode manipular envolvendo tabela com CLOB ou BLOB.<BR> ï¿½ uma
+	 * restriï¿½ï¿½o imposta pelo DB2.
 	 */
 	public static final int QT_MAX_REGISTROS_POR_TRANSACAO_COM_LOB = 30000;
 
 	/**
-	 * Constantes que representam as opções analítico e sintético em uma consulta ou relatório
+	 * Constantes que representam as opï¿½ï¿½es analï¿½tico e sintï¿½tico em uma consulta ou relatï¿½rio
 	 */
 	public static final String CD_OPCAO_ANALITICO = "opcao_analitico";
 
@@ -132,12 +132,12 @@ public class Constantes {
 	public static final String CD_OPCAO_SINTETICO = "opcao_sintetico";
 
 	/**
-	 * Constante que representa o comando javascript window.history.back() nas telas de mensagem ao usuário
+	 * Constante que representa o comando javascript window.history.back() nas telas de mensagem ao usuï¿½rio
 	 */
 	public static final String CD_HISTORY_BACK = "window_history_back";
 
 	/**
-	 * Constante que representa o comando javascript window.close() nas telas de mensagem ao usuário
+	 * Constante que representa o comando javascript window.close() nas telas de mensagem ao usuï¿½rio
 	 */
 	public static final String CD_CLOSE = "window_close";
 
@@ -152,7 +152,7 @@ public class Constantes {
 	public static final String CD_ATRIBUTO_NULO_ALTERADO = "[[**]]atr_nulo_alterado[[**]]";
 
 	/**
-	 * Constantes que representam campos separadores de informações concatenadas
+	 * Constantes que representam campos separadores de informaï¿½ï¿½es concatenadas
 	 */
 	public static final String CD_CAMPO_SEPARADOR = "[[*]]";
 
@@ -187,7 +187,7 @@ public class Constantes {
 	public static final String CD_CAMPO_SEPARADOR_ARQUIVO_EXPORTACAO = "<#>";
 
 	/**
-	 * Constantes que representam campos utilizados nas mensagens ao usuário
+	 * Constantes que representam campos utilizados nas mensagens ao usuï¿½rio
 	 */
 	public static final String CD_CAMPO_SUBSTITUICAO_MSGUSR = "#?#";
 
@@ -217,7 +217,7 @@ public class Constantes {
 	public static final String IN_MENU_JANELA_AUXILIAR = " (*)";
 
 	/**
-	 * Constante que indica que o item de menu deve abrir uma janela auxiliar passando os parâmetros do framework
+	 * Constante que indica que o item de menu deve abrir uma janela auxiliar passando os parï¿½metros do framework
 	 * (idSessao, cdUsuario, etc)
 	 */
 	public static final String IN_MENU_JANELA_AUXILIAR_COM_PARAMETROS_FRAMEWORK = " (#)";
@@ -233,17 +233,17 @@ public class Constantes {
 	public static final char CD_CARACTERE_CORINGA_BD = '%';
 
 	/**
-	 * Não está sendo utilizada
+	 * Nï¿½o estï¿½ sendo utilizada
 	 */
 	public static final char CD_CARACTERE_CORINGA_SIMPLES_USR = '?';
 
 	/**
-	 * Não está sendo utilizada
+	 * Nï¿½o estï¿½ sendo utilizada
 	 */
 	public static final char CD_CARACTERE_CORINGA_SIMPLES_BD = '_';
 
 	/**
-	 * Constantes que representam as opções de seleção 'Todos' e 'Nenhum' em um componente HTML Select
+	 * Constantes que representam as opï¿½ï¿½es de seleï¿½ï¿½o 'Todos' e 'Nenhum' em um componente HTML Select
 	 */
 	public static final String CD_OPCAO_NENHUM = "opcao_nenhum";
 
@@ -258,32 +258,32 @@ public class Constantes {
 	public static final String CD_OPCAO_TODOS_GUI = "Todos";
 
 	/**
-	 * Constante que representam o tipo de transação JTA
+	 * Constante que representam o tipo de transaï¿½ï¿½o JTA
 	 */
 	public static final short TP_TRANSACAO_JTA = 1;
 
 	/**
-	 * Constante que representam o tipo de transação JTA com Conexão e ResultSet Gerenciados pelo Cliente (CRGC).
+	 * Constante que representam o tipo de transaï¿½ï¿½o JTA com Conexï¿½o e ResultSet Gerenciados pelo Cliente (CRGC).
 	 */
 	public static final short TP_TRANSACAO_JTA_CRGC = 3;
 
 	/**
-	 * Constante que representam o tipo de transação JDBC
+	 * Constante que representam o tipo de transaï¿½ï¿½o JDBC
 	 */
 	public static final short TP_TRANSACAO_JDBC = 2;
 
 	/**
-	 * Constante que representam o tipo de transação JDBC, com ResultSet Gerenciado pelo Cliente (RGC)
+	 * Constante que representam o tipo de transaï¿½ï¿½o JDBC, com ResultSet Gerenciado pelo Cliente (RGC)
 	 */
 	public static final short TP_TRANSACAO_JDBC_RGC = 4;
 
 	/**
-	 * Constante que representam o tipo de transação JTA com Bean Managed Transaction
+	 * Constante que representam o tipo de transaï¿½ï¿½o JTA com Bean Managed Transaction
 	 */
 	public static final short TP_TRANSACAO_JTA_BMT = 5;
 
 	/**
-	 * Constantes que representam o tipo de mecanismo de persistência
+	 * Constantes que representam o tipo de mecanismo de persistï¿½ncia
 	 */
 	public static final short TP_PERSISTENCIA_EB = 1;
 
@@ -308,12 +308,12 @@ public class Constantes {
 	public static final String TP_DISPOSITIVO_ACESSO_CELULAR = "C";
 	
 	/**
-	 * Constante que identifica que uma mensagem de e-mail é do tipo HTML (text/html).
+	 * Constante que identifica que uma mensagem de e-mail ï¿½ do tipo HTML (text/html).
 	 */
 	public static final String TP_MENSAGEM_EMAIL_HTML = "text/html";
 
 	/**
-	 * Constantes que representam a situação de execução de um Job
+	 * Constantes que representam a situaï¿½ï¿½o de execuï¿½ï¿½o de um Job
 	 */
 	public static final String CD_SITUACAO_EXECUCAO_JOB_SOLICITADA = "SL";
 
@@ -348,7 +348,7 @@ public class Constantes {
 	public static final String CD_SITUACAO_EXECUCAO_JOB_CONCLUIDA_COM_ERRO = "CE";
 
 	/**
-	 * Constantes que representam parâmetros do UTL
+	 * Constantes que representam parï¿½metros do UTL
 	 */
 	public static final String CD_PARAM_JOB_NOME_REMETENTE_ALERTA = "NomeRemetenteAlertaJob";
 
@@ -388,37 +388,37 @@ public class Constantes {
 	public static final String CD_PARAM_TX_MENSAGEM_BROADCAST_PARADA_AMBIENTE = "TxMensagemBroadcastParadaAmbiente";
 
 	/**
-	 * Parâmetro que indica o tempo de expiração dos links favoritos.
+	 * Parï¿½metro que indica o tempo de expiraï¿½ï¿½o dos links favoritos.
 	 */
 	public static final String CD_PARAM_TEMPO_EXPIRACAO_FAVORITOS = "TempoExpiracaoFavoritos";
 
 	/**
-	 * Código da propriedade de transação que armazena o VOUsuario.
+	 * Cï¿½digo da propriedade de transaï¿½ï¿½o que armazena o VOUsuario.
 	 */
 	public static final String CD_PROPTX_VOUsuario = "com.sca.servico03.VOUsuario";
 
 	/**
-	 * Código da propriedade de transação que armazena o VOFuncao
+	 * Cï¿½digo da propriedade de transaï¿½ï¿½o que armazena o VOFuncao
 	 */
 	public static final String CD_PROPTX_VOFuncao = "com.sca.servico01.VOFuncao";
 
 	/**
-	 * Código da propriedade de transação que armazena o inLogFuncao
+	 * Cï¿½digo da propriedade de transaï¿½ï¿½o que armazena o inLogFuncao
 	 */
 	public static final String CD_PROPTX_InLogFuncao = "IN_LOG_FUNCAO";
 
 	/**
-	 * Código da propriedade de transação que armazena o inLogConsultaFuncao
+	 * Cï¿½digo da propriedade de transaï¿½ï¿½o que armazena o inLogConsultaFuncao
 	 */
 	public static final String CD_PROPTX_InLogConsultaFuncao = "IN_LOG_CONSULTA_FUNCAO";
 
 	/**
-	 * Código do Tipo de Tela de Mensagem de Sucesso
+	 * Cï¿½digo do Tipo de Tela de Mensagem de Sucesso
 	 */
 	public static final int CD_TIPO_TELA_MSGUSR_SUCESSO = 1;
 
 	/**
-	 * Código do Tipo de Tela de Mensagem de Confirmação
+	 * Cï¿½digo do Tipo de Tela de Mensagem de Confirmaï¿½ï¿½o
 	 */
 	public static final int CD_TIPO_TELA_MSGUSR_CONFIRMACAO = 4;
 
@@ -438,7 +438,7 @@ public class Constantes {
 	public static final int CD_MSGUSR_SUPORTE_TRIBUTARIOINTRANET = 10;
 
 	/**
-	 * Código das Telas de Mensagem aos Usuários
+	 * Cï¿½digo das Telas de Mensagem aos Usuï¿½rios
 	 */
 	public static final int CD_TELA_MSGUSR_SUCESSO = 1;
 
@@ -458,7 +458,7 @@ public class Constantes {
 	public static final int CD_TELA_MSGUSR_SUCESSO_COM_LINK_DOCUMENTO_SEM_PROXIMO_LINK = 41;
 
 	/**
-	 * Tipo de ordenação
+	 * Tipo de ordenaï¿½ï¿½o
 	 */
 	public static final String CD_TIPO_ORDENACAO_CRESCENTE = "C";
 
@@ -488,27 +488,27 @@ public class Constantes {
 	public static final String CD_TIPO_OPERACAO_MESTREDETALHE_DETALHAMENTO = "tipo_operacao_detalhamento";
 
 	/**
-	 * Código do Usuário Anônimo no SCA
+	 * Cï¿½digo do Usuï¿½rio Anï¿½nimo no SCA
 	 */
 	public static final String CD_USUARIO_ANONIMO = "1";
 
 	/**
-	 * Código do Usuário Monitor Geral 01 no SCA
+	 * Cï¿½digo do Usuï¿½rio Monitor Geral 01 no SCA
 	 */
 	public static final String CD_USUARIO_MONITOR_GERAL_01 = "2";
 
 	/**
-	 * Código do Usuário Monitor Geral 02 no SCA
+	 * Cï¿½digo do Usuï¿½rio Monitor Geral 02 no SCA
 	 */
 	public static final String CD_USUARIO_MONITOR_GERAL_02 = "3";
 
 	/**
-	 * Código do Usuário no legado não identificado durante a migração
+	 * Cï¿½digo do Usuï¿½rio no legado nï¿½o identificado durante a migraï¿½ï¿½o
 	 */
 	public static final String CD_USUARIO_LEGADO_NAO_IDENTIFICADO = "XY9999";
 
 	/**
-	 * Códigos dos tipos de rede de acesso
+	 * Cï¿½digos dos tipos de rede de acesso
 	 */
 	public static final short CD_TIPO_REDE_ACESSO_INTRANET = 1;
 
@@ -543,7 +543,7 @@ public class Constantes {
 	public static final short CD_TIPO_CERTIFICADO_DIGITAL_A3_COM_BIOMETRIA = 3;
 
 	/**
-	 * Sufixo das propriedades que guardam o nome do host de uma função
+	 * Sufixo das propriedades que guardam o nome do host de uma funï¿½ï¿½o
 	 */
 	public static final String NM_SUFIXO_INTRANET_PROPRIEDADE_NM_HOST = "Intranet";
 
@@ -578,7 +578,7 @@ public class Constantes {
 	public static final String NM_PATH_JSP = "jsp";
 
 	/**
-	 * Nomes dos 'paths' web para as JSPs de cada serviço
+	 * Nomes dos 'paths' web para as JSPs de cada serviï¿½o
 	 */
 	public static final String NM_PATH_JSP_SERVICO01 = Constantes.NM_PATH_JSP + "/servico01";
 
@@ -678,7 +678,7 @@ public class Constantes {
 	public static final String NM_PATH_JSP_SERVICO20 = Constantes.NM_PATH_JSP + "/servico20";
 
 	/**
-	 * Sigla das Áreas Funcionais
+	 * Sigla das ï¿½reas Funcionais
 	 */
 	public static final String SG_AREA_REFERENCIA = "referencia";
 
@@ -734,7 +734,7 @@ public class Constantes {
 	 * Sigla dos Sistemas
 	 */
 
-	//Área Comum
+	//ï¿½rea Comum
 	public static final String SG_SISTEMA_COM_ACG = "ACG";
 
 	/**
@@ -757,7 +757,7 @@ public class Constantes {
 	 */
 	public static final String SG_SISTEMA_COM_UTL = "UTL";
 
-	//Área Administrativa
+	//ï¿½rea Administrativa
 	/**
 	 * -
 	 */
@@ -778,7 +778,7 @@ public class Constantes {
 	 */
 	public static final String SG_SISTEMA_ADM_PRT = "PRT";
 
-	//Área Tributária
+	//ï¿½rea Tributï¿½ria
 	/**
 	 * -
 	 */
@@ -939,7 +939,7 @@ public class Constantes {
 	 */
 	public static final String SG_SISTEMA_TRB_GIF = "GIF";	
 
-	//Área Financeira
+	//ï¿½rea Financeira
 	/**
 	 * -
 	 */
@@ -1010,13 +1010,13 @@ public class Constantes {
 	 */
 	public static final String SG_SISTEMA_FIN_GPC = "GPC";
 
-	//Área Orçamentária
+	//ï¿½rea Orï¿½amentï¿½ria
 	/**
 	 * -
 	 */
 	public static final String SG_SISTEMA_ORC_PLO = "PLO";
 
-	//Área Planejamento
+	//ï¿½rea Planejamento
 	/**
 	 * -
 	 */
@@ -1052,14 +1052,14 @@ public class Constantes {
 	 */
 	public static final String SG_SISTEMA_PLN_GCR = "GCR";	
 
-	//Área Externa
+	//ï¿½rea Externa
 	/**
 	 * -
 	 */
 	public static final String SG_SISTEMA_EXT_SGE = "SGE";
 
 	/**
-	 * Sigla da Área Funcional por Sistema
+	 * Sigla da ï¿½rea Funcional por Sistema
 	 */
 	public static final Map<String, String> SG_AREAS_FUNCIONAIS_POR_SISTEMA;
 
@@ -1145,35 +1145,39 @@ public class Constantes {
 	public static final String NM_PROPRIEDADE_NM_PATH_BASEJOBS = "sfi.NmPathBaseJobs";
 
 	/**
-	 * Propriedade de ambiente que indica que a JVM é do servidor de aplicação (não é um Job)
+	 * Propriedade de ambiente que indica que a JVM ï¿½ do servidor de aplicaï¿½ï¿½o (nï¿½o ï¿½ um Job)
 	 */
 	public static final String NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO = "sfi.InJVMServidorAplicacao";
 
 	/**
-	 * Propriedade de ambiente que define o nome da URL para localização de EJBs
+	 * Propriedade de ambiente que define o nome da URL para localizaï¿½ï¿½o de EJBs
 	 */
 	public static final String NM_PROPRIEDADE_NM_PROVIDER_URL_EJB = "sfi.NmProviderURLEJB";
 
 	/**
-	 * Propriedade de ambiente que define o nome da URL para localização de fontes de dados JDBC
+	 * Propriedade de ambiente que define o nome da URL para localizaï¿½ï¿½o de fontes de dados JDBC
 	 */
 	public static final String NM_PROPRIEDADE_NM_PROVIDER_URL_FONTE_DADOS_JDBC = "sfi.NmProviderURLFonteDadosJDBC";
 
 	static {
-		if ((System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASE) == null) ||
-				System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASE).trim().equals("")) {
+		if ( 
+				System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASE) == null ||
+				System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASE).trim().equals("")
+		) {
 			BibliotecaFuncoesPrincipal.registrarLogErro(Constantes.class.getName(),
-				"ATENÇÃO: A propriedade de ambiente 'sfi.NmPathBase' não está disponível.");
-			throw new IllegalStateException("A propriedade de ambiente 'sfi.NmPathBase' não está disponível.");
+				"ATENï¿½ï¿½O: A propriedade de ambiente 'sfi.NmPathBase' nï¿½o estï¿½ disponï¿½vel.");
+			throw new IllegalStateException("A propriedade de ambiente 'sfi.NmPathBase' nï¿½o estï¿½ disponï¿½vel.");
 		}
-
+		
 		if (System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASEJOBS) == null) {
 			System.setProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASEJOBS,
 				System.getProperty(Constantes.NM_PROPRIEDADE_NM_PATH_BASE));
 		}
-
-		if ((System.getProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO) != null) &&
-				System.getProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO).equals("true")) {
+		
+		if ( 
+				System.getProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO) != null &&
+				System.getProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO).equals("true")
+		) {
 			System.setProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO, Constantes.CD_VERDADEIRO);
 		} else {
 			System.setProperty(Constantes.NM_PROPRIEDADE_IN_JVM_SERVIDOR_APLICACAO, Constantes.CD_FALSO);
@@ -1316,7 +1320,7 @@ public class Constantes {
 
 
 	/**
-	 * Nome das conexões JNDI disponíveis
+	 * Nome das conexï¿½es JNDI disponï¿½veis
 	 */
 	public static final String NM_CONEXAO_JNDI_REFERENCIA = "jdbc/sfi_referencia";
 
@@ -1325,7 +1329,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONEXAO_JNDI_MIGRACAO = "jdbc/sfi_migracao";
 
-	//Área Comum
+	//ï¿½rea Comum
 	/**
 	 * -
 	 */
@@ -1356,7 +1360,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONEXAO_JNDI_COM_UTL = "jdbc/sfi_com_utl";
 
-	//Área Administrativa
+	//ï¿½rea Administrativa
 	/**
 	 * -
 	 */
@@ -1377,7 +1381,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONEXAO_JNDI_ADM_PRT = "jdbc/sfi_adm_prt";
 
-	//Área Tributária
+	//ï¿½rea Tributï¿½ria
 	/**
 	 * -
 	 */
@@ -1538,7 +1542,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONEXAO_JNDI_TRB_GIF = "jdbc/sfi_trb_gif";	
 
-	//Área Financeira
+	//ï¿½rea Financeira
 	/**
 	 * -
 	 */
@@ -1609,13 +1613,13 @@ public class Constantes {
 	 */
 	public static final String NM_CONEXAO_JNDI_FIN_GPC = "jdbc/sfi_fin_gpc";
 
-	//Área Orçamentária
+	//ï¿½rea Orï¿½amentï¿½ria
 	/**
 	 * -
 	 */
 	public static final String NM_CONEXAO_JNDI_ORC_PLO = "jdbc/sfi_orc_plo";
 
-	//Área Planejamento
+	//ï¿½rea Planejamento
 	/**
 	 * -
 	 */
@@ -1666,7 +1670,7 @@ public class Constantes {
 	 */
 	public static final String NM_SCHEMA_REFERENCIA = "DBTST.";
 
-	//Área Comum
+	//ï¿½rea Comum
 	/**
 	 * -
 	 */
@@ -1692,7 +1696,7 @@ public class Constantes {
 	 */
 	public static final String NM_SCHEMA_COM_UTL = "ADMAPO.";
 
-	//Área Administrativa
+	//ï¿½rea Administrativa
 	/**
 	 * -
 	 */
@@ -1713,7 +1717,7 @@ public class Constantes {
 	 */
 	public static final String NM_SCHEMA_ADM_PRT = "ADMADM.";
 
-	//Área Tributária
+	//ï¿½rea Tributï¿½ria
 	/**
 	 * -
 	 */
@@ -1874,7 +1878,7 @@ public class Constantes {
 	 */	
 	public static final String NM_SCHEMA_TRB_GIF = "ADMTRB.";	
 
-	//Área Financeira
+	//ï¿½rea Financeira
 	/**
 	 * -
 	 */
@@ -1945,13 +1949,13 @@ public class Constantes {
 	 */
 	public static final String NM_SCHEMA_FIN_GPC = "ADMFIN.";
 
-	//Área Orçamentária
+	//ï¿½rea Orï¿½amentï¿½ria
 	/**
 	 * -
 	 */
 	public static final String NM_SCHEMA_ORC_PLO = "ADMPLN.";
 
-	//Área Planejamento
+	//ï¿½rea Planejamento
 	/**
 	 * -
 	 */
@@ -2002,7 +2006,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONTEXTO_WEB_AJUDA = "sfi_ajuda";
 
-	//Área Comum
+	//ï¿½rea Comum
 	/**
 	 * -
 	 */
@@ -2043,7 +2047,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONTEXTO_WEB_COM_UTL = "sfi_com_utl";
 
-	//Área Administrativa
+	//ï¿½rea Administrativa
 	/**
 	 * -
 	 */
@@ -2064,7 +2068,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONTEXTO_WEB_ADM_PRT = "sfi_adm_prt";
 
-	//Área Tributária
+	//ï¿½rea Tributï¿½ria
 	/**
 	 * -
 	 */
@@ -2225,7 +2229,7 @@ public class Constantes {
 	 */
 	public static final String NM_CONTEXTO_WEB_TRB_GIF = "sfi_trb_gif";	
 
-	//Área Financeira
+	//ï¿½rea Financeira
 	/**
 	 * -
 	 */
@@ -2296,13 +2300,13 @@ public class Constantes {
 	 */
 	public static final String NM_CONTEXTO_WEB_FIN_GPC = "sfi_fin_gpc";
 
-	//Área Orçamentária
+	//ï¿½rea Orï¿½amentï¿½ria
 	/**
 	 * -
 	 */
 	public static final String NM_CONTEXTO_WEB_ORC_PLO = "sfi_orc_plo";
 
-	//Área Planejamento
+	//ï¿½rea Planejamento
 	/**
 	 * -
 	 */
@@ -2339,7 +2343,7 @@ public class Constantes {
 	public static final String NM_CONTEXTO_WEB_PLN_GCR = "sfi_pln_gcr";
 	
 	/**
-	 * Tipos de Vínculos estabelecidos entre Pessoas e a SEFAZ-PE
+	 * Tipos de Vï¿½nculos estabelecidos entre Pessoas e a SEFAZ-PE
 	 */
 	/**
 	 * -
@@ -2522,7 +2526,7 @@ public class Constantes {
 	public static final short CD_TIPO_VINCULO_TESTE_MANUTENCAO_CADASTRAL = 27;
 
 	/**
-	 * Qualificadores dos tipos de Vínculos estabelecidos entre Pessoas e a SEFAZ-PE
+	 * Qualificadores dos tipos de Vï¿½nculos estabelecidos entre Pessoas e a SEFAZ-PE
 	 */
 	/**
 	 * -
@@ -2997,7 +3001,7 @@ public class Constantes {
 	public static final short CD_QUALIFICADOR_TIPO_VINCULO_TESTE_MANUTENCAO_CADASTRAL = 27;
 
 	/**
-	 * Possíveis situações para itens de um mestre detalhe
+	 * Possï¿½veis situaï¿½ï¿½es para itens de um mestre detalhe
 	 */
 	public static final String CD_ACAO_DETALHE_SEM_ACAO = "NOP";
 
@@ -3017,12 +3021,12 @@ public class Constantes {
 	public static final String CD_ACAO_DETALHE_EXCLUSAO = "EXCLUSAO";
 
 	/**
-	 * Identificador da coluna de ação sobre detalhes
+	 * Identificador da coluna de aï¿½ï¿½o sobre detalhes
 	 */
 	public static final String NM_COL_ACAO_DETALHE = "AcaoDetalhe";
 
 	/**
-	 * Códigos dos Tipos de Unidades
+	 * Cï¿½digos dos Tipos de Unidades
 	 */
 	public static final String CD_TIPO_UNIDADE_ORGANIZACIONAL = "1";
 
@@ -3042,37 +3046,37 @@ public class Constantes {
 	public static final String CD_TIPO_UNIDADE_ORCAMENTARIA = "3";
 
 	/**
-	 * Tipo de Usuário Servidor Fazendário
+	 * Tipo de Usuï¿½rio Servidor Fazendï¿½rio
 	 */
 	public static final short CD_TIPO_USUARIO_SERVIDOR_SEFAZ = 1;
 
 	/**
-	 * Tipo de Usuário Servidor Estadual
+	 * Tipo de Usuï¿½rio Servidor Estadual
 	 */
 	public static final short CD_TIPO_USUARIO_SERVIDOR_ESTADO = 2;
 
 	/**
-	 * Tipo de Usuário Contribuinte, Sócio e Contador
+	 * Tipo de Usuï¿½rio Contribuinte, Sï¿½cio e Contador
 	 */
 	public static final short CD_TIPO_USUARIO_CONTRIBUINTE = 3;
 
 	/**
-	 * Tipo de Usuário Prestador de Serviço
+	 * Tipo de Usuï¿½rio Prestador de Serviï¿½o
 	 */
 	public static final short CD_TIPO_USUARIO_PRESTADOR_SERVICO = 4;
 
 	/**
-	 * Tipo de Usuário de Outros Governos ou Outras Instituições
+	 * Tipo de Usuï¿½rio de Outros Governos ou Outras Instituiï¿½ï¿½es
 	 */
 	public static final short CD_TIPO_USUARIO_OUTROS_GOVERNOS = 5;
 
 	/**
-	 * Tipo de Usuário Funcionário de Gráfica
+	 * Tipo de Usuï¿½rio Funcionï¿½rio de Grï¿½fica
 	 */
 	public static final short CD_TIPO_USUARIO_FUNCIONARIO_GRAFICA = 5;
 
 	/**
-	 * Tipo de Usuário Despachante
+	 * Tipo de Usuï¿½rio Despachante
 	 */
 	public static final short CD_TIPO_USUARIO_DESPACHANTE = 6;
 
@@ -3087,7 +3091,7 @@ public class Constantes {
 	public static final short CD_TIPO_MENSAGEM_USUARIO_COMPLEMENTAR = 2;
 
 	/**
-	 * Tipo de Mensagen ao Usuario de Orientação
+	 * Tipo de Mensagen ao Usuario de Orientaï¿½ï¿½o
 	 */
 	public static final short CD_TIPO_MENSAGEM_USUARIO_ORIENTACAO = 3;
 
@@ -3107,7 +3111,7 @@ public class Constantes {
 	public static final short CD_TIPO_MENSAGEM_USUARIO_TEXTO = 6;
 
 	/**
-	 * Códigos dos Tipos de Unidades Gestoras
+	 * Cï¿½digos dos Tipos de Unidades Gestoras
 	 */
 	public static final String CD_TIPO_UG_COORDENADORA = "C";
 
@@ -3152,7 +3156,7 @@ public class Constantes {
 	public static final String CD_TIPO_UG_RESERVA_DE_CONTINGENCIA = "RC";
 
 	/**
-	 * Códigos dos Tipos de Nível de Natureza de Despesa
+	 * Cï¿½digos dos Tipos de Nï¿½vel de Natureza de Despesa
 	 */
 	public static final String NATUREZA_DESPESA_TP_NIVEL_CATEGORIA_ECONOMICA = "C";
 
@@ -3177,7 +3181,7 @@ public class Constantes {
 	public static final String NATUREZA_DESPESA_TP_NIVEL_ITEM_GASTO = "I";
 
 	/**
-	 * Código e descricao dos Meses do Ano
+	 * Cï¿½digo e descricao dos Meses do Ano
 	 */
 	public static final String CD_MES_JANEIRO = "01";
 
@@ -3249,7 +3253,7 @@ public class Constantes {
 	/**
 	 * -
 	 */
-	public static final String DS_MES_MARCO = "Março";
+	public static final String DS_MES_MARCO = "Marï¿½o";
 
 	/**
 	 * -
@@ -3297,7 +3301,7 @@ public class Constantes {
 	public static final String DS_MES_DEZEMBRO = "Dezembro";
 
 	/**
-	 * Códigos e Descrição referentes ao dia da semana
+	 * Cï¿½digos e Descriï¿½ï¿½o referentes ao dia da semana
 	 *
 	 * @see Calendar
 	 */
@@ -3346,7 +3350,7 @@ public class Constantes {
 	/**
 	 * -
 	 */
-	public static final String DS_DIA_SEMANA_TERCA = "Terça-Feira";
+	public static final String DS_DIA_SEMANA_TERCA = "Terï¿½a-Feira";
 
 	/**
 	 * -
@@ -3366,55 +3370,55 @@ public class Constantes {
 	/**
 	 * -
 	 */
-	public static final String DS_DIA_SEMANA_SABADO = "Sábado";
+	public static final String DS_DIA_SEMANA_SABADO = "Sï¿½bado";
 
 	/**
-	 * Nome da PR do SCA responsável pelo logout de usuários
+	 * Nome da PR do SCA responsï¿½vel pelo logout de usuï¿½rios
 	 */
 	public static final String NM_PR_EFETUAR_LOGOUT = "PREfetuarLogout";
 
 	/**
-	 * Nome da PR do SCA responsável pela montagem do menu
+	 * Nome da PR do SCA responsï¿½vel pela montagem do menu
 	 */
 	public static final String NM_PR_MONTAR_MENU_ACESSO = "PRMontarMenuAcesso";
 
 	/**
-	 * Nome da PR do SCA responsável pela manutenção de favoritos
+	 * Nome da PR do SCA responsï¿½vel pela manutenï¿½ï¿½o de favoritos
 	 */
 	public static final String NM_PR_GERENCIAR_FAVORITOS = "PRGerenciarFavoritos";
 
 	/**
-	 * Nome da PR do ACG responsável pela atualização de endereço de domicílio
+	 * Nome da PR do ACG responsï¿½vel pela atualizaï¿½ï¿½o de endereï¿½o de domicï¿½lio
 	 */
 	public static final String NM_PR_ATUALIZAR_ENDERECO_DOMICILIO = "PRSolicitarAtualizacaoEnderecoDomicilio";
 
 	/**
-	 * Nome da PR do TGE responsável pela consulta de CEP
+	 * Nome da PR do TGE responsï¿½vel pela consulta de CEP
 	 */
 	public static final String NM_PR_CONSULTAR_CEP = "PRConsultarCEP";
 
 	/**
-	 * Nome da PR do TGE responsável pela consulta de seção logradouro
+	 * Nome da PR do TGE responsï¿½vel pela consulta de seï¿½ï¿½o logradouro
 	 */
 	public static final String NM_PR_MANTER_SECAO_LOGRADOURO = "PRManterSecaoLogradouro";
 
 	/**
-	 * Nome da PR do TGE responsável pela consulta de logradouro
+	 * Nome da PR do TGE responsï¿½vel pela consulta de logradouro
 	 */
 	public static final String NM_PR_MANTER_LOGRADOURO = "PRManterLogradouro";
 
 	/**
-	 * Nome da PR do TGE responsável pela consulta de localidade
+	 * Nome da PR do TGE responsï¿½vel pela consulta de localidade
 	 */
 	public static final String NM_PR_MANTER_LOCALIDADE = "PRManterLocalidade";
 
 	/**
-	 * Nome da PR do TGE responsável pela consulta de municipio
+	 * Nome da PR do TGE responsï¿½vel pela consulta de municipio
 	 */
 	public static final String NM_PR_MANTER_MUNICIPIO = "PRManterMunicipio";
 
 	/**
-	 * Nome padrão da servlet Ajax do DWR
+	 * Nome padrï¿½o da servlet Ajax do DWR
 	 */
 	public static final String NM_SERVLET_AJAX_DWR = "ServletAjaxDwr";
 	
@@ -3439,7 +3443,7 @@ public class Constantes {
 	public static final String VL_PADRAO_HTTP_HEADER_UA_COMPATIBLE_IE = "IE=9";
 	
 	/**
-	 * Valor do header "Cache-Control" para arquivos estáticos.
+	 * Valor do header "Cache-Control" para arquivos estï¿½ticos.
 	 */
 	public static final String VL_PADRAO_HTTP_HEADER_CACHE_CONTROL = "max-age=43200";
 	
@@ -3449,7 +3453,7 @@ public class Constantes {
 	public static final String TX_HTTP_HEADER_USER_AGENT_MSIE = "MSIE ";
 	
 	/**
-	 * Trecho do HTTP Header "User Agent" quando Internet Explorer versão maior ou igual a 8.
+	 * Trecho do HTTP Header "User Agent" quando Internet Explorer versï¿½o maior ou igual a 8.
 	 */
 	public static final String TX_HTTP_HEADER_USER_AGENT_TRIDENT = "Trident/";
 	
@@ -3459,32 +3463,32 @@ public class Constantes {
 	public static final String DS_NAVEGADOR_MSIE = "Internet Explorer";
 	
 	/**
-	 * Nome da propriedade com a quantidade de segundos padrao  para atualização de arquivos de propriedades.
+	 * Nome da propriedade com a quantidade de segundos padrao  para atualizaï¿½ï¿½o de arquivos de propriedades.
 	 */
 	public static final String NM_PROP_QT_SEGS_ATUALIZACAO_PROPRIEDADES = "QtSegsAtualizacaoPropriedades";
 	
 	/**
-	 * Quantidade padrao de segundos para atualização de arquivos de propriedades.
+	 * Quantidade padrao de segundos para atualizaï¿½ï¿½o de arquivos de propriedades.
 	 */
 	public static final int QT_SEGS_ATUALIZACAO_PROPRIEDADES = 2;
 	
 	/**
-	 * Nome do usuário do sistema operacional
+	 * Nome do usuï¿½rio do sistema operacional
 	 */
 	public static final String NM_USUARIO_SO = System.getProperty("user.name");
 	
 	/**
-	 * Quantidade máxima de megabytes por arquivo de trace transação.
+	 * Quantidade mï¿½xima de megabytes por arquivo de trace transaï¿½ï¿½o.
 	 */
 	public static final int QT_MAX_MB_ARQUIVO_TRACE_TRANSACAO = 300;
 	
 	/**
-	 * Quantidade máxima de megabytes por arquivo de trace transação.
+	 * Quantidade mï¿½xima de megabytes por arquivo de trace transaï¿½ï¿½o.
 	 */
 	public static final int QT_MAX_MB_REQUISICAO_POST = 20;
 
 	/**
-	 * Utilizado pelo trace transação. Representa o nome da classe que realizou a chamada de método quando esta for indeterminada.
+	 * Utilizado pelo trace transaï¿½ï¿½o. Representa o nome da classe que realizou a chamada de mï¿½todo quando esta for indeterminada.
 	 */
 	public static final String NM_CLASSE_CHAMADORA_INDETERMINADA = "?";
 

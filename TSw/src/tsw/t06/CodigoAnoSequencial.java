@@ -5,20 +5,18 @@ public class CodigoAnoSequencial {
 	public String getCdAnoSequencial10Digitos( short pAno, short pSequencial ) {
 		String resposta = "";
 		
-		
-		
-		return resposta = "";
+		return resposta;
 	}
 	
 	/**
-	 * O Número do Documento de Referência deve ter um Total de 14 Dígitos
+	 * O Nï¿½mero do Documento de Referï¿½ncia deve ter um Total de 14 Dï¿½gitos
 	 * Deve ser composto de
-	 *  - Exercício 
-	 *  - Numero de Bloqueio de Dotacao para Contingenciamento, completado com Zeros a esquerda até completar 10 dígitos
+	 *  - Exercï¿½cio 
+	 *  - Numero de Bloqueio de Dotacao para Contingenciamento, completado com Zeros a esquerda atï¿½ completar 10 dï¿½gitos
 	 *  
 	 * @param pVOBloqueioDotacao
 	 * 
-	 * @return	Número do Documento de Referência
+	 * @return	Nï¿½mero do Documento de Referï¿½ncia
 	 */
 	public static String getNumeroDocumentoReferencia(VOBloqueioDotacao pVOBloqueioDotacao) {
 		String numeroDocumentoReferencia = "";

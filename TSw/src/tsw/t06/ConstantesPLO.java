@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo ï¿½ propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaï¿½ï¿½o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissï¿½o escrita da Sefaz-PE.
  */
 package tsw.t06;
 
@@ -77,7 +77,7 @@ public class ConstantesPLO extends Constantes {
 	
 	public static final String ZERO_VIRGULA_ZERO_ZERO_STRING = "0,00";
 	
-	public static final BigDecimal UM_BIGDECIMAL = new BigDecimal(1);
+	public static final BigDecimal UM_BIGDECIMAL = BigDecimal.ONE;
 	public static final BigDecimal CEM_BIGDECIMAL = new BigDecimal(100);
 	public static final BigInteger CEM_BIGINTEGER= new BigInteger("100");
 	
@@ -121,7 +121,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String NM_SERVLET_PR_MANTER_FONTE_RECURSO_VIGENCIA = "PRManterFonteRecursoVigencia";
 	
 	/**
-	 * - Nome da Servlet de Fonte de Recurso para Operação de Crédito, utilizada por componentes Web
+	 * - Nome da Servlet de Fonte de Recurso para Operaï¿½ï¿½o de Crï¿½dito, utilizada por componentes Web
 	 * dentro do projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_MANTER_FONTE_RECURSO_PARA_OPERACAO_CREDITO = "PRManterFontesRecursoParaOperacaoCredito";
@@ -138,13 +138,13 @@ public class ConstantesPLO extends Constantes {
 	public static final String NM_SERVLET_PR_MANTER_PROGRAMA_TRABALHO_VIGENCIA = "PRManterProgramaTrabalhoVigencia";
 	
 	/**
-	 * - Nome da Servlet de PLO Órgão, utilizada por componentes Web dentro do
+	 * - Nome da Servlet de PLO ï¿½rgï¿½o, utilizada por componentes Web dentro do
 	 * projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_MANTER_PLO_ORGAO = "PRManterPLOOrgao";
 	
 	/**
-	 * - Nome da Servlet de PLO Órgão Vigencia, utilizada por componentes Web dentro do
+	 * - Nome da Servlet de PLO ï¿½rgï¿½o Vigencia, utilizada por componentes Web dentro do
 	 * projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_CONSULTAR_PLO_ORGAO_VIGENCIA = "PRConsultarPLOOrgaoVigencia";
@@ -159,19 +159,19 @@ public class ConstantesPLO extends Constantes {
 	
 	public static final String NM_SERVLET_PR_MANTER_PLO_FuncaoVigencia = "PRManterFuncaoVigencia";
 	/**
-	 * - Nome da Servlet de Unidade Orçamentária, utilizada por componentes Web
+	 * - Nome da Servlet de Unidade Orï¿½amentï¿½ria, utilizada por componentes Web
 	 * dentro do projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_MANTER_UNIDADE_ORCAMENTARIA = "PRManterUnidadeOrcamentaria";
 	
 	/**
-	 * - Nome da Servlet de Unidade Orçamentária por Vigência, utilizada por componentes Web
+	 * - Nome da Servlet de Unidade Orï¿½amentï¿½ria por Vigï¿½ncia, utilizada por componentes Web
 	 * dentro do projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_MANTER_UNIDADE_ORCAMENTARIA_VIGENCIA = "PRConsultarUnidadeOrcamentariaVigencia";
 		
 	/**
-	 * - Nome da Servlet de Reversão de Provisão (pela UGE), utilizada por componentes Web dentro do projeto ORC_PLO_JAVA.
+	 * - Nome da Servlet de Reversï¿½o de Provisï¿½o (pela UGE), utilizada por componentes Web dentro do projeto ORC_PLO_JAVA.
 	 */
 	public static final String NM_SERVLET_PR_MANTER_REVERSAO_PROVISAO = "PRManterReversaoProvisao";
 	
@@ -183,7 +183,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String NM_SERVLET_PR_CONSULTAR_SALDOS_RETROATIVOS = "PRConsultarSaldosRetroativos";
 	
 	/**
-	 * - Evento para o método exibirFiltroConsulta, comum a quase todas as PR's (Servlets) de Cadastro.
+	 * - Evento para o mï¿½todo exibirFiltroConsulta, comum a quase todas as PR's (Servlets) de Cadastro.
 	 */
 	public static final String EVENTO_EXIBIR_FILTRO_CONSULTA = "exibirFiltroConsulta";
 	
@@ -228,7 +228,7 @@ public class ConstantesPLO extends Constantes {
 	 * -
 	 */
 	public static final String CD_SELECAO_POR_UO = "porUnidadesOrcamentarias";
-	public static final String ORCAMENTO_FISCAL = "Orçamento Fiscal ";
+	public static final String ORCAMENTO_FISCAL = "Orï¿½amento Fiscal ";
 	public static final String ORCAMENTO_INVESTIMENTO = "DE INVESTIMENTO DAS EMPRESAS";
 	
 	/**
@@ -237,7 +237,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_SELECAO_CONSOLIDADO = "opcao_todos";
 	
 	/**
-	 * - Descrição para o valor "null"
+	 * - Descriï¿½ï¿½o para o valor "null"
 	 */
 	public static final String DS_NULO = "NULO";
 	
@@ -253,19 +253,19 @@ public class ConstantesPLO extends Constantes {
 	/**
 	 * -
 	 */
-	public static final String DS_NATUREZA_ORCAMENTARIA_EMPRESA_PUBLICA = "Empresa Pública";
+	public static final String DS_NATUREZA_ORCAMENTARIA_EMPRESA_PUBLICA = "Empresa Pï¿½blica";
 	public static final String DS_NATUREZA_ORCAMENTARIA_EMPRESA_MISTA = "Empresa Mista";
 	public static final String DS_NATUREZA_ORCAMENTARIA_AUTARQUIA = "Autarquia";
-	public static final String DS_NATUREZA_ORCAMENTARIA_FUNDACAO = "Fundação";
+	public static final String DS_NATUREZA_ORCAMENTARIA_FUNDACAO = "Fundaï¿½ï¿½o";
 	public static final String DS_NATUREZA_ORCAMENTARIA_FUNDOS = "Fundos";
 
 	/**
 	 * -
 	 */
-	public static final String GRUPO_DESPESA_33 = "Outras Inversões Financeiras";
+	public static final String GRUPO_DESPESA_33 = "Outras Inversï¿½es Financeiras";
 	
 	/**
-	 * - Códigos de Eventos de Contabilização
+	 * - Cï¿½digos de Eventos de Contabilizaï¿½ï¿½o
 	 */
 	public static final String EVENTO_DESBLOQUEIO_DOTACAO_CRIADA_A_PARTIR_DE_CREDITO_ESPECIAL = "200045";
 	public static final String CD_EVENTO_DESBLOQUEIO_REJEICAO_DOTACAO_CREDITO_EXTRAORDINARIO = "200046";
@@ -273,7 +273,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_EVENTO_BLOQUEIO_DOTACAO_CREDITO_EXTRAORDINARIO = "200061";
 	
 	/**
-	 * Códigos de Eventos de Destaque
+	 * Cï¿½digos de Eventos de Destaque
 	 */
 	public static final String CD_EVENTO_DESTAQUE_PROGRAMAR_COTA_UGE2 = "541801";
 	public static final String CD_EVENTO_DESTAQUE_PROGRAMAR_COTA_UGC2 = "541802";
@@ -281,7 +281,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_EVENTO_DESTAQUE_REDUCAO_COTA_UGE1_PARA_UGC1 = "541806";
 	public static final String CD_EVENTO_DESTAQUE_CONTABILIZACAO_NA_UGC = "541807";
 	
-	// Não utilizado até o momento (04/07/2011)
+	// Nï¿½o utilizado atï¿½ o momento (04/07/2011)
 	public static final String CD_EVENTO_DESTAQUE_CONTABILIZACAO_PELA_PROPRIA_UGC = "541800";
 	
 	public static final String CD_EVENTO_DESTAQUE_TRANSFERENCIA_ORCAMENTO_UGC1_PARA_UGC2 = "300061";
@@ -296,15 +296,15 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_EVENTO_ACRESCIMO_DESTINO = "200171";
 	
 	/**
-	 * Reserva de Dotação
+	 * Reserva de Dotaï¿½ï¿½o
 	 */
 	public static final String CD_EVENTO_DESBLOQUEIO_RESERVA_DOTACAO = "200071";
 	
 
 
 	/**
-	 * - Tipos de Poder da Administração Pública: - Executivo - Legislativo -
-	 * Judiciário - Essencial para a Justiça
+	 * - Tipos de Poder da Administraï¿½ï¿½o Pï¿½blica: - Executivo - Legislativo -
+	 * Judiciï¿½rio - Essencial para a Justiï¿½a
 	 */
 	public static final String TP_PODER_ADM_PUBL_EXECUTIVO = "E";
 	public static final String TP_PODER_ADM_PUBL_JUDICIARIO = "J";
@@ -315,9 +315,9 @@ public class ConstantesPLO extends Constantes {
 	 * -
 	 */
 	public static final String NM_TP_PODER_ADM_PUBL_EXECUTIVO = "Executivo";
-	public static final String NM_TP_PODER_ADM_PUBL_JUDICIARIO = "Judiciário";
+	public static final String NM_TP_PODER_ADM_PUBL_JUDICIARIO = "Judiciï¿½rio";
 	public static final String NM_TP_PODER_ADM_PUBL_LEGISLATIVO = "Legislativo";
-	public static final String NM_TP_PODER_ADM_PUBL_ESSENCIAL_PARA_JUSTICA = "Essencial para a Justiça";
+	public static final String NM_TP_PODER_ADM_PUBL_ESSENCIAL_PARA_JUSTICA = "Essencial para a Justiï¿½a";
 	
 	/**
 	 * -
@@ -346,25 +346,25 @@ public class ConstantesPLO extends Constantes {
 	public static final Short CONTA_CONTABIL_CTB_REALIZADA_ATE = VINTE_QUATRO_SHORT;
 	public static final Short CONTA_CONTABIL_CTB_SUPERAVIT = VINTE_CINCO_SHORT;
 	public static final Short CONTA_CONTABIL_CTB_ORCADA = VINTE_SEIS_SHORT;
-	public static final String ANO_PRIMEIRO_REVISAO_LOA = "1º. Ano Revisão";
-	public static final String ANO_SEGUNDO_REVISAO_LOA = "2º. Ano Revisão";
-	public static final String ANO_TERCEIRO_REVISAO_LOA = "3º. Ano Revisão";
-	public static final String ANO_QUARTO_REVISAO_LOA = "4º. Ano Revisão";
+	public static final String ANO_PRIMEIRO_REVISAO_LOA = "1ï¿½. Ano Revisï¿½o";
+	public static final String ANO_SEGUNDO_REVISAO_LOA = "2ï¿½. Ano Revisï¿½o";
+	public static final String ANO_TERCEIRO_REVISAO_LOA = "3ï¿½. Ano Revisï¿½o";
+	public static final String ANO_QUARTO_REVISAO_LOA = "4ï¿½. Ano Revisï¿½o";
 	
 	/**
-	 * - Constante que guarda o tamanho padrão dos campos selects que devem ser limitados.
+	 * - Constante que guarda o tamanho padrï¿½o dos campos selects que devem ser limitados.
 	 */
 	public static final Integer VL_TAMANHO_CAMPO_SELECT_PADRAO_PLO = Integer.valueOf(110);
 
 	/**
-	 * - Contantes que identificao se o relacionamente entre uma Vinculação Legal e uma Natureza da Receita.
-	 *   Pode ser Receita ou Dedução
+	 * - Contantes que identificao se o relacionamente entre uma Vinculaï¿½ï¿½o Legal e uma Natureza da Receita.
+	 *   Pode ser Receita ou Deduï¿½ï¿½o
 	 */
 	public static final String TP_VINC_LEGAL_DEDUCAO = "D";
 	public static final String TP_VINC_LEGAL_RECEITA = "R";
 
 	/**
-	 * - Utilizadas na interface do Caso de Uso de Vinculação Legal
+	 * - Utilizadas na interface do Caso de Uso de Vinculaï¿½ï¿½o Legal
 	 */
 	public static final String CD_OPR_CORRENTE_INCLUSAO = "I";
 	public static final String CD_OPR_CORRENTE_ALTERACAO = "A";
@@ -375,8 +375,8 @@ public class ConstantesPLO extends Constantes {
 	public static final String IN_ATIVO = "Ativo";
 	public static final String IN_INATIVO = "Inativo";
 	
-	//Inativar esta Unidade Orçamentária
-	public static final String NM_ACAO = "Ação";
+	//Inativar esta Unidade Orï¿½amentï¿½ria
+	public static final String NM_ACAO = "Aï¿½ï¿½o";
 	public static final String NM_PROGRAMA_GOVERNO = "Programa de Governo";
 	
 	// Codigos de opcao de apresentacao do Painel Estrategico
@@ -386,12 +386,12 @@ public class ConstantesPLO extends Constantes {
 	
 	public static final String CD_OPCAO_APRESENTACAO_VISUAL_BASICO_TODAS_FONTES = "3";
 	
-	// Codigos de opcao de apresentacao do Relatório de Evolução da Receita do Painel Estrategico -  23/08/2006
+	// Codigos de opcao de apresentacao do Relatï¿½rio de Evoluï¿½ï¿½o da Receita do Painel Estrategico -  23/08/2006
 	public static final String CD_OPCAO_EVOLUCAO_RECEITA_DESPESA_TESOURO_ESTADO = "1";
 	public static final String CD_OPCAO_EVOLUCAO_RECEITA_DESPESA_OUTRAS_FONTES = "2";
 	public static final String CD_OPCAO_EVOLUCAO_RECEITA_DESPESA_TODAS_FONTES = "3";
 	
-	// IDs para atributos inseridos em Hashtables de vinculações contitucionais
+	// IDs para atributos inseridos em Hashtables de vinculaï¿½ï¿½es contitucionais
 	public static final String ID_ATRIBUTO_VINCULACAO_NmVinculacaoLegal = "NmVinculacaoLegal ";
 	public static final String ID_ATRIBUTO_VINCULACAO_VlVinculacaoLegal = "VlVinculacaoLegal ";
 	
@@ -468,7 +468,7 @@ public class ConstantesPLO extends Constantes {
 	 * -
 	 */
 	public static final String NM_FASE_ORCAMENTO_PROPOSTA = "Proposta";
-	public static final String NM_FASE_ORCAMENTO_ANALISE = "Análise";
+	public static final String NM_FASE_ORCAMENTO_ANALISE = "Anï¿½lise";
 	public static final String NM_FASE_ORCAMENTO_EMENDA = "Emenda";
 	public static final String NM_FASE_ORCAMENTO_LEI = "Lei";
 	
@@ -508,7 +508,7 @@ public class ConstantesPLO extends Constantes {
 	 * -
 	 */
 	public static final String NM_SITUACAO_PAINEL_APROVADO = "Aprovado";
-	public static final String NM_SITUACAO_PAINEL_SIMULACAO = "Simulação";
+	public static final String NM_SITUACAO_PAINEL_SIMULACAO = "Simulaï¿½ï¿½o";
 	
 	/**
 	 * -
@@ -541,7 +541,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String TP_PAINEL_DESPESA_VALOR_VINC_OUTRAS = "4";
 	
 	/**
-	 * - Códigos e nomes do Domnínio de Situação de Solicitação de Provisão
+	 * - Cï¿½digos e nomes do Domnï¿½nio de Situaï¿½ï¿½o de Solicitaï¿½ï¿½o de Provisï¿½o
 	 */
 	public static final String CD_SITUACAO_SOLICITACAO_PROVISAO_ELABORACAO = "E";
 	public static final String CD_SITUACAO_SOLICITACAO_PROVISAO_ANALISE = "A";
@@ -554,12 +554,12 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_SITUACAO_SOLICITACAO_DESTAQUE_REJEITADA = "R";
 	
 	/**
-	 * -Utilizada em Exercício
+	 * -Utilizada em Exercï¿½cio
 	 */
 	public static final String CD_SITUACAO_EM_EXECUCAO = "E";
 	
 	/**
-	 * - Códigos com os posíveis fluxos de execução para a inclusão de uma solicitação de crédito adicional
+	 * - Cï¿½digos com os posï¿½veis fluxos de execuï¿½ï¿½o para a inclusï¿½o de uma solicitaï¿½ï¿½o de crï¿½dito adicional
 	 */
 	public static final String CD_FLUXO_EXECUCAO_NOVO_PROGRAMA_NOVA_ACAO_NOVA_CATEGORIA = "1";
 	public static final String CD_FLUXO_EXECUCAO_PROGRAMA_EXISTENTE_NOVA_ACAO_NOVA_CATEGORIA = "2";
@@ -581,38 +581,38 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_EXECUCAO_ORCAMENTARIA_TOTAL_ANULADO_LIQUIDACAO = "16";
 	
 	/**
-	 * - Códigos de Resultado para Análises.
-	 * 	 * A Aprovação Parcial é utilizada para Provisão
+	 * - Cï¿½digos de Resultado para Anï¿½lises.
+	 * 	 * A Aprovaï¿½ï¿½o Parcial ï¿½ utilizada para Provisï¿½o
 	 */
 	public static final String CD_RESULTADO_ANALISE_APROVADA = "A";
 	public static final String CD_RESULTADO_ANALISE_APROVADA_PARCIALMENTE = "P";
 	public static final String CD_RESULTADO_ANALISE_REJEITADA = "R";
 	
 	/**
-	 * - Nome das operações
+	 * - Nome das operaï¿½ï¿½es
 	 */
-	public static final String NM_OPERACAO_PROVISAO = "Provisão";
-	public static final String NM_OPERACAO_REVERSAO_PROVISAO = "Reversão Provisão";
-	public static final String NM_OPERACAO_INCLUIR_PROVISAO = "Incluir Provisão";
-	public static final String NM_OPERACAO_SOLICITAR_PROVISAO = "Solicitação de Provisão";
-	public static final String NM_OPERACAO_RESERVA_DOTACAO = "Reserva de Dotação";
+	public static final String NM_OPERACAO_PROVISAO = "Provisï¿½o";
+	public static final String NM_OPERACAO_REVERSAO_PROVISAO = "Reversï¿½o Provisï¿½o";
+	public static final String NM_OPERACAO_INCLUIR_PROVISAO = "Incluir Provisï¿½o";
+	public static final String NM_OPERACAO_SOLICITAR_PROVISAO = "Solicitaï¿½ï¿½o de Provisï¿½o";
+	public static final String NM_OPERACAO_RESERVA_DOTACAO = "Reserva de Dotaï¿½ï¿½o";
 	
 	/**
-	 * - Identificados do Tipo de Fase do Teto Orçamentário 
+	 * - Identificados do Tipo de Fase do Teto Orï¿½amentï¿½rio 
 	 */
 	public static final String TP_FASE_PACTUACAO = "Pactuacao";
 	public static final String TP_FASE_EMENDADO = "Emendado";
 	
 	/**
-	 * - Código da Fonte de Recurso (do Tesouro): -- Recursos Ordinarios da
-	 * Administração Direta
+	 * - Cï¿½digo da Fonte de Recurso (do Tesouro): -- Recursos Ordinarios da
+	 * Administraï¿½ï¿½o Direta
 	 */
 	public static final String CD_FONTE_RECURSO__RECURSOS_ORDINARIOS__ADMINISTRACAO_DIRETA = "0101000000";
 	
 	public static final String TERMINACAO_FONTE_RECURSO_SINTETICA = "000000";
 	
 	/**
-	 * - Codigos do Domínio de Tipo de Desdobramento de Fonte Detalhada
+	 * - Codigos do Domï¿½nio de Tipo de Desdobramento de Fonte Detalhada
 	 */
 	public static final short CD_TIPO_FONTE_NAO_DETALHAVEL						= UM_SHORT.shortValue();
 	public static final short CD_TIPO_FONTE_NAO_DETALHAVEL_SALVO_CONTRAPARTIDA	= DOIS_SHORT.shortValue();
@@ -630,7 +630,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_TIPO_DESDOBRAMENTO_REVERSAO = "R";
 	
 	/**
-	 * - Constantes da situação de uma reserva de dotação
+	 * - Constantes da situaï¿½ï¿½o de uma reserva de dotaï¿½ï¿½o
 	 */
 	public static final String CD_SITUACAO_RESERVA_DOTACAO_BLOQUEADA = "B";
 	public static final String CD_SITUACAO_RESERVA_DOTACAO_DESBLOQUEADA = "D";
@@ -657,7 +657,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_SITUACAO_AVALIACAO_ACAO_GPP_APROVADA = "AP";
 	
 	/**
-	 * - Constantes para índices de reajuste do Painel Estrategico
+	 * - Constantes para ï¿½ndices de reajuste do Painel Estrategico
 	 */
 	public static final String TP_INDICE_PAINEL_REESTIMADO = "R";
 	public static final String TP_INDICE_PAINEL_PROJETADO = "P";
@@ -665,8 +665,8 @@ public class ConstantesPLO extends Constantes {
 	public static final String TP_INDICE_PAINEL_DESPESA = "D";
 	
 	/**
-	 * - Constante que indica nivel em que a despesa é tratada no painel
-	 * estratégico
+	 * - Constante que indica nivel em que a despesa ï¿½ tratada no painel
+	 * estratï¿½gico
 	 */
 	public static final String TP_NIVEL_DESPESA_PAINEL = ConstantesPLO.NATUREZA_DESPESA_TP_NIVEL_GRUPO_DESPESA;
 	
@@ -683,7 +683,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_REVERSAO_PROVISAO_CREDITO = "RP";
 	
 	/**
-	 * - Código da Conta Contábil em PLO Parâmetros para obtenção de saldo retroativo
+	 * - Cï¿½digo da Conta Contï¿½bil em PLO Parï¿½metros para obtenï¿½ï¿½o de saldo retroativo
 	 */
 	public static final String CD_CONTA_CONTABIL_PROVISAO_CREDITO = "11";
 	public static final String CD_CONTA_CONTABIL_REVERSAO_PROVISAO_CREDITO = "12";
@@ -694,22 +694,22 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_CONTA_CONTABIL_PF_UGC = "17";
 	
 	/**
-	 * - Conta Contábil da Programação Financeira para a UG Central Utilizada
-	 * para a Validação de Saldo no Destaque de Crédito. Usada em conjunto com a
+	 * - Conta Contï¿½bil da Programaï¿½ï¿½o Financeira para a UG Central Utilizada
+	 * para a Validaï¿½ï¿½o de Saldo no Destaque de Crï¿½dito. Usada em conjunto com a
 	 * constante: - CD_CONTA_CONTABIL_PF_UGC_FINANCEIRA_GERAL_DEVEDORA = 24
 	 */
 	public static final String CD_CONTA_CONTABIL_PF_UGC_FINANCEIRA_GERAL = "18";
 	public static final String CD_CONTA_CONTABIL_RESERVA_DOTACAO = "19";
 	
 	/**
-	 * - Conta CTB para validação de Saldo no Destaque de Crédito
+	 * - Conta CTB para validaï¿½ï¿½o de Saldo no Destaque de Crï¿½dito
 	 */
 	public static final String CD_CONTA_CONTABIL_PF_UGC_FINANCEIRA_GERAL_DEVEDORA = "29";
 	
 	/**
-	 * - Conjunto de tipos de fonte de recurso a serem filtrados na execução
-	 * orçamentária - String com todos os Tipos de Fonte de Recurso
-	 * [Sintéticas/"Mães"/Detalhaveis]
+	 * - Conjunto de tipos de fonte de recurso a serem filtrados na execuï¿½ï¿½o
+	 * orï¿½amentï¿½ria - String com todos os Tipos de Fonte de Recurso
+	 * [Sintï¿½ticas/"Mï¿½es"/Detalhaveis]
 	 */
 	public static final String STRING_SQL_TIPOS_FONTE_RECURSO_DETALHAVEL = 
 		CD_TIPO_FONTE_NAO_DETALHAVEL_SALVO_CONTRAPARTIDA + ","
@@ -719,7 +719,7 @@ public class ConstantesPLO extends Constantes {
 	
 	/**
 	 * - String com todos os Tipos de Fonte de Recurso
-	 * [Analíticas/"Filhas"/Não-Detalhaveis]
+	 * [Analï¿½ticas/"Filhas"/Nï¿½o-Detalhaveis]
 	 */
 	public static final String STRING_SQL_TIPOS_FONTE_RECURSO_NAO_DETALHAVEL = 
 		CD_TIPO_FONTE_DETALHADA_POR_CONVENIO + ","
@@ -749,14 +749,14 @@ public class ConstantesPLO extends Constantes {
 	
 	/**
 	 * - Utilizada nos Creditos Adicionais na montagem do select da fonte de
-	 * recurso quando a Origem for Convênio
+	 * recurso quando a Origem for Convï¿½nio
 	 */
 	public static final String STRING_SQL_TIPOS_FONTES_DET_POR_CONVENIO_DET_POR_CONTRAPARTIDA_DETALHADA_OU_NAO = 
 		Short.toString( CD_TIPO_FONTE_DETALHAVEL_POR_CONVENIO );
 	
 	/**
 	 * - Utilizada nos Creditos Adicionais na montagem do select da fonte de
-	 * recurso quando a Origem for Operação
+	 * recurso quando a Origem for Operaï¿½ï¿½o
 	 */
 	public static final String STRING_SQL_TIPOS_FONTES_DET_POR_CONTRATO_DET_POR_CONTRAPARTIDA_DETALHADA_OU_NAO = 
 		Short.toString( CD_TIPO_FONTE_DETALHAVEL_POR_CONTRATO );
@@ -769,7 +769,7 @@ public class ConstantesPLO extends Constantes {
 	public static final Short CD_MINISTERIO_PUBLICO = VINTE_SETE_SHORT;
 	
 	/**
-	 * -Códigos que representam as fontes de recurso de operação de Crédito
+	 * -Cï¿½digos que representam as fontes de recurso de operaï¿½ï¿½o de Crï¿½dito
 	 * direta/indireta
 	 */
 	public static final Short CD_FONTE_RECURSO_OPERACAO_CREDITO_DIRETA = TRINTA_SHORT;
@@ -777,13 +777,13 @@ public class ConstantesPLO extends Constantes {
 	public static final Short CD_FONTE_RECURSO_OPERACAO_CREDITO_AMBAS = TRINTA_TRES_SHORT;
 	
 	/**
-	 * -Código que representa as naturezas de receita de cessão de superavit
+	 * -Cï¿½digo que representa as naturezas de receita de cessï¿½o de superavit
 	 */
 	public static final Short CD_NATUREZA_RECEITA_CESSAO_SUPERAVIT = TRINTA_DOIS_SHORT;
 	
 	/**
-	 * - ATENDENDO ISSUE #27012 - Na elementaçao de despesa, não permitir que os
-	 * Elementos de Despesas 51 e 61 sejam associados a ações diferentes de
+	 * - ATENDENDO ISSUE #27012 - Na elementaï¿½ao de despesa, nï¿½o permitir que os
+	 * Elementos de Despesas 51 e 61 sejam associados a aï¿½ï¿½es diferentes de
 	 * projetos.
 	 */
 	public static final String COLECAO_CRITICA_ELEMENTO_DE_DESPESA_EM_CELULA_ORCAMENTARIA_PARA_ACAO_DO_TIPO_PROJETO = 
@@ -791,9 +791,9 @@ public class ConstantesPLO extends Constantes {
 		"61";
 	
 	/**
-	 * - ATENDENDO ISSUE #27435 - Na elementaçao de despesa, não permitir que os
-	 * Elementos de Despesas 63, 64, 65 e 66 sejam associados a ações diferentes
-	 * de operações especiais.
+	 * - ATENDENDO ISSUE #27435 - Na elementaï¿½ao de despesa, nï¿½o permitir que os
+	 * Elementos de Despesas 63, 64, 65 e 66 sejam associados a aï¿½ï¿½es diferentes
+	 * de operaï¿½ï¿½es especiais.
 	 */
 	public static final String COLECAO_CRITICA_ELEMENTO_DE_DESPESA_EM_CELULA_ORCAMENTARIA_PARA_ACAO_DO_TIPO_OPERACOES_ESPECIAIS = 
 		"63" + ConstantesPLO.CD_CAMPO_SEPARADOR
@@ -807,7 +807,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_NATUREZA_DESPESA_DE_ACORDO_COM_LOA_CREDITOS_ADICIONAIS = "31";
 	
 	/**
-	 * - Tipos para Relatório Receita Orçada Desdobrada por Itens e Fontes de
+	 * - Tipos para Relatï¿½rio Receita Orï¿½ada Desdobrada por Itens e Fontes de
 	 * Recursos - LOA
 	 */
 	public static final String CD_RECEITA_PREVISTA_ANALITICO = "A";
@@ -816,7 +816,7 @@ public class ConstantesPLO extends Constantes {
 	/**
 	 * -
 	 */
-	public static final String DS_RECEITA_PREVISTA_ANALITICO = "Analítico";
+	public static final String DS_RECEITA_PREVISTA_ANALITICO = "Analï¿½tico";
 	public static final String DS_RECEITA_PREVISTA_CONSOLIDADO = "Consolidado";
 	
 	/**
@@ -836,15 +836,15 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_RECEITA_PREVISTA_RESERVA = "9";
 	
 	/**
-	 * - Utilizado na inclusão do destino da solicitação do Crédito Adicional - >
-	 * Constituição ou aumento de capital de empresas (Código 4590)
+	 * - Utilizado na inclusï¿½o do destino da solicitaï¿½ï¿½o do Crï¿½dito Adicional - >
+	 * Constituiï¿½ï¿½o ou aumento de capital de empresas (Cï¿½digo 4590)
 	 */
 	public static final String CD_CONSTITUICAO_OU_AUMENTO_DE_CAPITAL_DE_EMPRESAS_NIVEL_MODALIDADE = "4590";
 	public static final String CD_NATUREZA_RECEITA_IMPACTA_ORCAMENTO = "4591";
 	
 	/**
-	 * - Utilizado na inclusão do destino da solicitação do Crédito Adicional - >
-	 * Constituição ou aumento de capital de empresas (Código 4590)
+	 * - Utilizado na inclusï¿½o do destino da solicitaï¿½ï¿½o do Crï¿½dito Adicional - >
+	 * Constituiï¿½ï¿½o ou aumento de capital de empresas (Cï¿½digo 4590)
 	 */
 	public static final String CD_CONSTITUICAO_OU_AUMENTO_DE_CAPITAL_DE_EMPRESAS_NIVEL_ITEM_DE_GASTO = "45906500";
 	
@@ -871,24 +871,24 @@ public class ConstantesPLO extends Constantes {
 	public static final String DS_TIPO_UG_SOLICITADA_DO_CREDITO_ADICIONAL = "Solicitada";
 	
 	/**
-	 * Descrição, com o nome do campo de Código da Natureza de Receita
+	 * Descriï¿½ï¿½o, com o nome do campo de Cï¿½digo da Natureza de Receita
 	 */
-	public static final String DS_NOME_CAMPO_CODIGO_NATUREZA_RECEITA = "Código da Natureza de Receita";
+	public static final String DS_NOME_CAMPO_CODIGO_NATUREZA_RECEITA = "Cï¿½digo da Natureza de Receita";
 	
 	/**
-	 * Descrição, com o nome do campo de Código da Fonte de Recurso
+	 * Descriï¿½ï¿½o, com o nome do campo de Cï¿½digo da Fonte de Recurso
 	 */
-	public static final String DS_NOME_CAMPO_CODIGO_FONTE_RECURSO = "Código da Fonte de Recurso";
+	public static final String DS_NOME_CAMPO_CODIGO_FONTE_RECURSO = "Cï¿½digo da Fonte de Recurso";
 	
 	/**
-	 * Descrição, com o nome do campo de Seqüêncial da Natureza de Receita
+	 * Descriï¿½ï¿½o, com o nome do campo de Seqï¿½ï¿½ncial da Natureza de Receita
 	 */
-	public static final String DS_NOME_CAMPO_SEQUENCIAL_NATUREZA_RECEITA = "Seqüêncial da Natureza de Receita";
+	public static final String DS_NOME_CAMPO_SEQUENCIAL_NATUREZA_RECEITA = "Seqï¿½ï¿½ncial da Natureza de Receita";
 	
 	/**
-	 * Descrição, com o nome do campo de Seqüêncial da Fonte de Recurso
+	 * Descriï¿½ï¿½o, com o nome do campo de Seqï¿½ï¿½ncial da Fonte de Recurso
 	 */
-	public static final String DS_NOME_CAMPO_SEQUENCIAL_FONTE_RECURSO = "Seqüêncial da Fonte de Recurso";
+	public static final String DS_NOME_CAMPO_SEQUENCIAL_FONTE_RECURSO = "Seqï¿½ï¿½ncial da Fonte de Recurso";
 	
 	/**
 	 * -
@@ -911,35 +911,35 @@ public class ConstantesPLO extends Constantes {
 	public static final String NM_COL_ValorOrcado = "CELULA_VALOR";
 	
 	/**
-	 * - Utilizado na Solicitação do Crédito Adicional
+	 * - Utilizado na Solicitaï¿½ï¿½o do Crï¿½dito Adicional
 	 */
 	public static final String DS_NENHUM = "Nenhum";
-	public static final String DS_NAO_DEFINIDA = "Não definida";
+	public static final String DS_NAO_DEFINIDA = "Nï¿½o definida";
 	
 	/**
-	 * - Constantes utilizada na Reversão de Provisão da UGC
+	 * - Constantes utilizada na Reversï¿½o de Provisï¿½o da UGC
 	 */
-	public static final String DS_DA_REVERSAO = "da Reversão";
+	public static final String DS_DA_REVERSAO = "da Reversï¿½o";
 	
 	/**
-	 * - Constante que define o campo separador a ser usado nos jobs de exportaçãod e dados do PLO
+	 * - Constante que define o campo separador a ser usado nos jobs de exportaï¿½ï¿½od e dados do PLO
 	 */
 	public static final String CD_CAMPO_SEPARADOR_ARQUIVO_EXPORTACAO_PLO = ";";
 	
 	/**
-	 * - Constante que define o código do parâmetro que indica quais as UGs que terão arquivos individuais gerados pelos jobs de
-	 * exportação do GFU
+	 * - Constante que define o cï¿½digo do parï¿½metro que indica quais as UGs que terï¿½o arquivos individuais gerados pelos jobs de
+	 * exportaï¿½ï¿½o do GFU
 	 */
 	public static final String CD_PARAM_RELACAO_UGS_EXPORTACAO = "CdRelUGsArquivosGeraisFinanc";
 	
 	/**
-	 * - Constante que define o código do parâmetro que indica quantidades de meses retroativos gerados pelos jobs de
-	 * exportação do GFU
+	 * - Constante que define o cï¿½digo do parï¿½metro que indica quantidades de meses retroativos gerados pelos jobs de
+	 * exportaï¿½ï¿½o do GFU
 	 */
 	public static final String CD_PARAM_QUANTIDADE_MESES_RETROATIVOS = "QtMesesRetroativosExecucaoJob";
 	
 	/**
-	 * Constantes que definem os retornos [em HashTable] das REGRAS DE NEGÓCIOS
+	 * Constantes que definem os retornos [em HashTable] das REGRAS DE NEGï¿½CIOS
 	 */
 	public static final String CHAVE_NUMERO_DOCUMENTO_CTB = "numeroDocumentoRefCTB";
 	public static final String CHAVE_OTD_SOLICITACAO_CA = "otdSolicitacaoCreditoAdicional";
@@ -949,30 +949,30 @@ public class ConstantesPLO extends Constantes {
 	public static final Short DT_ANO_2011 = DOIS_MIL_E_ONZE_SHORT;
 	
 	/**
-	 * Constante para definir o tamanho máximo de um arquivo.
+	 * Constante para definir o tamanho mï¿½ximo de um arquivo.
 	 */
 	public static final Long SIZE_1MB_BYTES_LONG = Long.valueOf(1048576);
 	
 	/**
-	 * Ordenação crescente
+	 * Ordenaï¿½ï¿½o crescente
 	 */
 	public static final String CD_ORDEM_CRESCENTE = "C";
 	
 	/**
-	 * Constantes utilizadas na tela Bloqueia/Desbloqueia Célula da Despesa (Painel)
+	 * Constantes utilizadas na tela Bloqueia/Desbloqueia Cï¿½lula da Despesa (Painel)
 	 */
 	public static final String ACAO_BLOQUEAR_TODAS_CELULAS = "BTC";
 	public static final String ACAO_DESBLOQUEAR_TODAS_CELULAS = "DTC";
 	public static final String ACAO_BLOQUEIO_DESBLOQUEIO_POR_CELULA = "BDC";
 	
 	/**
-	 * Constante utilizada na consulta de Células de Teto
+	 * Constante utilizada na consulta de Cï¿½lulas de Teto
 	 */
 	public static final String IN_COLECAO_ORIGEM = "Origem";
 	public static final String IN_COLECAO_DESTINO = "Destino";
 	
 	/**
-	 * Constante com o código da Classicicação da Despesa não Prioritária
+	 * Constante com o cï¿½digo da Classicicaï¿½ï¿½o da Despesa nï¿½o Prioritï¿½ria
 	 */
 	public static final String CD_CLASSIFICACAO_DESPESA_NAO_CLASSIFICADA = "00";
 	
@@ -989,29 +989,29 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_CARGO_PESSOA_PRESIDENTE_ASSEMBLEIA = "3";
 	public static final String CD_CARGO_PESSOA_PRESIDENTE_TRIBUNAL = "4";	
 	/**
-	 * Descrições de Cargo Pessoa
+	 * Descriï¿½ï¿½es de Cargo Pessoa
 	 */
 	public static final String DS_CARGO_PESSOA_GOVERNADOR = "Governador do Estado de Pernambuco";
 	public static final String DS_CARGO_PESSOA_VICE_GOVERNADOR = "Vice-Governador do Estado de Pernambuco";
-	public static final String DS_CARGO_PESSOA_PRESIDENTE_ASSEMBLEIA = "Presidente da Assembléia Legislativa";
-	public static final String DS_CARGO_PESSOA_PRESIDENTE_TRIBUNAL = "Presidente do Tribunal de Justiça";
+	public static final String DS_CARGO_PESSOA_PRESIDENTE_ASSEMBLEIA = "Presidente da Assemblï¿½ia Legislativa";
+	public static final String DS_CARGO_PESSOA_PRESIDENTE_TRIBUNAL = "Presidente do Tribunal de Justiï¿½a";
 	
 	/**
-	 * -Código que representa o governador do estado de pernambuco na tabela de parametro do plo
+	 * -Cï¿½digo que representa o governador do estado de pernambuco na tabela de parametro do plo
 	 */
 	public static final Short CD_GOVERNADOR_ESTADO_PERNAMBUCO = VINTE_TRES_SHORT;
 	
 	/**
-	 * - Identificador no Número de Referência Contábil
+	 * - Identificador no Nï¿½mero de Referï¿½ncia Contï¿½bil
 	 */
-	public static final String ID_REQ_NUMERO_REFERENCIA_CONTABIL = "Número de Referência Contábil";
+	public static final String ID_REQ_NUMERO_REFERENCIA_CONTABIL = "Nï¿½mero de Referï¿½ncia Contï¿½bil";
 	
 	public static final String ID_REQ_DT_EXERCICIO_ACAO_GPP = "DtExercicioAcao";
 	
 	public static final String ID_REQ_DATA_INICIO_VIGENCIA_GPO = "dtInicioVigencia";
 
 	/**
-	 * - Identificador do Tipo do Valor do Teto a ser listado no Relatório 
+	 * - Identificador do Tipo do Valor do Teto a ser listado no Relatï¿½rio 
 	 */
 	public static final String DS_TIPO_RELATORIO_SUGERIDO = "VALOR SUGERIDO";
 	public static final String DS_TIPO_RELATORIO_SOLICITADO = "VALOR SOLICITADO";
@@ -1053,14 +1053,14 @@ public class ConstantesPLO extends Constantes {
 	public static final String DS_SITUACAO_DED_CONCLUIDA = "C";
 	
 	/**
-	 * - Utilizado no Relatório de Emenda 
+	 * - Utilizado no Relatï¿½rio de Emenda 
 	 */
 	public static final String VALOR_OBJETO_MUNICIPALIZACAO = "T";
 	public static final String VALOR_OBJETO_AOSANEXOS = "V";
 	
-	public static final String DS_CONTEUDO_RELATORIO_VAZIO = "Nenhum registro encontrado para os parâmetros informados!";
+	public static final String DS_CONTEUDO_RELATORIO_VAZIO = "Nenhum registro encontrado para os parï¿½metros informados!";
 	
-	// Identificador comum a várias PRs de Serviços diferentes
+	// Identificador comum a vï¿½rias PRs de Serviï¿½os diferentes
 	public static final String ID_REQ_DataContabil = "Data_Contabil";
 	public static final String ID_REQ_DtAnoExercicioCTB = "DtAnoExercicioCTB";
 	public static final String ID_REQ_TipoDocumento = "Tipo_Documento";
@@ -1094,12 +1094,12 @@ public class ConstantesPLO extends Constantes {
 	
 	public static final String PARAMETRO_ALTERACAO = "A";
 	
-	public static final String DS_PARAMETRO_INCLUSAO = "Inclusão";
+	public static final String DS_PARAMETRO_INCLUSAO = "Inclusï¿½o";
 	
-	public static final String DS_PARAMETRO_ALTERACAO = "Alteração";
+	public static final String DS_PARAMETRO_ALTERACAO = "Alteraï¿½ï¿½o";
 	
 	/**
-	 * Variáveis utilizadas em Consutlas e Componentes Web, para concatenação em Strings
+	 * Variï¿½veis utilizadas em Consutlas e Componentes Web, para concatenaï¿½ï¿½o em Strings
 	 */
 	public static final String STRING_VAZIA = "";
 	public static final String PONTO = ".";
@@ -1117,7 +1117,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String CD_PLO_SIM = Constantes.CD_VERDADEIRO;
 	public static final String CD_PLO_NAO = Constantes.CD_FALSO;
 	public static final String DS_PLO_SIM = "Sim";
-	public static final String DS_PLO_NAO = "Não";
+	public static final String DS_PLO_NAO = "Nï¿½o";
 	
 	public static final String NM_SERVLET_COMPONENTE_SUBACAO = "PRManterSubacaoCadastro";
 	public static final String NM_SERVLET_COMPONENTE_ACAO = "PRManterAcaoCadastro";
@@ -1128,8 +1128,8 @@ public class ConstantesPLO extends Constantes {
 	public static final String NM_SERVLET_ELEMENTACAO = "PRManterElementacao";
 	
 	/**
-	 * Constantes para serem usadas no Relatório de Publicação de Créditos Adicionais
-	 * Indicam o ano da Revolução Republicana Constitucionalista e da Independência do Brasil respectivamente 
+	 * Constantes para serem usadas no Relatï¿½rio de Publicaï¿½ï¿½o de Crï¿½ditos Adicionais
+	 * Indicam o ano da Revoluï¿½ï¿½o Republicana Constitucionalista e da Independï¿½ncia do Brasil respectivamente 
 	 */
 	public static final int  ANO_REVOLUCAO_REPUBLICANA = 1816;
 	public static final int  ANO_INDEPENDENCIA_BRASIL = 1821;
@@ -1142,7 +1142,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String ID_REQ_MENU_SCA_CD_MENU = "cd_menu";
 	
 	/**
-	 * Códigos de Job's
+	 * Cï¿½digos de Job's
 	 */
 	public static final Integer CD_SCRIPT_JOB_EXECUCAO_ORCAMENTARIA_ACOES_UG = Integer.valueOf(28000);
 	public static final Integer CD_SCRIPT_JOB_EXPORTACAO_CICLO_EXTRAORDINARIO = Integer.valueOf(28016);
@@ -1162,7 +1162,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String OPERACAO_EXCLUSAO_UNIDADE_GESTORA = "ExclusaoUnidadeGestora";
 	
 	/**
-	 * Constante usada para a Formatação de Data-Hora nos Jobs
+	 * Constante usada para a Formataï¿½ï¿½o de Data-Hora nos Jobs
 	 */
 	public static final String FORMATO_DATA_HORA_JOBS_YYYY_M_MDD_H_HMM = "yyyyMMddHHmm";
 	
@@ -1174,7 +1174,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String DS_PLO_NUNCA = "Nunca";
 	
 	/**
-	 *  Constantes que identificam o Nível da natureza
+	 *  Constantes que identificam o Nï¿½vel da natureza
 	 */
 	public static final String CD_NATUREZA_RECEITA_SEM_PAI				= "00000000";
 	public static final String NATUREZA_RECEITA_ZEROS_DIREITA_NIVEL_1	= "0000000";
@@ -1186,7 +1186,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String NATUREZA_RECEITA_ZEROS_DIREITA_NIVEL_7	= "0";
 	
 	/**
-	 * Constantes que descrevem tipos de operação
+	 * Constantes que descrevem tipos de operaï¿½ï¿½o
 	 */
 	public static final String DS_OPERACAO = "Operacao";
 	public static final String DS_OPERACAO_RESUMO = "OperacaoResumo";
@@ -1202,10 +1202,10 @@ public class ConstantesPLO extends Constantes {
 	public static final String DS_OPERACAO_TRATAR_REJEICAO = "OperacaoTratarRejeicao";
 	public static final String DS_OPERACAO_PREENCHIMENTO_MODALIDADE = "OperacaoPreenchimentoModalidade";
 	
-	public static final String DS_ANALISAR_SOLICITACAO_CICLO_EXTRAORDINARIO = "Análise de Solicitação - Ciclo Extraordinário";
-	public static final String DS_ANALISAR_SOLICITACAO_SEPLAG_SEPO = "Análise de Solicitação - SEPLAG/SEPOC";
-	public static final String DS_ANALISAR_SOLICITACAO_SECRETARIO_SEPLAG = "Análise de Solicitação - Secretário SEPLAG";
-	public static final String DS_ANALISAR_SOLICITACAO_GESTOR_CENTRAL_GOE = "Análise de Solicitacão de Crédito Adicional Pelo Gestor Central GOE";
+	public static final String DS_ANALISAR_SOLICITACAO_CICLO_EXTRAORDINARIO = "Anï¿½lise de Solicitaï¿½ï¿½o - Ciclo Extraordinï¿½rio";
+	public static final String DS_ANALISAR_SOLICITACAO_SEPLAG_SEPO = "Anï¿½lise de Solicitaï¿½ï¿½o - SEPLAG/SEPOC";
+	public static final String DS_ANALISAR_SOLICITACAO_SECRETARIO_SEPLAG = "Anï¿½lise de Solicitaï¿½ï¿½o - Secretï¿½rio SEPLAG";
+	public static final String DS_ANALISAR_SOLICITACAO_GESTOR_CENTRAL_GOE = "Anï¿½lise de Solicitacï¿½o de Crï¿½dito Adicional Pelo Gestor Central GOE";
 	
 	public static final String ATIVO = " 'Ativo' ";
 	public static final String INATIVO = " 'Inativo' ";
@@ -1261,7 +1261,7 @@ public class ConstantesPLO extends Constantes {
 	public static final String ID_REQ_NmIdentificadorNaturezaDespesa = "NmIdentificadorNaturezaDespesa";
 	
 	/**
-	 * Identificador para definição: SelectTipoDetalhamentoFonteRecurso
+	 * Identificador para definiï¿½ï¿½o: SelectTipoDetalhamentoFonteRecurso
 	 */
 	public static final String ID_REQ_FONTERECURSO_VIGENCIA = "FonteRecursoVigencia";
 	public static final String ID_REQ_FONTERECURSO_DETALHAMENTO = "FonteRecursoDetalhamento";

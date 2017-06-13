@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo ï¿½ propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaï¿½ï¿½o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissï¿½o escrita da Sefaz-PE.
  */
 package tsw.t06;
 
@@ -35,7 +35,6 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 /**
@@ -53,17 +52,16 @@ public abstract class DAO_BD extends DAO {
 
 	//~ Construtores ---------------------------------------------------------------------------------------------------------------
 
-/**
-         * Cria um novo objeto DAO_BD.
-         */
-	public DAO_BD() {
-	}
+	/**
+	 * Cria um novo objeto DAO_BD.
+	 */
+	public DAO_BD() {}
 
-/**
-         * Cria um novo objeto DAO_BD.
-         *
-         * @param pNmConexaoJNDI
-         */
+	/**
+	 * Cria um novo objeto DAO_BD.
+	 *
+	 * @param pNmConexaoJNDI
+	 */
 	public DAO_BD(String pNmConexaoJNDI) {
 		this.aNmConexaoJNDI = pNmConexaoJNDI;
 	}
@@ -94,35 +92,32 @@ public abstract class DAO_BD extends DAO {
 		DataSource ds = null;
 		Connection conexao = null;
 		Properties env = null;
-		InitialContext contextoInicial;
 		String nmPropriedadeProviderURL = null;
-
+		
 		try {
 			if (Parametros.getInstancia().isJ2EE14Ativado() && !pInLookupGlobal) {
 				pNmConexaoJNDI = "java:comp/env/" + pNmConexaoJNDI + "_rc";
 			}
-
+			
 			ds = DATA_SOURCES.get(pNmConexaoJNDI);
-
+			
 			if (ds == null) {
 				env = new Properties();
 				env.put(Context.INITIAL_CONTEXT_FACTORY, "com.ibm.websphere.naming.WsnInitialContextFactory");
-
+				
 				nmPropriedadeProviderURL = Constantes.NM_PROVIDER_URL_FONTE_DADOS_JDBC;
-
+				
 				if (nmPropriedadeProviderURL != null) {
 					env.put(Context.PROVIDER_URL, nmPropriedadeProviderURL);
 				} else {
 					env.put(Context.PROVIDER_URL, Parametros.getInstancia().getNmProviderURLConexaoBD());
 				}
-
-				long tsInicioLookup = 0;
-
+				
 				DATA_SOURCES.put(pNmConexaoJNDI, ds);
 			}
-
+			
 			boolean inErro = true;
-
+			
 			try {
 				conexao = ds.getConnection();
 				inErro = false;
@@ -132,7 +127,7 @@ public abstract class DAO_BD extends DAO {
 				}
 			}
 		} catch (SQLException e) {
-			throw new ExcecaoSistema("Conexão JNDI não disponível (pNmConexaoJNDI = " + pNmConexaoJNDI + " | NmProviderURL = " +
+			throw new ExcecaoSistema("Conexï¿½o JNDI nï¿½o disponï¿½vel (pNmConexaoJNDI = " + pNmConexaoJNDI + " | NmProviderURL = " +
 				Parametros.getInstancia().getNmProviderURLConexaoBD() + ")", e);
 		}
 
@@ -166,38 +161,7 @@ public abstract class DAO_BD extends DAO {
 		throws ExcecaoSistema {
 		return DAO_BD.getConexao(pNmConexaoJNDI, true);
 	}
-
-	/**
-	 * -
-	 *
-	 * @param pNmConexaoJNDI
-	 * @param pTsInicioLookup
-	 * @param pTsFimLookup
-	 */
-	private static void registrarLogDataSourceLookup(String pNmConexaoJNDI, long pTsInicioLookup, long pTsFimLookup) {
-		String txLogParte01 = "[DAO_BD.getConexao] DataSource lookup executado em [";
-		String txLogParte02 = Long.toString(pTsFimLookup - pTsInicioLookup);
-		String txLogParte03 = "] ms para [";
-		String txLogParte05 = "]";
-		String txLogParte06 = " | Thread = [";
-		String txLogParte07 = Thread.currentThread().getName();
-		String txLogParte08 = "]";
-
-		StringBuilder sbTxLog = new StringBuilder(txLogParte01.length() + txLogParte02.length() + txLogParte03.length() +
-				pNmConexaoJNDI.length() + txLogParte05.length() + txLogParte06.length() + txLogParte07.length() +
-				txLogParte08.length());
-
-		sbTxLog.append(txLogParte01);
-		sbTxLog.append(txLogParte02);
-		sbTxLog.append(txLogParte03);
-		sbTxLog.append(pNmConexaoJNDI);
-		sbTxLog.append(txLogParte05);
-		sbTxLog.append(txLogParte06);
-		sbTxLog.append(txLogParte07);
-		sbTxLog.append(txLogParte08);
-
-	}
-
+	
 	/**
 	 * -
 	 *
@@ -210,23 +174,27 @@ public abstract class DAO_BD extends DAO {
 	 */
 	public static void fecharConexao(ContextoUsuario pContextoUsuario, String pNmClasse, Connection pConexao,
 		PreparedStatement pPreStmt) throws ExcecaoGenerica {
-		// Se for transação JTA_CRGC ou JDBC_RGC, não fecha nada. Quem deve fechar a conexão e o resultset é o cliente.
-		if (((pContextoUsuario.getTpTransacao() != Constantes.TP_TRANSACAO_JTA_CRGC) &&
-				(pContextoUsuario.getTpTransacao() != Constantes.TP_TRANSACAO_JDBC_RGC)) ||
-				!pContextoUsuario.getInNaoFecharProximoPreparedStatement()) {
+		// Se for transaï¿½ï¿½o JTA_CRGC ou JDBC_RGC, nï¿½o fecha nada. Quem deve fechar a conexï¿½o e o resultset ï¿½ o cliente.
+		if (
+				(
+					pContextoUsuario.getTpTransacao() != Constantes.TP_TRANSACAO_JTA_CRGC &&
+					pContextoUsuario.getTpTransacao() != Constantes.TP_TRANSACAO_JDBC_RGC
+				) ||
+				!pContextoUsuario.getInNaoFecharProximoPreparedStatement()
+		) {
 			try {
 				if (pPreStmt != null) {
 					pPreStmt.close();
 				}
-
+				
 				if (pContextoUsuario.getTpTransacao() == Constantes.TP_TRANSACAO_JTA) {
-					// Se for transação JTA, fecha a conexão devolvendo para o pool
+					// Se for transaï¿½ï¿½o JTA, fecha a conexï¿½o devolvendo para o pool
 					if (pConexao != null) {
 						pConexao.close();
 					}
 				}
 			} catch (SQLException e) {
-				DAO.tratarExcecao(pNmClasse, "pContextoUsuario = " + pContextoUsuario + " | Erro fechando conexão", e);
+				DAO.tratarExcecao(pNmClasse, "pContextoUsuario = " + pContextoUsuario + " | Erro fechando conexï¿½o", e);
 			}
 		}
 
@@ -237,7 +205,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em uma coleção de VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em uma coleï¿½ï¿½o de VOGenerico
 	 *
 	 * @param pResultSet
 	 *
@@ -255,7 +223,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em uma coleção de VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em uma coleï¿½ï¿½o de VOGenerico
 	 *
 	 * @param pResultSet
 	 * @param pInExtrairBLOBComoArrBytes
@@ -270,7 +238,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em uma coleção de VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em uma coleï¿½ï¿½o de VOGenerico
 	 *
 	 * @param pResultSet
 	 * @param pInExtrairBLOB
@@ -340,7 +308,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em um VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em um VOGenerico
 	 *
 	 * @param pResultSet
 	 *
@@ -358,7 +326,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em um VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em um VOGenerico
 	 *
 	 * @param pResultSet
 	 * @param pInExtrairBLOBComoArquivo
@@ -377,7 +345,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Transforma o resultset passado como parâmetro em um VOGenerico
+	 * Transforma o resultset passado como parï¿½metro em um VOGenerico
 	 *
 	 * @param pResultSet
 	 * @param pInExtrairBLOBComoArquivo
@@ -547,14 +515,14 @@ public abstract class DAO_BD extends DAO {
 			// Define autocommit
 			pConexao.setAutoCommit(false);
 		} catch (Exception e) {
-			String nmUsuarioBD = "[não disponível]";
+			String nmUsuarioBD = "[nï¿½o disponï¿½vel]";
 
 			try {
 				nmUsuarioBD = pConexao.getMetaData().getUserName();
 			} catch (SQLException sqle) {
 			}
 
-			throw new ExcecaoSistema("Erro configurando conexão (Usuário BD: " + nmUsuarioBD + ") | sql = " + sql, e);
+			throw new ExcecaoSistema("Erro configurando conexï¿½o (Usuï¿½rio BD: " + nmUsuarioBD + ") | sql = " + sql, e);
 		}
 	}
 
@@ -733,7 +701,7 @@ public abstract class DAO_BD extends DAO {
 			VOEntidade voEntidade = pArrayVOEntidade.get(i);
 
 			if (i == 0) {
-				// Verifica se a inclusão em batch está ativada ou desativada para o sistema em questão
+				// Verifica se a inclusï¿½o em batch estï¿½ ativada ou desativada para o sistema em questï¿½o
 				isUtilizacaoBatchDesativado = Parametros.getInstancia()
 						.isUtilizacaoBatchDesativado(BibliotecaFuncoesPrincipal.extrairSgSistema(voEntidade.getClass().getName())
 							.toUpperCase());
@@ -798,7 +766,7 @@ public abstract class DAO_BD extends DAO {
 
 					// Inserindo os sql no objeto batchupdate
 					if (conexao == null) {
-						// Primeira iteração
+						// Primeira iteraï¿½ï¿½o
 
 						preStmt = conexao.prepareStatement(sql);
 						nmEntidade = voEntidade.getNmEntidade();
@@ -850,7 +818,7 @@ public abstract class DAO_BD extends DAO {
 						}
 					}
 
-					// Adiciona os valores setados no statement para execução batch
+					// Adiciona os valores setados no statement para execuï¿½ï¿½o batch
 					preStmt.addBatch();
 
 				}
@@ -1014,7 +982,7 @@ public abstract class DAO_BD extends DAO {
 			if (preStmt.getUpdateCount() == 0) {
 
 				throw new ExcecaoRegistroNaoEncontrado(pVOEntidade.getDsEntidade(),
-					this.getClass().getName() + " | método = alterar | pContextoUsuario = " + pContextoUsuario +
+					this.getClass().getName() + " | mï¿½todo = alterar | pContextoUsuario = " + pContextoUsuario +
 					" | pVOEntidade = " + pVOEntidade);
 			}
 
@@ -1068,7 +1036,7 @@ public abstract class DAO_BD extends DAO {
 			VOEntidade voEntidade = pArrayVOEntidade.get(i);
 
 			if (i == 0) {
-				// Verifica se a utilização de update em batch está ativada ou desativada para o sistema em questão
+				// Verifica se a utilizaï¿½ï¿½o de update em batch estï¿½ ativada ou desativada para o sistema em questï¿½o
 				isUtilizacaoBatchDesativado = Parametros.getInstancia()
 						.isUtilizacaoBatchDesativado(BibliotecaFuncoesPrincipal.extrairSgSistema(voEntidade.getClass().getName())
 							.toUpperCase());
@@ -1083,7 +1051,7 @@ public abstract class DAO_BD extends DAO {
 
 		if (!isUtilizacaoBatchDesativado) {
 			try {
-				// Armazena o grupo de campos que serão atualizados, cada um com um update em batch.
+				// Armazena o grupo de campos que serï¿½o atualizados, cada um com um update em batch.
 				Hashtable<String, ArrayList<VOEntidade>> grupoCamposUpdate = new Hashtable<String, ArrayList<VOEntidade>>();
 
 				// Para cada VOEntidade, preparar o SQL e adicionar no batchupdate
@@ -1106,11 +1074,11 @@ public abstract class DAO_BD extends DAO {
 						}
 					}
 
-					// Se este grupo já foi adicionado por algum voEntidade anterior...
+					// Se este grupo jï¿½ foi adicionado por algum voEntidade anterior...
 					if (grupoCamposUpdate.containsKey(camposAlterados.toString())) {
 						grupoCamposUpdate.get(camposAlterados.toString()).add(voEntidade);
 					} else {
-						// Como este grupo ainda não adicionado, adiciona no hashtable
+						// Como este grupo ainda nï¿½o adicionado, adiciona no hashtable
 						ArrayList<VOEntidade> vosMesmoGrupo = new ArrayList<VOEntidade>();
 						vosMesmoGrupo.add(voEntidade);
 						grupoCamposUpdate.put(camposAlterados.toString(), vosMesmoGrupo);
@@ -1167,7 +1135,7 @@ public abstract class DAO_BD extends DAO {
 
 							sql = sqlBuffer.toString();
 
-							// Resgatando a conexão
+							// Resgatando a conexï¿½o
 							if (conexao == null) {
 								nmEntidade = voEntidade.getNmEntidade();
 								dsEntidade = voEntidade.getDsEntidade();
@@ -1247,14 +1215,14 @@ public abstract class DAO_BD extends DAO {
 					updateCounts = preStmt.executeBatch();
 					
 					
-					// Se algum dos updates executados em batch não retornou nenhum resultado a ExcecaoRegistroNaoEncontrado é levantada. 
+					// Se algum dos updates executados em batch nï¿½o retornou nenhum resultado a ExcecaoRegistroNaoEncontrado ï¿½ levantada. 
 					for (int i = 0; i < updateCounts.length; i++) {
 						int updateCount = updateCounts[i];
 						
 						if (updateCount == 0) {
 							
 							throw new ExcecaoRegistroNaoEncontrado(dsEntidade,
-								this.getClass().getName() + " | método = alterarBatch | pContextoUsuario = " + pContextoUsuario +
+								this.getClass().getName() + " | mï¿½todo = alterarBatch | pContextoUsuario = " + pContextoUsuario +
 								" | voEntidade = " + pArrayVOEntidade.get(i));
 						} else {
 						}
@@ -1340,7 +1308,7 @@ public abstract class DAO_BD extends DAO {
 			if (preStmt.getUpdateCount() == 0) {
 
 				throw new ExcecaoRegistroNaoEncontrado(pVOEntidade.getDsEntidade(),
-					this.getClass().getName() + " | método = excluir | pContextoUsuario = " + pContextoUsuario +
+					this.getClass().getName() + " | mï¿½todo = excluir | pContextoUsuario = " + pContextoUsuario +
 					" | pVOEntidade = " + pVOEntidade);
 			}
 		} finally {
@@ -1455,7 +1423,7 @@ public abstract class DAO_BD extends DAO {
 			if (!rs.next()) {
 
 				throw new ExcecaoRegistroNaoEncontrado(pVOEntidade.getDsEntidade(),
-					this.getClass().getName() + " | método = consultarPorChavePrimaria | pContextoUsuario = " + pContextoUsuario +
+					this.getClass().getName() + " | mï¿½todo = consultarPorChavePrimaria | pContextoUsuario = " + pContextoUsuario +
 					" | pVOEntidade = " + pVOEntidade);
 			}
 
@@ -1520,7 +1488,7 @@ public abstract class DAO_BD extends DAO {
 	}
 
 	/**
-	 * Este método não trata o tipo CLOB. Ele é tratado nos métodos getResultSetComoVOGenerico e getResultSetComoColecao
+	 * Este mï¿½todo nï¿½o trata o tipo CLOB. Ele ï¿½ tratado nos mï¿½todos getResultSetComoVOGenerico e getResultSetComoColecao
 	 *
 	 * @param pTpColuna
 	 *
@@ -1583,7 +1551,7 @@ public abstract class DAO_BD extends DAO {
 		} else if (pCdNivelIsolamento == Connection.TRANSACTION_SERIALIZABLE) {
 			nmNivelIsolamento = "SERIALIZABLE";
 		} else {
-			nmNivelIsolamento = "Não indentificado";
+			nmNivelIsolamento = "Nï¿½o indentificado";
 		}
 
 		return nmNivelIsolamento;

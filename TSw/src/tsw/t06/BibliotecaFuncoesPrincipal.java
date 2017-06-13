@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo Ã© propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaÃ§Ã£o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissÃ£o escrita da Sefaz-PE.
  */
 package tsw.t06;
 
@@ -148,7 +148,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 *
 	 * @param pObjeto Objeto a ser convertido para HTML
 	 * @param pIsTable Se 'true' e pObjeto.toString igual a null ou "", retorna &nbsp;
-	 * @param pQtMaxCaracteresLinha Número máximo de caracteres por linha no HTML
+	 * @param pQtMaxCaracteresLinha Nï¿½mero mï¿½ximo de caracteres por linha no HTML
 	 *
 	 * @return HTML com linhas quebradas
 	 */
@@ -174,7 +174,7 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Retira as tags HTML de um texto e substitui algumas codificações.
+	 * Retira as tags HTML de um texto e substitui algumas codificaï¿½ï¿½es.
 	 *
 	 * @param pTxComHTML
 	 *
@@ -241,7 +241,7 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Substitui caracteres especiais pelo código equivalente
+	 * Substitui caracteres especiais pelo cï¿½digo equivalente
 	 *
 	 * @param pXML XML a ser codificado
 	 *
@@ -362,7 +362,7 @@ public final class BibliotecaFuncoesPrincipal {
 	/**
 	 * -
 	 *
-	 * @param pObjeto A classe deve utilizar as anotações XmlRootElement, XmlElement e XmlTransient para definir a
+	 * @param pObjeto A classe deve utilizar as anotaï¿½ï¿½es XmlRootElement, XmlElement e XmlTransient para definir a
 	 * 		  estrutura do xml
 	 * @param pClasseObjeto
 	 *
@@ -416,14 +416,14 @@ public final class BibliotecaFuncoesPrincipal {
 				if (fc != null) {
 					valor = fc.getNodeValue();
 				} else {
-					throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML não tem filho");
+					throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML nï¿½o tem filho");
 				}
 			} else {
-				throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML não existe no índice " +
+				throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML nï¿½o existe no ï¿½ndice " +
 					pNuIndiceElemento);
 			}
 		} else {
-			throw new ExcecaoSistema("O documento XML não tem o elemento " + pNmElemento);
+			throw new ExcecaoSistema("O documento XML nï¿½o tem o elemento " + pNmElemento);
 		}
 
 		return valor;
@@ -461,21 +461,21 @@ public final class BibliotecaFuncoesPrincipal {
 				if (atributo != null) {
 					valor = atributo.getNodeValue();
 				} else {
-					throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML não tem o atributo " + pNmAtributo);
+					throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML nï¿½o tem o atributo " + pNmAtributo);
 				}
 			} else {
-				throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML não existe no índice " +
+				throw new ExcecaoSistema("O elemento " + pNmElemento + " do documento XML nï¿½o existe no ï¿½ndice " +
 					pNuIndiceElemento);
 			}
 		} else {
-			throw new ExcecaoSistema("O documento XML não tem o elemento " + pNmElemento);
+			throw new ExcecaoSistema("O documento XML nï¿½o tem o elemento " + pNmElemento);
 		}
 
 		return valor;
 	}
 
 	/**
-	 * Método que gera um elemento XML com o seu valor.
+	 * Mï¿½todo que gera um elemento XML com o seu valor.
 	 *
 	 * @param pNmElemento
 	 * @param pVlElemento
@@ -531,7 +531,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * Retorna uma colecao de tokens separados pelo "pSeparador".
 	 *
 	 * @param pConteudo pConteudo Contem as chaves que devem ser separados
-	 * @param pSeparador pSeparador    Sequência de caracteres que separam as chaves
+	 * @param pSeparador pSeparador    Sequï¿½ncia de caracteres que separam as chaves
 	 *
 	 * @return ArrayList Colecao de chaves encontradas.
 	 */
@@ -561,7 +561,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * Retorna uma colecao com os primeiros "pQtMaxTokens" tokens separados por "pSeparador"
 	 *
 	 * @param pConteudo pConteudo Contem as chaves que devem ser separados
-	 * @param pSeparador pSeparador    Sequência de caracteres que separam as chaves
+	 * @param pSeparador pSeparador    Sequï¿½ncia de caracteres que separam as chaves
 	 * @param pQtMaxTokens pQtMaxTokens Quantidade maxima de tokens que se deseja retornar
 	 *
 	 * @return ArrayList Colecao de chaves encontradas.
@@ -600,7 +600,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * requerida, uma excecao sera levantada
 	 *
 	 * @param pConteudo pConteudo Contem os tokens que devem ser separados
-	 * @param pSeparador pSeparador    Sequência de caracteres que separam as chaves
+	 * @param pSeparador pSeparador    Sequï¿½ncia de caracteres que separam as chaves
 	 * @param pQtTokens ptQtTokens Numero de tokens que deve existir em pConteudo
 	 *
 	 * @return ArrayList Colecao de chaves encontradas.
@@ -631,7 +631,7 @@ public final class BibliotecaFuncoesPrincipal {
 		}
 
 		if (contador != pQtTokens) {
-			throw new ExcecaoParametroInvalido("O numero de chaves encontradas é menor que o requisitado!");
+			throw new ExcecaoParametroInvalido("O numero de chaves encontradas ï¿½ menor que o requisitado!");
 		}
 
 		return lista;
@@ -818,13 +818,13 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Este método garante que a saída tera apenas caracteres unicode válidos em XML conforme especificado pelo padrão XML
-	 * 1.0. Para referência, consulte <a href="http://www.w3.org/TR/2000/REC-xml-20001006#NT-Char">o padrão</a>.  Esse método irá
+	 * Este mï¿½todo garante que a saï¿½da tera apenas caracteres unicode vï¿½lidos em XML conforme especificado pelo padrï¿½o XML
+	 * 1.0. Para referï¿½ncia, consulte <a href="http://www.w3.org/TR/2000/REC-xml-20001006#NT-Char">o padrï¿½o</a>.  Esse mï¿½todo irï¿½
 	 * retornar vazio se a entrada for nulo ou vazio.
 	 *
-	 * @param pStr A String da qual que se deseja remover os caracteres não válidos.
+	 * @param pStr A String da qual que se deseja remover os caracteres nï¿½o vï¿½lidos.
 	 *
-	 * @return A String , sem os caracteres não válidos.
+	 * @return A String , sem os caracteres nï¿½o vï¿½lidos.
 	 */
 	public static String removerCaracteresUNICODEInvalidos(String pStr) {
 		StringBuffer buf = new StringBuffer();
@@ -847,9 +847,9 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Este método garante que a saída terá apenas caracteres unicode válidos em XML conforme especificado pelo padrão XML
-	 * 1.0, substituindo os caracteres inválidos por pStrSubstituicao. Para referência, consulte <a
-	 * href="http://www.w3.org/TR/2000/REC-xml-20001006#NT-Char">o padrão</a>.  Esse método irá retornar vazio se a entrada for
+	 * Este mï¿½todo garante que a saï¿½da terï¿½ apenas caracteres unicode vï¿½lidos em XML conforme especificado pelo padrï¿½o XML
+	 * 1.0, substituindo os caracteres invï¿½lidos por pStrSubstituicao. Para referï¿½ncia, consulte <a
+	 * href="http://www.w3.org/TR/2000/REC-xml-20001006#NT-Char">o padrï¿½o</a>.  Esse mï¿½todo irï¿½ retornar vazio se a entrada for
 	 * nulo ou vazio.
 	 *
 	 * @param pStr
@@ -891,97 +891,97 @@ public final class BibliotecaFuncoesPrincipal {
 		char[] c = pStr.toCharArray();
 
 		for (int i = 0; i < c.length; i++) {
-			if (c[i] == 'Á') {
+			if (c[i] == 'ï¿½') {
 				buf.append('A');
-			} else if (c[i] == 'À') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('A');
-			} else if (c[i] == 'Â') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('A');
-			} else if (c[i] == 'Ã') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('A');
-			} else if (c[i] == 'Ä') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('A');
-			} else if (c[i] == 'á') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('a');
-			} else if (c[i] == 'à') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('a');
-			} else if (c[i] == 'â') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('a');
-			} else if (c[i] == 'ã') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('a');
-			} else if (c[i] == 'ä') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('a');
-			} else if (c[i] == 'É') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('E');
-			} else if (c[i] == 'È') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('E');
-			} else if (c[i] == 'Ê') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('E');
-			} else if (c[i] == 'Ë') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('E');
-			} else if (c[i] == 'é') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('e');
-			} else if (c[i] == 'è') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('e');
-			} else if (c[i] == 'ê') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('e');
-			} else if (c[i] == 'ë') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('e');
-			} else if (c[i] == 'Í') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('I');
-			} else if (c[i] == 'Ì') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('I');
-			} else if (c[i] == 'Î') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('I');
-			} else if (c[i] == 'Ï') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('I');
-			} else if (c[i] == 'í') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('i');
-			} else if (c[i] == 'ì') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('i');
-			} else if (c[i] == 'î') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('i');
-			} else if (c[i] == 'ï') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('i');
-			} else if (c[i] == 'Ó') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('O');
-			} else if (c[i] == 'Ò') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('O');
-			} else if (c[i] == 'Ô') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('O');
-			} else if (c[i] == 'Õ') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('O');
-			} else if (c[i] == 'Ö') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('O');
-			} else if (c[i] == 'ó') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('o');
-			} else if (c[i] == 'ò') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('o');
-			} else if (c[i] == 'ô') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('o');
-			} else if (c[i] == 'õ') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('o');
-			} else if (c[i] == 'ö') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('o');
-			} else if (c[i] == 'Ú') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('U');
-			} else if (c[i] == 'Ù') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('U');
-			} else if (c[i] == 'Û') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('U');
-			} else if (c[i] == 'Ü') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('U');
-			} else if (c[i] == 'ú') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('u');
-			} else if (c[i] == 'ù') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('u');
-			} else if (c[i] == 'û') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('u');
-			} else if (c[i] == 'ü') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('u');
-			} else if (c[i] == 'Ç') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('C');
-			} else if (c[i] == 'ç') {
+			} else if (c[i] == 'ï¿½') {
 				buf.append('c');
 			} else {
 				buf.append(c[i]);
@@ -1330,7 +1330,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * @return
 	 */
 	public static String comprimirNomePessoaFisica(String pNomePessoaFisica) {
-		// Recebendo a String sem os possiveis espaços em branco no inicio e no final da string String nomePessoaFisica = pNomePessoaFisica.trim();
+		// Recebendo a String sem os possiveis espaï¿½os em branco no inicio e no final da string String nomePessoaFisica = pNomePessoaFisica.trim();
 		ArrayList nomesPessoas = null;
 		ArrayList nomesInvalidos = new ArrayList();
 		String nomeComprimido = null;
@@ -1351,7 +1351,7 @@ public final class BibliotecaFuncoesPrincipal {
 
 			nomesPessoas.set(0, strPrimeiroNomePessoa);
 
-			// Percorrendo nomesPessoas (do segundo ao penúltimo) para retirar os nomes inválidos : de, do, etc..
+			// Percorrendo nomesPessoas (do segundo ao penï¿½ltimo) para retirar os nomes invï¿½lidos : de, do, etc..
 			String strNomePessoa = null;
 			String strNomeInvalido = null;
 
@@ -1366,17 +1366,17 @@ public final class BibliotecaFuncoesPrincipal {
 				}
 			}
 
-			/* Abreviando os nomes entre o primeiro e o último nome
-			   verifica se o último nome eh "Filho", "Neto" ou "Júnior"
-			   se for, o penultimo nome não será abreviado, do contrário somente o último e o primeiro não são abreviados
+			/* Abreviando os nomes entre o primeiro e o ï¿½ltimo nome
+			   verifica se o ï¿½ltimo nome eh "Filho", "Neto" ou "Jï¿½nior"
+			   se for, o penultimo nome nï¿½o serï¿½ abreviado, do contrï¿½rio somente o ï¿½ltimo e o primeiro nï¿½o sï¿½o abreviados
 			 */
 			String strUltimoNomePessoa = nomesPessoas.get(nomesPessoas.size() - 1).toString();
 
 			if (strUltimoNomePessoa.equalsIgnoreCase("Filho") || strUltimoNomePessoa.equalsIgnoreCase("Junior") ||
 					strUltimoNomePessoa.equalsIgnoreCase("Neto")) {
-				// Percorre as posições de nomesPessoas do segundo até o ante-penúltimo nome
+				// Percorre as posiï¿½ï¿½es de nomesPessoas do segundo atï¿½ o ante-penï¿½ltimo nome
 				for (int i = 1; i < (nomesPessoas.size() - 2); i++) {
-					// A posição de nomesPessoas vai ser trocada pela primeira letra do nome anterior + "." 
+					// A posiï¿½ï¿½o de nomesPessoas vai ser trocada pela primeira letra do nome anterior + "." 
 					if (!nomesPessoas.get(i).equals("")) {
 						nomesPessoas.set(i, nomesPessoas.get(i).toString().substring(0, 1) + ".");
 					}
@@ -1387,9 +1387,9 @@ public final class BibliotecaFuncoesPrincipal {
 				nomesPessoas.set(nomesPessoas.size() - 2, strPenultimoNomePessoa);
 				nomesPessoas.set(nomesPessoas.size() - 1, strUltimoNomePessoa);
 			} else {
-				// Percorre as posições de nomesPessoas do segundo até o penúltimo nome
+				// Percorre as posiï¿½ï¿½es de nomesPessoas do segundo atï¿½ o penï¿½ltimo nome
 				for (int i = 1; i < (nomesPessoas.size() - 1); i++) {
-					// A posição de nomesPessoas vai ser trocada pela primeira letra do nome anterior + "." 
+					// A posiï¿½ï¿½o de nomesPessoas vai ser trocada pela primeira letra do nome anterior + "." 
 					if (!nomesPessoas.get(i).equals("")) {
 						nomesPessoas.set(i, nomesPessoas.get(i).toString().substring(0, 1) + ".");
 					}
@@ -1398,7 +1398,7 @@ public final class BibliotecaFuncoesPrincipal {
 				nomesPessoas.set(nomesPessoas.size() - 1, strUltimoNomePessoa);
 			}
 
-			// Precorre nomesPessoas e concatena suas posições num String de retorno
+			// Precorre nomesPessoas e concatena suas posiï¿½ï¿½es num String de retorno
 			for (int i = 0; i < nomesPessoas.size(); i++) {
 				if (!nomesPessoas.get(i).equals("")) {
 					nomeComprimido = nomeComprimido + " " + nomesPessoas.get(i);
@@ -1435,9 +1435,9 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Completa o número passado como parâmetro com 'pQtZeros' zeros a esquerda
+	 * Completa o nï¿½mero passado como parï¿½metro com 'pQtZeros' zeros a esquerda
 	 *
-	 * @param pNumero Número a ser modificado
+	 * @param pNumero Nï¿½mero a ser modificado
 	 * @param pTmFormato
 	 *
 	 * @return String
@@ -1970,10 +1970,10 @@ public final class BibliotecaFuncoesPrincipal {
 		throws ExcecaoSistema {
 		int cont;
 
-		// Foi declarado um buffer com valor 2048, logo o arquivo será lido de 2 em 2 KB.
+		// Foi declarado um buffer com valor 2048, logo o arquivo serï¿½ lido de 2 em 2 KB.
 		byte[] dados = new byte[2048];
 
-		// Streams de entrada e saída.
+		// Streams de entrada e saï¿½da.
 		BufferedInputStream bisEntrada = null;
 		FileInputStream fisEntrada = null;
 		FileOutputStream fosSaida = null;
@@ -2026,7 +2026,7 @@ public final class BibliotecaFuncoesPrincipal {
 		// Contadores. 
 		int cont;
 
-		// Foi declarado um buffer com valor 2048, logo o arquivo será lido de 2 em 2 KB.
+		// Foi declarado um buffer com valor 2048, logo o arquivo serï¿½ lido de 2 em 2 KB.
 		byte[] dados = new byte[2048];
 
 		// Lista dos arquivos a serem compactados. 
@@ -2034,7 +2034,7 @@ public final class BibliotecaFuncoesPrincipal {
 		File diretorioEntrada = null;
 		Arquivo arquivoEntrada = null;
 
-		// Streams de entrada e saída.
+		// Streams de entrada e saï¿½da.
 		BufferedInputStream bisEntrada = null;
 		FileInputStream fisEntrada = null;
 		FileOutputStream fosSaida = null;
@@ -2047,7 +2047,7 @@ public final class BibliotecaFuncoesPrincipal {
 			fosSaida = new FileOutputStream(pArquivoSaida.getNmCompletoArquivo());
 			zosSaida = new ZipOutputStream(new BufferedOutputStream(fosSaida));
 
-			diretorioEntrada = new File(pNmCompletoDiretorioEntrada); // Todos os arquivos do diretório
+			diretorioEntrada = new File(pNmCompletoDiretorioEntrada); // Todos os arquivos do diretï¿½rio
 			arquivosEntrada = diretorioEntrada.list();
 
 			for (int i = 0; i < arquivosEntrada.length; i++) {
@@ -2074,7 +2074,7 @@ public final class BibliotecaFuncoesPrincipal {
 			zosSaida.close();
 			fosSaida.close();
 		} catch (Exception e) {
-			throw new ExcecaoSistema("Erro compactando arquivos do diretório [pNmCompletoDiretorioEntrada = " +
+			throw new ExcecaoSistema("Erro compactando arquivos do diretï¿½rio [pNmCompletoDiretorioEntrada = " +
 				pNmCompletoDiretorioEntrada + "]", e);
 		}
 	}
@@ -2165,8 +2165,8 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Deleta todos os arquivos e subdiretórios dentro do diretório. Retorna true se todas as remoções foram realizadas com
-	 * sucesso. Se a remoção falhar, o método para e retorna false.
+	 * Deleta todos os arquivos e subdiretï¿½rios dentro do diretï¿½rio. Retorna true se todas as remoï¿½ï¿½es foram realizadas com
+	 * sucesso. Se a remoï¿½ï¿½o falhar, o mï¿½todo para e retorna false.
 	 *
 	 * @param pDir
 	 *
@@ -2185,7 +2185,7 @@ public final class BibliotecaFuncoesPrincipal {
 			}
 		}
 
-		// O diretório está limpo, logo é possível deletá-lo.
+		// O diretï¿½rio estï¿½ limpo, logo ï¿½ possï¿½vel deletï¿½-lo.
 		return pDir.delete();
 	}
 
@@ -2348,7 +2348,7 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 
 	/**
-	 * Utilizado para registrar logs de informação do sistema
+	 * Utilizado para registrar logs de informaÃ§Ã£o do sistema
 	 *
 	 * @param pNmClasse pNmClasse    Nome da classe (this.getClass().getName())
 	 * @param pTxLog pTxLog        Texto do log
@@ -2362,12 +2362,12 @@ public final class BibliotecaFuncoesPrincipal {
 			if ((tokens.size() >= 9) && (tokens.get(5) != null) &&
 					BibliotecaFuncoesPrincipal.isAreaFuncional((String) tokens.get(5)) && (tokens.get(8) != null) &&
 					(tokens.get(8).toString().indexOf("Fachada") == -1) && (tokens.get(8).toString().indexOf("Constantes") == -1)) {
-				// Não registra log se for classe de algum sistema
+				// Nï¿½o registra log se for classe de algum sistema
 				return;
 			}
 		}
 
-		BibliotecaFuncoesPrincipal.registrarLogStdOut("informação", pNmClasse, pTxLog);
+		BibliotecaFuncoesPrincipal.registrarLogStdOut("informaÃ§Ã£o", pNmClasse, pTxLog);
 	}
 
 	/**
@@ -2384,7 +2384,7 @@ public final class BibliotecaFuncoesPrincipal {
 		ArrayList tokens = BibliotecaFuncoesPrincipal.split(pNmClasse, ".");
 
 		if ((tokens.size() >= 6) && (tokens.get(5) != null) && BibliotecaFuncoesPrincipal.isAreaFuncional((String) tokens.get(5))) {
-			// Não registra log se for classe de algum sistema
+			// Nï¿½o registra log se for classe de algum sistema
 			return;
 		}
 
@@ -2489,7 +2489,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 *
 	 * @param pNmCompletoClasse
 	 *
-	 * @return Sigla da área funcional
+	 * @return Sigla da ï¿½rea funcional
 	 */
 	public static String extrairSgAreaFuncional(String pNmCompletoClasse) {
 		ArrayList array = BibliotecaFuncoesPrincipal.split(pNmCompletoClasse, ".");
@@ -2510,7 +2510,7 @@ public final class BibliotecaFuncoesPrincipal {
 		sgAreaFuncional = (String) Constantes.SG_AREAS_FUNCIONAIS_POR_SISTEMA.get(pSgSistema);
 
 		if (sgAreaFuncional == null) {
-			sgAreaFuncional = "[Não disponível]";
+			sgAreaFuncional = "[Nï¿½o disponï¿½vel]";
 		}
 
 		return sgAreaFuncional;
@@ -2551,7 +2551,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * @return
 	 */
 	public static String getNuVersaoSistema() {
-		String nuVersao = "[Não disponível]";
+		String nuVersao = "[Nï¿½o disponï¿½vel]";
 		Arquivo arqVersaoSistema = null;
 		InputStream is = null;
 		Properties propriedades = null;
@@ -2580,7 +2580,7 @@ public final class BibliotecaFuncoesPrincipal {
 			}
 		} catch (Exception e) {
 			BibliotecaFuncoesPrincipal.registrarLogInformacao(BibliotecaFuncoesPrincipal.class.getName(),
-				"Erro obtendo versão do sistema [nu_versao_sistema]. Erro: [" + e.getClass().getName() + " | " + e.getMessage() +
+				"Erro obtendo versï¿½o do sistema [nu_versao_sistema]. Erro: [" + e.getClass().getName() + " | " + e.getMessage() +
 				"]");
 		} finally {
 			if (is != null) {
@@ -2601,7 +2601,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * @return
 	 */
 	public static String getNuVersaoFramework() {
-		String nuVersao = "[Não disponível]";
+		String nuVersao = "[Nï¿½o disponï¿½vel]";
 		InputStream is = null;
 		Properties propriedades = null;
 
@@ -2613,7 +2613,7 @@ public final class BibliotecaFuncoesPrincipal {
 			nuVersao = propriedades.getProperty("nu_versao_sistema");
 		} catch (Exception e) {
 			BibliotecaFuncoesPrincipal.registrarLogInformacao(BibliotecaFuncoesPrincipal.class.getName(),
-				"Erro obtendo versão do framework [nu_versao_sistema]. Erro: [" + e.getClass().getName() + " | " + e.getMessage() +
+				"Erro obtendo versï¿½o do framework [nu_versao_sistema]. Erro: [" + e.getClass().getName() + " | " + e.getMessage() +
 				"]");
 		} finally {
 			if (is != null) {
@@ -2636,10 +2636,10 @@ public final class BibliotecaFuncoesPrincipal {
 	 * @return
 	 */
 	public static String getNmPathConfigSistema(String pSgSistema) {
-		String path = "[Não disponível]";
+		String path = "[Nï¿½o disponï¿½vel]";
 		String sgAreaFuncional = BibliotecaFuncoesPrincipal.getSgAreaFuncional(pSgSistema);
 
-		if (!sgAreaFuncional.equals("[Não disponível]")) {
+		if (!sgAreaFuncional.equals("[Nï¿½o disponï¿½vel]")) {
 			path = BibliotecaFuncoesPrincipal.getNmPathConfigSistema(sgAreaFuncional, pSgSistema);
 		}
 
@@ -2655,7 +2655,7 @@ public final class BibliotecaFuncoesPrincipal {
 	 * @return
 	 */
 	public static String getNmPathConfigSistema(String pSgAreaFuncional, String pSgSistema) {
-		String path = "[Não disponível]";
+		String path = "[Nï¿½o disponï¿½vel]";
 
 		try {
 			if (Parametros.getInstancia().isSfiArquivosExclusivoAtivado(pSgSistema)) {
@@ -2688,8 +2688,8 @@ public final class BibliotecaFuncoesPrincipal {
 	public static void serializar(Serializable pObj, OutputStream pOutputStream)
 		throws IOException {
 		if (pOutputStream == null) {
-			throw new IllegalArgumentException("pOutputStream não pode ser null | Classe: " +
-				BibliotecaFuncoesPrincipal.class.getName() + " | Método: serializar");
+			throw new IllegalArgumentException("pOutputStream nï¿½o pode ser null | Classe: " +
+				BibliotecaFuncoesPrincipal.class.getName() + " | Mï¿½todo: serializar");
 		}
 
 		ObjectOutputStream out = null;
@@ -2746,8 +2746,8 @@ public final class BibliotecaFuncoesPrincipal {
 	public static Object desserializar(InputStream pInputStream)
 		throws IOException, ClassNotFoundException {
 		if (pInputStream == null) {
-			throw new IllegalArgumentException("pInputStream não pode ser null | Classe: " +
-				BibliotecaFuncoesPrincipal.class.getName() + " | Método: desserializar");
+			throw new IllegalArgumentException("pInputStream nï¿½o pode ser null | Classe: " +
+				BibliotecaFuncoesPrincipal.class.getName() + " | Mï¿½todo: desserializar");
 		}
 		
 		ObjectInputStream in = null;
@@ -2784,8 +2784,8 @@ public final class BibliotecaFuncoesPrincipal {
 	public static Object desserializar(byte[] pObjectData)
 		throws IOException, ClassNotFoundException {
 		if (pObjectData == null) {
-			throw new IllegalArgumentException("pObjectData não pode ser null | Classe: " +
-				BibliotecaFuncoesPrincipal.class.getName() + " | Método: desserializar");
+			throw new IllegalArgumentException("pObjectData nï¿½o pode ser null | Classe: " +
+				BibliotecaFuncoesPrincipal.class.getName() + " | Mï¿½todo: desserializar");
 		}
 		
 		ByteArrayInputStream bais = new ByteArrayInputStream(pObjectData);
@@ -2811,10 +2811,10 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 	
 	/**
-	 * Método recursivo que ordena uma colecao de VOs
+	 * Mï¿½todo recursivo que ordena uma colecao de VOs
 	 *
 	 * @param pColecaoVOGenerico Uma colecao formada por VOGenerico
-	 * @param pNmAtributoOrdenacao Atributo do VO usado para Ordenação
+	 * @param pNmAtributoOrdenacao Atributo do VO usado para Ordenaï¿½ï¿½o
 	 *
 	 * @return
 	 *
@@ -2826,10 +2826,10 @@ public final class BibliotecaFuncoesPrincipal {
 	}
 	
 	/**
-	 * Método recursivo que ordena uma colecao de VOs
+	 * Mï¿½todo recursivo que ordena uma colecao de VOs
 	 *
 	 * @param pColecaoVOGenerico Uma colecao formada por VOGenerico
-	 * @param pNmAtributoOrdenacao Atributo do VO usado para Ordenação
+	 * @param pNmAtributoOrdenacao Atributo do VO usado para Ordenaï¿½ï¿½o
 	 * @param pInAceitaValorNulo Indica permissao para utilizar valor nulo
 	 *
 	 * @return
@@ -2861,7 +2861,7 @@ public final class BibliotecaFuncoesPrincipal {
 							arrayAtributosOrdenacao[i] = "";
 						} else {
 							throw new ExcecaoParametroInvalido(
-								"A coleção possui um ou vários atributos de ordenação com valor nulo.");
+								"A coleï¿½ï¿½o possui um ou vï¿½rios atributos de ordenaï¿½ï¿½o com valor nulo.");
 						}
 					}
 					
@@ -2899,9 +2899,9 @@ public final class BibliotecaFuncoesPrincipal {
 				}
 			}
 		} catch (ClassCastException e) {
-			throw new ExcecaoParametroInvalido("A coleção tem que ser composta de objetos VOGenerico", e);
+			throw new ExcecaoParametroInvalido("A coleï¿½ï¿½o tem que ser composta de objetos VOGenerico", e);
 		} catch (NullPointerException npe) {
-			throw new ExcecaoParametroInvalido("A coleção possui um ou vários atributos de ordenação com valor nulo.", npe);
+			throw new ExcecaoParametroInvalido("A coleï¿½ï¿½o possui um ou vï¿½rios atributos de ordenaï¿½ï¿½o com valor nulo.", npe);
 		}
 		
 		return retorno;

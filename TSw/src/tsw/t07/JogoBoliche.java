@@ -7,7 +7,7 @@ public class JogoBoliche {
 	
 	// Atributos
 	
-	private List<RodadaBoliche> aRodadas = new ArrayList<RodadaBoliche>();
+	private List<RodadaBoliche> aRodadas = null;
 	private int aIndiceRodadaAtual = 0;
 	
 	// Métodos
@@ -33,9 +33,7 @@ public class JogoBoliche {
 	
 	public void inserirJogada(int pQtPinosDerrubados) {
 		// Verifica se a Coleção de Rodadas já foi inicializada
-		if ( this.aRodadas == null ) {
-			this.aRodadas = new ArrayList<RodadaBoliche>();
-		}
+		inicializarListaRodadas();
 		
 		// Inicializa a Rodada Atual, em caso de necessidade
 		if ( this.aRodadas.size() == 0 ) {
@@ -57,18 +55,26 @@ public class JogoBoliche {
 			this.aRodadas.add(this.aIndiceRodadaAtual, rodadaAtual);
 		}
 		
-		// Se a Rodada ainda não tiver sido inicializada, será aqui
+		// Se a Rodada ainda nao tiver sido inicializada, serah aqui
 		if ( this.aRodadas.get(this.aIndiceRodadaAtual) == null ) {
 			this.aRodadas.add(this.aIndiceRodadaAtual, new RodadaBoliche());
 		}
 		
-		// Se for a 2ª Rodada em diante, associar as Rodadas atuais com as anteriores
+		// Se for da 2a Rodada em diante, associarah as Rodadas atuais com as anteriores
 		if ( this.aIndiceRodadaAtual > 0 ) {
 			this.aRodadas.get(this.aIndiceRodadaAtual).setRodadaAnterior(this.aRodadas.get(this.aIndiceRodadaAtual - 1));
 		}
 		
 		RodadaBoliche rodadaAtual = this.aRodadas.get(this.aIndiceRodadaAtual);
 		rodadaAtual.adicionarJogada(pQtPinosDerrubados);
+	}
+	
+	public List<RodadaBoliche> inicializarListaRodadas() {
+		if ( this.aRodadas == null ) {
+			this.aRodadas = new ArrayList<RodadaBoliche>();
+		}
+		
+		return this.aRodadas;
 	}
 	
 	public boolean isJogoCompletado() {

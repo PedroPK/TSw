@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo ï¿½ propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaï¿½ï¿½o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissï¿½o escrita da Sefaz-PE.
  */
 package tsw.t06;
 
@@ -257,11 +257,14 @@ public final class BibliotecaFuncoesDataHora {
 	 */
 	public static String getTimestampComoStringComNanos(Timestamp pTimestamp) {
 		String ts = getTimestampComoString(pTimestamp);
-		ts = ts + "." + BibliotecaFuncoesPrincipal.completarNumeroComZerosEsquerda((pTimestamp.getNanos() / 1000), 6);
-
+		ts = ts + "." + 
+				BibliotecaFuncoesPrincipal.completarNumeroComZerosEsquerda(
+					pTimestamp.getNanos() / 1000, 
+					6);
+		
 		return ts;
 	}
-
+	
 	/**
 	 * Converte um java.sql.Timestamp para uma String no formato "yyyyMMddHHmmssSSSSSS"
 	 *
@@ -269,13 +272,13 @@ public final class BibliotecaFuncoesDataHora {
 	 *
 	 * @return
 	 */
-	public static String getTimestampComoStringInvertida(java.sql.Timestamp pTimestamp) {
+	public static String getTimestampComoStringInvertida(Timestamp pTimestamp) {
 		String ts = getDataHoraComoStringInvertida(pTimestamp);
-		ts = ts + BibliotecaFuncoesPrincipal.completarNumeroComZerosEsquerda((pTimestamp.getNanos() / 1000), 6);
-
+		ts = ts + BibliotecaFuncoesPrincipal.completarNumeroComZerosEsquerda(pTimestamp.getNanos() / 1000, 6);
+		
 		return ts;
 	}
-
+	
 	/**
 	 * Converte um java.sql.Timestamp para uma String no formato "yyyyMMddHHmmss"
 	 *
@@ -283,10 +286,10 @@ public final class BibliotecaFuncoesDataHora {
 	 *
 	 * @return
 	 */
-	public static String getTimestampComoStringInvertidaSemNanos(java.sql.Timestamp pTimestamp) {
+	public static String getTimestampComoStringInvertidaSemNanos(Timestamp pTimestamp) {
 		return getDataHoraComoStringInvertida(pTimestamp);
 	}
-
+	
 	/**
 	 * Converte um java.sql.Timestamp para uma String no formato "dd/MM/aaaa"
 	 *
@@ -300,7 +303,7 @@ public final class BibliotecaFuncoesDataHora {
 		throws ParseException {
 		return getDataComoString(pTimestamp);
 	}
-
+	
 	/**
 	 * Converte um java.sql.Timestamp para uma String no formato "aaaaMMdd"
 	 *
@@ -436,36 +439,38 @@ public final class BibliotecaFuncoesDataHora {
 				}
 			}
 		}
-
+		
 		if (pInValidarLimitesAno) {
 			if (ano < 1900) {
-				throw new ParseException("Ano inválido (" + pData + ") - não pode ser menor que 1900", posAno);
+				throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1900", posAno);
 			}
-
+			
 			if (ano > (anoAtual + 100)) {
-				throw new ParseException("Ano inválido (" + pData + ") - não pode ser maior que " + (anoAtual + 100), posAno);
+				throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser maior que " + (anoAtual + 100), posAno);
 			}
 		}
-
-		if ((mes < 1) || (mes > 12)) {
-			throw new ParseException("Mês inválido (" + pData + ") - não pode ser menor que 1 nem maior que 12", posMes);
+		
+		if ( mes < 1 || mes > 12 ) {
+			throw new ParseException("Mï¿½s invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1 nem maior que 12", posMes);
 		}
-
+		
 		if (dia < 1) {
-			throw new ParseException("Dia inválido (" + pData + ") - não pode ser menor que 1", posDia);
+			throw new ParseException("Dia invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1", posDia);
 		}
-
-		if (((mes == 1) && (dia > 31)) || ((mes == 2) && (dia > 29) && (calendar.isLeapYear(ano))) //ano bissexto
-				 ||((mes == 2) && (dia > 28) && (!calendar.isLeapYear(ano))) || ((mes == 3) && (dia > 31)) ||
-				((mes == 4) && (dia > 30)) || ((mes == 5) && (dia > 31)) || ((mes == 6) && (dia > 30)) ||
-				((mes == 7) && (dia > 31)) || ((mes == 8) && (dia > 31)) || ((mes == 9) && (dia > 30)) ||
-				((mes == 10) && (dia > 31)) || ((mes == 11) && (dia > 30)) || ((mes == 12) && (dia > 31))) {
-			throw new ParseException("Dia inválido (" + dia + ") para o mês " + mes, posDia);
+		
+		if ( ( mes == 1 && dia > 31) || (mes == 2 && dia > 29 && calendar.isLeapYear(ano)) //ano bissexto
+				 ||
+				 (mes == 2 && dia > 28 && !calendar.isLeapYear(ano)) || (mes == 3 && dia > 31) ||
+				(mes == 4 && dia > 30) || (mes == 5 && dia > 31) || (mes == 6 && dia > 30) ||
+				(mes == 7 && dia > 31) || (mes == 8 && dia > 31) || (mes == 9 && dia > 30) ||
+				(mes == 10 && dia > 31) || (mes == 11 && dia > 30) || (mes == 12 && dia > 31)
+		) {
+			throw new ParseException("Dia invï¿½lido (" + dia + ") para o mï¿½s " + mes, posDia);
 		}
-
+		
 		return new Date(dt.getTime());
 	}
-
+	
 	/**
 	 * Converte uma string para um tipo java.sql.Date
 	 *
@@ -745,23 +750,23 @@ public final class BibliotecaFuncoesDataHora {
 		}
 
 		if (!isConvertido) {
-			throw new ParseException("Data-hora inválida (" + pDataHora + ")", 0);
+			throw new ParseException("Data-hora invï¿½lida (" + pDataHora + ")", 0);
 		}
 
 		if (ano < 1900) {
-			throw new ParseException("Ano inválido (" + pDataHora + ") - não pode ser menor que 1900", posAno);
+			throw new ParseException("Ano invï¿½lido (" + pDataHora + ") - nï¿½o pode ser menor que 1900", posAno);
 		}
 
 		if (ano > (anoAtual + 100)) {
-			throw new ParseException("Ano inválido (" + pDataHora + ") - não pode ser maior que " + (anoAtual + 100), posAno);
+			throw new ParseException("Ano invï¿½lido (" + pDataHora + ") - nï¿½o pode ser maior que " + (anoAtual + 100), posAno);
 		}
 
 		if ((mes < 1) || (mes > 12)) {
-			throw new ParseException("Mês inválido (" + pDataHora + ") - não pode ser menor que 1 nem maior que 12", posMes);
+			throw new ParseException("Mï¿½s invï¿½lido (" + pDataHora + ") - nï¿½o pode ser menor que 1 nem maior que 12", posMes);
 		}
 
 		if (dia < 1) {
-			throw new ParseException("Dia inválido (" + pDataHora + ") - não pode ser menor que 1", posDia);
+			throw new ParseException("Dia invï¿½lido (" + pDataHora + ") - nï¿½o pode ser menor que 1", posDia);
 		}
 
 		if (((mes == 1) && (dia > 31)) || ((mes == 2) && (dia > 29) && (calendar.isLeapYear(ano))) //ano bissexto
@@ -769,7 +774,7 @@ public final class BibliotecaFuncoesDataHora {
 				((mes == 4) && (dia > 30)) || ((mes == 5) && (dia > 31)) || ((mes == 6) && (dia > 30)) ||
 				((mes == 7) && (dia > 31)) || ((mes == 8) && (dia > 31)) || ((mes == 9) && (dia > 30)) ||
 				((mes == 10) && (dia > 31)) || ((mes == 11) && (dia > 30)) || ((mes == 12) && (dia > 31))) {
-			throw new ParseException("Dia inválido (" + dia + ") para o mês " + mes, posDia);
+			throw new ParseException("Dia invï¿½lido (" + dia + ") para o mï¿½s " + mes, posDia);
 		}
 
 		return new Date(dt.getTime());
@@ -949,15 +954,15 @@ public final class BibliotecaFuncoesDataHora {
 		}
 
 		if (ano < 1900) {
-			throw new ParseException("Ano inválido (" + pData + ") - não pode ser menor que 1900", posAno);
+			throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1900", posAno);
 		}
 
 		if (ano > (anoAtual + 100)) {
-			throw new ParseException("Ano inválido (" + pData + ") - não pode ser maior que " + (anoAtual + 100), posAno);
+			throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser maior que " + (anoAtual + 100), posAno);
 		}
 
 		if ((mes < 1) || (mes > 12)) {
-			throw new ParseException("Mês inválido (" + pData + ") - não pode ser menor que 1 nem maior que 12", posMes);
+			throw new ParseException("Mï¿½s invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1 nem maior que 12", posMes);
 		}
 
 		return new Date(dt.getTime());
@@ -1003,15 +1008,15 @@ public final class BibliotecaFuncoesDataHora {
 		}
 
 		if (ano < 1900) {
-			throw new ParseException("Ano inválido (" + pData + ") - não pode ser menor que 1900", posAno);
+			throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1900", posAno);
 		}
 
 		if (ano > (anoAtual + 100)) {
-			throw new ParseException("Ano inválido (" + pData + ") - não pode ser maior que " + (anoAtual + 100), posAno);
+			throw new ParseException("Ano invï¿½lido (" + pData + ") - nï¿½o pode ser maior que " + (anoAtual + 100), posAno);
 		}
 
 		if ((mes < 1) || (mes > 12)) {
-			throw new ParseException("Mês inválido (" + pData + ") - não pode ser menor que 1 nem maior que 12", posMes);
+			throw new ParseException("Mï¿½s invï¿½lido (" + pData + ") - nï¿½o pode ser menor que 1 nem maior que 12", posMes);
 		}
 
 		return (new Date(dt.getTime()));
@@ -1053,7 +1058,7 @@ public final class BibliotecaFuncoesDataHora {
 		} else if (pCdMes.equals(Constantes.CD_MES_DEZEMBRO)) {
 			return Constantes.CD_MES_NOVEMBRO;
 		} else {
-			throw new ExcecaoParametroInvalido("Codigo de Mês inválido (" + pCdMes + ")");
+			throw new ExcecaoParametroInvalido("Codigo de Mï¿½s invï¿½lido (" + pCdMes + ")");
 		}
 	}
 
@@ -1093,31 +1098,31 @@ public final class BibliotecaFuncoesDataHora {
 		} else if (pCdMes.equals(Constantes.CD_MES_DEZEMBRO)) {
 			return Constantes.CD_MES_JANEIRO;
 		} else {
-			throw new ExcecaoParametroInvalido("Codigo de Mês inválido (" + pCdMes + ")");
+			throw new ExcecaoParametroInvalido("Codigo de Mï¿½s invï¿½lido (" + pCdMes + ")");
 		}
 	}
 
 	/**
-	 * Retorna o nome do mes por extenso dado sua representação númerica
+	 * Retorna o nome do mes por extenso dado sua representaï¿½ï¿½o nï¿½merica
 	 *
-	 * @param pNuMes Número que representa o mes do ano
+	 * @param pNuMes Nï¿½mero que representa o mes do ano
 	 *
 	 * @return
 	 *
-	 * @exception ExcecaoParametroInvalido Caso número do mes não esteja entre os valores 1 e 12
+	 * @exception ExcecaoParametroInvalido Caso nï¿½mero do mes nï¿½o esteja entre os valores 1 e 12
 	 */
 	public static String getNmMes(String pNuMes) throws ExcecaoParametroInvalido {
 		return BibliotecaFuncoesDataHora.getNmMes(Integer.valueOf(pNuMes).intValue());
 	}
 
 	/**
-	 * Retorna o nome do mes por extenso dado sua representação númerica
+	 * Retorna o nome do mes por extenso dado sua representaï¿½ï¿½o nï¿½merica
 	 *
-	 * @param pNuMes Número que representa o mes do ano
+	 * @param pNuMes Nï¿½mero que representa o mes do ano
 	 *
 	 * @return
 	 *
-	 * @exception ExcecaoParametroInvalido Caso número do mes não esteja entre os valores 1 e 12
+	 * @exception ExcecaoParametroInvalido Caso nï¿½mero do mes nï¿½o esteja entre os valores 1 e 12
 	 */
 	public static String getNmMes(int pNuMes) throws ExcecaoParametroInvalido {
 		String retorno = "";
@@ -1127,20 +1132,20 @@ public final class BibliotecaFuncoesDataHora {
 			nuMes = BibliotecaFuncoesPrincipal.completarNumeroComZerosEsquerda(pNuMes, 2);
 			retorno = DominioMes.getInstancia().getDescricaoChave(nuMes);
 		} catch (ExcecaoParametroInvalido e) {
-			throw new ExcecaoParametroInvalido("Apenas números positivos entre 1 e 12 correspondem a meses do ano válidos");
+			throw new ExcecaoParametroInvalido("Apenas nï¿½meros positivos entre 1 e 12 correspondem a meses do ano vï¿½lidos");
 		}
 
 		return retorno;
 	}
 
 	/**
-	 * Retorna o nome do dia por extenso dado sua representação númerica
+	 * Retorna o nome do dia por extenso dado sua representaï¿½ï¿½o nï¿½merica
 	 *
-	 * @param pNuDia Número que representa o dia da semana
+	 * @param pNuDia Nï¿½mero que representa o dia da semana
 	 *
 	 * @return
 	 *
-	 * @exception ExcecaoParametroInvalido Caso número do dia não esteja entre os valores 1 e 7
+	 * @exception ExcecaoParametroInvalido Caso nï¿½mero do dia nï¿½o esteja entre os valores 1 e 7
 	 */
 	public static String getNmDia(int pNuDia) throws ExcecaoParametroInvalido {
 		String retorno = "";
@@ -1148,7 +1153,7 @@ public final class BibliotecaFuncoesDataHora {
 		try {
 			retorno = DominioDiaSemana.getInstancia().getDescricaoChave("" + pNuDia);
 		} catch (ExcecaoParametroInvalido e) {
-			throw new ExcecaoParametroInvalido("Apenas números positivos entre 1 e 7 correspondem a dias da semana válidos", e);
+			throw new ExcecaoParametroInvalido("Apenas nï¿½meros positivos entre 1 e 7 correspondem a dias da semana vï¿½lidos", e);
 		}
 
 		return retorno;
@@ -1427,7 +1432,7 @@ public final class BibliotecaFuncoesDataHora {
 	}
 
 	/**
-	 * Retorna a data de amanhã como java.sql.Date
+	 * Retorna a data de amanhï¿½ como java.sql.Date
 	 *
 	 * @return
 	 */
@@ -1442,7 +1447,7 @@ public final class BibliotecaFuncoesDataHora {
 	}
 
 	/**
-	 * Retorna a data de amanhã com horas zeradas como java.sql.Date
+	 * Retorna a data de amanhï¿½ com horas zeradas como java.sql.Date
 	 *
 	 * @return
 	 */
@@ -1836,11 +1841,11 @@ public final class BibliotecaFuncoesDataHora {
 		throws ExcecaoParametroInvalido {
 		// verifica se os parametros sao validos
 		if (pData1 == null) {
-			throw new ExcecaoParametroInvalido("Parâmetro Inválido! pData1 = null");
+			throw new ExcecaoParametroInvalido("Parï¿½metro Invï¿½lido! pData1 = null");
 		}
 
 		if (pData2 == null) {
-			throw new ExcecaoParametroInvalido("Parâmetro Inválido! pData2 = null");
+			throw new ExcecaoParametroInvalido("Parï¿½metro Invï¿½lido! pData2 = null");
 		}
 
 		int inComparacao = BibliotecaFuncoesDataHora.compararDatasSemHoras(pData1, pData2);
@@ -1995,10 +2000,10 @@ public final class BibliotecaFuncoesDataHora {
 	 *
 	 * @throws ExcecaoGenerica
 	 *
-	 * @deprecated Usar os métodos na FachadaTGE.
+	 * @deprecated Usar os mï¿½todos na FachadaTGE.
 	 */
 	public static Date getProximoDiaUtil(Date pData) throws ExcecaoGenerica {
-		// Declara variáveis
+		// Declara variï¿½veis
 		Date retorno = null;
 
 		retorno = BibliotecaFuncoesDataHora.avancarDataComQtDias(pData, 1);
@@ -2020,16 +2025,16 @@ public final class BibliotecaFuncoesDataHora {
 	public static boolean isDiaFimSemana(Date pDate) {
 		Calendar calendario = Calendar.getInstance();
 
-		// Cria calendário
+		// Cria calendï¿½rio
 		calendario.setTime(pDate);
 
-		// Retorna verdadeiro se o dia for sábado ou domingo
+		// Retorna verdadeiro se o dia for sï¿½bado ou domingo
 		return ((calendario.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) ||
 			(calendario.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY));
 	}
 
 	/**
-	 * Integração com TGE não disponível
+	 * Integraï¿½ï¿½o com TGE nï¿½o disponï¿½vel
 	 *
 	 * @param pDataInicial
 	 * @param pDataFinal
@@ -2096,9 +2101,9 @@ public final class BibliotecaFuncoesDataHora {
 	/**
 	 * Utilizado dentro da JSP
 	 *
-	 * @param pDtMes Número inteiro relativo ao mês: 1-Janeiro, 2-Fevereiro, etc...
+	 * @param pDtMes Nï¿½mero inteiro relativo ao mï¿½s: 1-Janeiro, 2-Fevereiro, etc...
 	 *
-	 * @return Constante que representa a chave do mês: Constantes.CD_MES_JANEIRO, Constantes.CD_MES_FEVEREIRO, etc...
+	 * @return Constante que representa a chave do mï¿½s: Constantes.CD_MES_JANEIRO, Constantes.CD_MES_FEVEREIRO, etc...
 	 */
 	public static String getIntComoCdMes(int pDtMes) {
 		String retorno = "";
@@ -2135,9 +2140,9 @@ public final class BibliotecaFuncoesDataHora {
 	/**
 	 * Utilizado dentro da JSP
 	 *
-	 * @param pCdMes Constante que representa a chave do mês: Constantes.CD_MES_JANEIRO, Constantes.CD_MES_FEVEREIRO, etc...
+	 * @param pCdMes Constante que representa a chave do mï¿½s: Constantes.CD_MES_JANEIRO, Constantes.CD_MES_FEVEREIRO, etc...
 	 *
-	 * @return Número inteiro relativo ao mês: 1-Janeiro, 2-Fevereiro, etc...
+	 * @return Nï¿½mero inteiro relativo ao mï¿½s: 1-Janeiro, 2-Fevereiro, etc...
 	 */
 	public static int getCdMesComoInt(String pCdMes) {
 		int retorno = 0;

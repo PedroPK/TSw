@@ -1,11 +1,34 @@
 package tsw.teste.t07;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.List;
+
 import org.junit.Test;
 
 import tsw.t07.JogoBoliche;
+import tsw.t07.RodadaBoliche;
 
 public class JogoBolicheTest {
+	
+	JogoBoliche aJogoBoliche = new JogoBoliche();
+	
+	@Test
+	public void testarInicializacaoRodadas() {
+		List<RodadaBoliche> listaRodadas = aJogoBoliche.inicializarListaRodadas();
+		
+		assertNotNull(listaRodadas);
+	}
+	
+	@Test
+	public void testarInicializacaoDuplaRodadas() {
+		List<RodadaBoliche> listaRodadas = aJogoBoliche.inicializarListaRodadas();
+		listaRodadas = aJogoBoliche.inicializarListaRodadas();
+		
+		assertNotNull(listaRodadas);
+	}
 	
 	@Test
 	public void testarTodasNaCanaleta() {
@@ -137,5 +160,5 @@ public class JogoBolicheTest {
 		assertEquals(300, boliche.getPontuacao());
 		//assertFalse(boliche.isJogoCompletado());
 	}
-
+	
 }

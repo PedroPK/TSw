@@ -1,7 +1,7 @@
 /*
- * Este arquivo é propriedade da Secretaria da Fazenda do Estado
- * de Pernambuco (Sefaz-PE). Nenhuma informação nele contida pode ser
- * reproduzida, mostrada ou revelada sem permissão escrita da Sefaz-PE.
+ * Este arquivo ï¿½ propriedade da Secretaria da Fazenda do Estado
+ * de Pernambuco (Sefaz-PE). Nenhuma informaï¿½ï¿½o nele contida pode ser
+ * reproduzida, mostrada ou revelada sem permissï¿½o escrita da Sefaz-PE.
  */
 
 package tsw.t06;
@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 import javax.transaction.UserTransaction;
 
 /**
- * Classe que representa o contexto do usuário dentro do Sistema.
+ * Classe que representa o contexto do usuï¿½rio dentro do Sistema.
  */
 public class ContextoUsuario implements Serializable {
 	//~ Atributos/inicializadores estaticos ----------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ public class ContextoUsuario implements Serializable {
 		this.aCdFuncao = pCdFuncao;
 
 		if (this.isUsuarioAnonimo()) {
-			this.aNmUsuario = "ANÔNIMO";
+			this.aNmUsuario = "ANï¿½NIMO";
 		}
 
 		this.aNmUsuarioSistemaOperacional = Constantes.NM_USUARIO_SO;
@@ -102,7 +102,7 @@ public class ContextoUsuario implements Serializable {
 		this.aNmClasseJob = pNmClasseJob;
 
 		if (this.isUsuarioAnonimo()) {
-			this.aNmUsuario = "ANÔNIMO";
+			this.aNmUsuario = "ANï¿½NIMO";
 		}
 
 		this.aNmUsuarioSistemaOperacional = Constantes.NM_USUARIO_SO;
@@ -433,8 +433,8 @@ public class ContextoUsuario implements Serializable {
 	 */
 	public short getTpTransacao() {
 		if (this.aTpTransacao == 0) {
-			// Na serialização este atributo vira 0 pois é transient.
-			// É preciso redefinir o valor default
+			// Na serializaï¿½ï¿½o este atributo vira 0 pois ï¿½ transient.
+			// ï¿½ preciso redefinir o valor default
 			this.aTpTransacao = Constantes.TP_TRANSACAO_JTA;
 		}
 
@@ -467,8 +467,10 @@ public class ContextoUsuario implements Serializable {
 	 * @return
 	 */
 	public static boolean isTransacaoJTA(int pTpTransacao) {
-		if ((pTpTransacao == Constantes.TP_TRANSACAO_JTA) ||
-				((pTpTransacao == Constantes.TP_TRANSACAO_JTA_CRGC) || (pTpTransacao == Constantes.TP_TRANSACAO_JTA_BMT))) {
+		if (	pTpTransacao == Constantes.TP_TRANSACAO_JTA ||
+				pTpTransacao == Constantes.TP_TRANSACAO_JTA_CRGC || 
+				pTpTransacao == Constantes.TP_TRANSACAO_JTA_BMT
+		) {
 			return true;
 		} else {
 			return false;
@@ -483,7 +485,10 @@ public class ContextoUsuario implements Serializable {
 	 * @return
 	 */
 	public static boolean isTransacaoJDBC(int pTpTransacao) {
-		if ((pTpTransacao == Constantes.TP_TRANSACAO_JDBC) || (pTpTransacao == Constantes.TP_TRANSACAO_JDBC_RGC)) {
+		if (
+				pTpTransacao == Constantes.TP_TRANSACAO_JDBC || 
+				pTpTransacao == Constantes.TP_TRANSACAO_JDBC_RGC
+		) {
 			return true;
 		} else {
 			return false;
@@ -509,8 +514,8 @@ public class ContextoUsuario implements Serializable {
 	}
 
 	/**
-	 * Utilizado em transações do tipo JDBC_RGC e JDBC_CRGC para controlar que PreparedStatements devem ser fechados. Deve ser
-	 * chamado imediatamente antes do acesso ao DAO que retorna um OTDResultSet. O método DAO_BD.fecharConexao é responsável por
+	 * Utilizado em transaï¿½ï¿½es do tipo JDBC_RGC e JDBC_CRGC para controlar que PreparedStatements devem ser fechados. Deve ser
+	 * chamado imediatamente antes do acesso ao DAO que retorna um OTDResultSet. O mï¿½todo DAO_BD.fecharConexao ï¿½ responsï¿½vel por
 	 * fechar o PreparedStatement e resetar este indicador.
 	 *
 	 * @param pInNaoFecharProximoPreparedStatement
@@ -529,7 +534,7 @@ public class ContextoUsuario implements Serializable {
 	}
 
 	/**
-	 * Utilizado nos métodos alterar e excluir do Cadastro para garantir comparação correta do timestamp
+	 * Utilizado nos mï¿½todos alterar e excluir do Cadastro para garantir comparaï¿½ï¿½o correta do timestamp
 	 *
 	 * @param pInUtilizarLockExclusivoProximaConsultaPorChavePrimaria
 	 */
@@ -558,13 +563,13 @@ public class ContextoUsuario implements Serializable {
 		if (this.aTpTransacao == Constantes.TP_TRANSACAO_JTA) {
 			dsTpTransacao = "JTA";
 		} else if (this.aTpTransacao == Constantes.TP_TRANSACAO_JTA_CRGC) {
-			dsTpTransacao = "JTA com Conexão e ResultSet Gerenciados pelo Cliente";
+			dsTpTransacao = "JTA com Conexï¿½o e ResultSet Gerenciados pelo Cliente";
 		} else if (this.aTpTransacao == Constantes.TP_TRANSACAO_JDBC) {
 			dsTpTransacao = "JDBC";
 		} else if (this.aTpTransacao == Constantes.TP_TRANSACAO_JDBC_RGC) {
 			dsTpTransacao = "JDBC com ResultSet Gerenciado pelo Cliente";
 		} else {
-			dsTpTransacao = "Não definido";
+			dsTpTransacao = "Nï¿½o definido";
 		}
 
 		return dsTpTransacao;
@@ -649,8 +654,8 @@ public class ContextoUsuario implements Serializable {
 	 * @param pNmConexaoJNDI
 	 */
 	public void setNmConexaoJNDI(String pNmConexaoJNDI) {
-		// Após a primeira RN definir o nome da conexão JNDI, outra RN não pode mais mudar, exceto para null
-		if ((pNmConexaoJNDI == null) || (this.aNmConexaoJNDI == null)) {
+		// Apï¿½s a primeira RN definir o nome da conexï¿½o JNDI, outra RN nï¿½o pode mais mudar, exceto para null
+		if ( pNmConexaoJNDI == null || this.aNmConexaoJNDI == null ) {
 			this.aNmConexaoJNDI = pNmConexaoJNDI;
 		}
 	}
@@ -729,7 +734,7 @@ public class ContextoUsuario implements Serializable {
 		if (this.isJob()) {
 			this.aCdUsuario = pCdUsuario;
 		} else {
-			throw new ExcecaoSistema("Só é permitido forçar um CdUsuario dentro do ContextoUsuario de Jobs | " + this.toString());
+			throw new ExcecaoSistema("Sï¿½ ï¿½ permitido forï¿½ar um CdUsuario dentro do ContextoUsuario de Jobs | " + this.toString());
 		}
 	}
 
