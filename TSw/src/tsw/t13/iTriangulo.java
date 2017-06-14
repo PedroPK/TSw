@@ -3,8 +3,7 @@ package tsw.t13;
 public interface iTriangulo {
 	
 	/**
-	 * Getter's and Setter's
-	 * @return
+	 * Metodos de Validacao
 	 */
 	public void validarTamanhoLado(Double pTamanhoLado);
 	
@@ -13,7 +12,7 @@ public interface iTriangulo {
 	public boolean isTamanhoLadoValido(Double pTamanhoLado);
 	
 	/**
-	 * Métodos de Situação
+	 * Metodos de Situacao
 	 */
 	public boolean isEquilatero();
 	
