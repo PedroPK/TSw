@@ -11,13 +11,21 @@ public class TrianguloTest {
 	@Test(expected=ExcecaoTamanhoInvalido.class)
 	public void testarCT01CriacaoTrianguloVazio() {
 		Triangulo t = 
-			new Triangulo(	new Double(0),		new Double(0),		new Double(0)	);
+			new Triangulo(	0,		0,		0	);
+		
+		assertNotNull(t);
+	}
+	
+	@Test
+	public void testarCT02CriacaoTriangulo() {
+		Triangulo t = 
+			new Triangulo(	2,		3,		4	);
 		
 		assertNotNull(t);
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCT02CriacaoTrianguloComLadosNulos() {
+	public void testarCT03CriacaoTrianguloComLadosNulos() {
 		Triangulo t = 
 			new Triangulo(	null,		null,		null	);
 		
@@ -25,69 +33,110 @@ public class TrianguloTest {
 	}
 	
 	@Test
-	public void testarCT03CriacaoTrianguloEquilatero() {
-		Double lados = new Double(1);
+	public void testarCT04CriacaoTrianguloEquilatero() {
+		double lados = 1	;
 		
 		Triangulo t = new Triangulo(lados, lados, lados);
 		
-		assertNotNull(t);
-		assertTrue( t.isEquilatero() );
-		assertFalse( t.isIsosceles() );
-		assertFalse( t.isEscaleno() );
+		assertNotNull(	t					);
+		assertTrue(		t.isEquilatero()	);
+		assertTrue(		t.isIsosceles()		);
+		assertFalse(	t.isEscaleno()		);
 	}
 	
 	@Test
-	public void testarCT04CriacaoTrianguloIsoceles() {
-		Double ladosUmDois = new Double(1);
-		Double ladoTres = new Double(1.5);
+	public void testarCT05CriacaoTrianguloNaoEquilatero() {
+		double lados = 1	;
 		
-		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
+		Triangulo t = new Triangulo(lados, lados + 0.01, lados + 0.001);
 		
-		assertNotNull(t);
-		assertFalse( t.isEquilatero() );
-		assertTrue( t.isIsosceles() );
-		assertFalse( t.isEscaleno() );
-	}
-	
-	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCT05CriacaoTrianguloIsocelesInvalido() {
-		Double ladosUmDois = new Double(1);
-		Double ladoTres = new Double(2);
-		
-		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
-		
-		assertNotNull(t);
-		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsosceles() );
-		assertFalse( t.isEscaleno() );
+		assertNotNull(	t					);
+		assertFalse(	t.isEquilatero()	);
+		assertFalse(	t.isIsosceles()		);
+		assertTrue(		t.isEscaleno()		);
 	}
 	
 	@Test
-	public void testarCT06CriacaoTrianguloEscaleno() {
-		Double ladosUm = new Double(1);
-		Double ladosDois = new Double(2);
-		Double ladoTres = new Double(2.5);
+	public void testarCT06CriacaoTrianguloIsoceles() {
+		double ladosUmDois =	1		;
+		double ladoTres =		1.5		;
 		
-		Triangulo t = new Triangulo(ladosUm, ladosDois, ladoTres);
+		Triangulo t = new Triangulo(	ladosUmDois, 	ladosUmDois, 	ladoTres);
 		
-		assertNotNull(t);
-		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsosceles() );
-		assertTrue( t.isEscaleno() );
+		assertNotNull(	t					);
+		assertFalse(	t.isEquilatero()	);
+		assertTrue(		t.isIsosceles()		);
+		assertFalse(	t.isEscaleno()		);
+	}
+	
+	@Test
+	public void testarCT07CriacaoTrianguloIsocelesEquilatero() {
+		double ladosUmDois =	1		;
+		double ladoTres =		1		;
+		
+		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
+		
+		assertNotNull(	t					);
+		assertTrue(		t.isEquilatero()	);
+		assertTrue(		t.isIsosceles()		);
+		assertFalse(	t.isEscaleno()		);
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
-	public void testarCT07CriacaoTrianguloEscalenoInvalido() {
-		Double ladosUm = new Double(1);
-		Double ladosDois = new Double(2);
-		Double ladoTres = new Double(3);
+	public void testarCT08CriacaoTrianguloIsocelesInvalido() {
+		double ladosUmDois =	1	;
+		double ladoTres =		2	;
+		
+		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
+		
+		assertNotNull(	t					);
+		assertFalse(	t.isEquilatero()	);
+		assertFalse(	t.isIsosceles()		);
+		assertFalse(	t.isEscaleno()		);
+	}
+	
+	@Test
+	public void testarCT09CriacaoTrianguloEscaleno() {
+		double ladosUm =	1	;
+		double ladosDois =	2	;
+		double ladoTres =	2.5	;
 		
 		Triangulo t = new Triangulo(ladosUm, ladosDois, ladoTres);
 		
-		assertNotNull(t);
-		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsosceles() );
-		assertFalse( t.isEscaleno() );
+		assertNotNull(	t					);
+		assertFalse(	t.isEquilatero()	);
+		assertFalse(	t.isIsosceles()		);
+		assertTrue(		t.isEscaleno()		);
+	}
+	
+	@Test(expected=ExcecaoTamanhoInvalido.class)
+	public void testarCT10CriacaoTrianguloEscalenoInvalido() {
+		double ladosUm =	1	;
+		double ladosDois =	2	;
+		double ladoTres =	3	;
+		
+		Triangulo t = new Triangulo(ladosUm, ladosDois, ladoTres);
+		
+		assertNotNull(	t					);
+		assertFalse(	t.isEquilatero()	);
+		assertFalse(	t.isIsosceles()		);
+		assertFalse(	t.isEscaleno()		);
+	}
+	
+	@Test
+	public void testarCT11CriacaoTrianguloReto() {
+		Triangulo t = new Triangulo(	3,		4,		5);
+		
+		assertNotNull(	t							);
+		assertTrue(		t.isTrianguloRetangulo()	);
+	}
+	
+	@Test
+	public void testarCT12CriacaoTrianguloNaoReto() {
+		Triangulo t = new Triangulo(	3,		4,		5.1);
+		
+		assertNotNull(	t							);
+		assertFalse(	t.isTrianguloRetangulo()	);
 	}
 	
 }

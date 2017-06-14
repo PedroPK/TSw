@@ -10,6 +10,14 @@ public class Triangulo implements iTriangulo {
 		super();
 	}
 	
+	public Triangulo(double a, double b, double c) {
+		this.aLadoA =	new Double(	a	);
+		this.aLadoB =	new Double(	b	);
+		this.aLadoC =	new Double(	c	);
+		
+		this.validarTresLadosTriangulo();
+	}
+	
 	public Triangulo(Double pLadoA, Double pLadoB, Double pLadoC) {
 		super();
 		this.aLadoA = pLadoA;
@@ -21,7 +29,6 @@ public class Triangulo implements iTriangulo {
 	
 	/**
 	 * Getter's and Setter's
-	 * @return
 	 */
 	public double getLadoA() {
 		return aLadoA;
@@ -45,6 +52,10 @@ public class Triangulo implements iTriangulo {
 		validarTamanhoLado(pLadoC);
 		this.aLadoC = pLadoC;
 	}
+	
+	/**
+	 * Validations
+	 */
 	
 	public void validarTamanhoLado(Double pTamanhoLado) {
 		if ( isTamanhoLadoValido(pTamanhoLado) ) {
@@ -74,8 +85,9 @@ public class Triangulo implements iTriangulo {
 	}
 	
 	/**
-	 * Métodos de Situação
+	 * Situation
 	 */
+	
 	public boolean isEquilatero() {
 		boolean resposta = true;
 		
@@ -104,23 +116,9 @@ public class Triangulo implements iTriangulo {
 		
 		if ( resposta &&
 				!(
-					(
-						this.aLadoA.doubleValue()		==		this.aLadoB.doubleValue()
-						&&
-						this.aLadoB.doubleValue()	!=		this.aLadoC.doubleValue()
-					)
-					||
-					(
-						this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()
-						&&
-						this.aLadoC.doubleValue()	!=		this.aLadoA.doubleValue()
-					)
-					||
-					(
-						this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()
-						&&
-						this.aLadoA.doubleValue()		!=		this.aLadoB.doubleValue()
-					)
+					this.aLadoA.doubleValue()	==		this.aLadoB.doubleValue()	||
+					this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()	||
+					this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()
 				)
 		) {
 			resposta = false;
@@ -138,11 +136,11 @@ public class Triangulo implements iTriangulo {
 		
 		if ( resposta &&
 				(
-					this.aLadoA.doubleValue()		==		this.aLadoB.doubleValue()	
+					this.aLadoA.doubleValue()	==		this.aLadoB.doubleValue()
 					||
-					this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()	
+					this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()
 					||
-					this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()	
+					this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()
 				)
 		) {
 			resposta = false;
