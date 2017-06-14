@@ -28,7 +28,6 @@ public class Triangulo implements iTriangulo {
 	}
 	public void setLadoA(Double pLadoA) {
 		validarTamanhoLado(pLadoA);
-		
 		this.aLadoA = pLadoA;
 	}
 	
@@ -37,15 +36,13 @@ public class Triangulo implements iTriangulo {
 	}
 	public void setLadoB(Double pLadoB) {
 		validarTamanhoLado(pLadoB);
-		
 		this.aLadoB = pLadoB;
 	}
 	public double getLadoC() {
 		return aLadoC;
 	}
-	public void setLadoTres(Double pLadoC) {
+	public void setLadoC(Double pLadoC) {
 		validarTamanhoLado(pLadoC);
-		
 		this.aLadoC = pLadoC;
 	}
 	
@@ -53,6 +50,9 @@ public class Triangulo implements iTriangulo {
 		if ( isTamanhoLadoValido(pTamanhoLado) ) {
 			throw new ExcecaoTamanhoInvalido();
 		}
+	}
+	public boolean isTamanhoLadoValido(Double pTamanhoLado) {
+		return pTamanhoLado != null && pTamanhoLado.doubleValue() > 0;
 	}
 	
 	public void validarTresLadosTriangulo() {
@@ -71,10 +71,6 @@ public class Triangulo implements iTriangulo {
 		) {
 			throw new ExcecaoTamanhoInvalido();
 		}
-	}
-	
-	public boolean isTamanhoLadoValido(Double pTamanhoLado) {
-		return pTamanhoLado != null && pTamanhoLado.doubleValue() > 0;
 	}
 	
 	/**
@@ -99,7 +95,7 @@ public class Triangulo implements iTriangulo {
 		return resposta;
 	}
 	
-	public boolean isIsoceles() {
+	public boolean isIsosceles() {
 		boolean resposta = true;
 		
 		if ( !this.isTresLadosValidos() ) {
@@ -109,19 +105,19 @@ public class Triangulo implements iTriangulo {
 		if ( resposta &&
 				!(
 					(
-						this.aLadoA.doubleValue()		==		this.aLadoB.doubleValue()	
+						this.aLadoA.doubleValue()		==		this.aLadoB.doubleValue()
 						&&
 						this.aLadoB.doubleValue()	!=		this.aLadoC.doubleValue()
 					)
 					||
 					(
-						this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()	
+						this.aLadoB.doubleValue()	==		this.aLadoC.doubleValue()
 						&&
 						this.aLadoC.doubleValue()	!=		this.aLadoA.doubleValue()
 					)
 					||
 					(
-						this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()	
+						this.aLadoC.doubleValue()	==		this.aLadoA.doubleValue()
 						&&
 						this.aLadoA.doubleValue()		!=		this.aLadoB.doubleValue()
 					)

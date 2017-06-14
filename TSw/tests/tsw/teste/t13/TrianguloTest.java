@@ -11,21 +11,17 @@ public class TrianguloTest {
 	@Test(expected=ExcecaoTamanhoInvalido.class)
 	public void testarCT01CriacaoTrianguloVazio() {
 		Triangulo t = 
-			new Triangulo(
-				new Double(0),
-				new Double(0),
-				new Double(0)
-			);
+			new Triangulo(	new Double(0),		new Double(0),		new Double(0)	);
+		
+		assertNotNull(t);
 	}
 	
 	@Test(expected=ExcecaoTamanhoInvalido.class)
 	public void testarCT02CriacaoTrianguloComLadosNulos() {
 		Triangulo t = 
-			new Triangulo(
-				null,
-				null,
-				null
-			);
+			new Triangulo(	null,		null,		null	);
+		
+		assertNotNull(t);
 	}
 	
 	@Test
@@ -33,8 +29,10 @@ public class TrianguloTest {
 		Double lados = new Double(1);
 		
 		Triangulo t = new Triangulo(lados, lados, lados);
+		
+		assertNotNull(t);
 		assertTrue( t.isEquilatero() );
-		assertFalse( t.isIsoceles() );
+		assertFalse( t.isIsosceles() );
 		assertFalse( t.isEscaleno() );
 	}
 	
@@ -44,8 +42,10 @@ public class TrianguloTest {
 		Double ladoTres = new Double(1.5);
 		
 		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
+		
+		assertNotNull(t);
 		assertFalse( t.isEquilatero() );
-		assertTrue( t.isIsoceles() );
+		assertTrue( t.isIsosceles() );
 		assertFalse( t.isEscaleno() );
 	}
 	
@@ -55,8 +55,10 @@ public class TrianguloTest {
 		Double ladoTres = new Double(2);
 		
 		Triangulo t = new Triangulo(ladosUmDois, ladosUmDois, ladoTres);
+		
+		assertNotNull(t);
 		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsoceles() );
+		assertFalse( t.isIsosceles() );
 		assertFalse( t.isEscaleno() );
 	}
 	
@@ -67,8 +69,10 @@ public class TrianguloTest {
 		Double ladoTres = new Double(2.5);
 		
 		Triangulo t = new Triangulo(ladosUm, ladosDois, ladoTres);
+		
+		assertNotNull(t);
 		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsoceles() );
+		assertFalse( t.isIsosceles() );
 		assertTrue( t.isEscaleno() );
 	}
 	
@@ -79,9 +83,11 @@ public class TrianguloTest {
 		Double ladoTres = new Double(3);
 		
 		Triangulo t = new Triangulo(ladosUm, ladosDois, ladoTres);
+		
+		assertNotNull(t);
 		assertFalse( t.isEquilatero() );
-		assertFalse( t.isIsoceles() );
+		assertFalse( t.isIsosceles() );
 		assertFalse( t.isEscaleno() );
 	}
-
+	
 }

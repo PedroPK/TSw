@@ -6,15 +6,6 @@ public interface iTriangulo {
 	 * Getter's and Setter's
 	 * @return
 	 */
-	public double getLadoA();
-	public void setLadoA(Double pLadoA);
-	
-	public double getLadoB();
-	public void setLadoB(Double pLadoB);
-	
-	public double getLadoC();
-	public void setLadoTres(Double pLadoC);
-	
 	public void validarTamanhoLado(Double pTamanhoLado);
 	
 	public void validarTresLadosTriangulo();
@@ -26,7 +17,7 @@ public interface iTriangulo {
 	 */
 	public boolean isEquilatero();
 	
-	public boolean isIsoceles();
+	public boolean isIsosceles();
 	
 	public boolean isEscaleno();
 	
