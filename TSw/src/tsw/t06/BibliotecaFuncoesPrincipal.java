@@ -891,97 +891,97 @@ public final class BibliotecaFuncoesPrincipal {
 		char[] c = pStr.toCharArray();
 
 		for (int i = 0; i < c.length; i++) {
-			if (c[i] == 'ï¿½') {
+			if (c[i] == 'Á') {
 				buf.append('A');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'À') {
 				buf.append('A');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Â') {
 				buf.append('A');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ã') {
 				buf.append('A');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ä') {
 				buf.append('A');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'á') {
 				buf.append('a');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'à') {
 				buf.append('a');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'â') {
 				buf.append('a');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ã') {
 				buf.append('a');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ä') {
 				buf.append('a');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'É') {
 				buf.append('E');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'È') {
 				buf.append('E');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ê') {
 				buf.append('E');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ë') {
 				buf.append('E');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'é') {
 				buf.append('e');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'è') {
 				buf.append('e');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ê') {
 				buf.append('e');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ë') {
 				buf.append('e');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Í') {
 				buf.append('I');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ì') {
 				buf.append('I');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Î') {
 				buf.append('I');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ï') {
 				buf.append('I');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'í') {
 				buf.append('i');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ì') {
 				buf.append('i');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'î') {
 				buf.append('i');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ï') {
 				buf.append('i');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ó') {
 				buf.append('O');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ò') {
 				buf.append('O');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ô') {
 				buf.append('O');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Õ') {
 				buf.append('O');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ö') {
 				buf.append('O');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ó') {
 				buf.append('o');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ò') {
 				buf.append('o');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ô') {
 				buf.append('o');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'õ') {
 				buf.append('o');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ö') {
 				buf.append('o');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ú') {
 				buf.append('U');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ù') {
 				buf.append('U');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Û') {
 				buf.append('U');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ü') {
 				buf.append('U');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ú') {
 				buf.append('u');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ù') {
 				buf.append('u');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'û') {
 				buf.append('u');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ü') {
 				buf.append('u');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'Ç') {
 				buf.append('C');
-			} else if (c[i] == 'ï¿½') {
+			} else if (c[i] == 'ç') {
 				buf.append('c');
 			} else {
 				buf.append(c[i]);
