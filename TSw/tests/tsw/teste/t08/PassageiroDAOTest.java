@@ -9,10 +9,12 @@ import tsw.t08.persistencia.IPassageiroDAO;
 import tsw.util.BibliotecaFuncoes;
 
 /**
- * Depend�ncias do Mockito:
+ * Dependencias do Mockito:
  *  - Byte-Buddy
+ *  	= Versão em uso: 1.8.11
  *  - Objenesis
- *  - http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
+ *  	= http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
+ *  	= Versão em uso: 2.6
  *  
  * @author pedro.f-santos
  *
@@ -21,22 +23,22 @@ public class PassageiroDAOTest {
 
 	@Test
 	public void testarInserirDAO() {
-		Passageiro ticoSantaCruz = UtilTeste.instancializarNovoPassageiro();
+		Passageiro passageiroInstancializado = UtilTeste.instancializarNovoPassageiro();
 		
-		Passageiro tico = 
-			/* Equivalente a invocar as instru��es abaoxp
+		Passageiro passageiroInserido = 
+			/* A Serializacao do método Clone() equivalente a invocar as instrucoes abaixo
 			 * 
 			 * PassageiroDAO dao = new PassageiroDAO();
-			 *dao.inserir(ticoSantaCruz);
+			 * dao.inserir(passageiroInstancializado);
 			 */
-			(Passageiro) BibliotecaFuncoes.clone(ticoSantaCruz);
+			(Passageiro) BibliotecaFuncoes.clone(passageiroInstancializado);
 		
-		IPassageiroDAO daoFalso = UtilTeste.getMockPassageiroDAO();
-		UtilTeste.prepararMockConsultarPassageiro(ticoSantaCruz, tico, daoFalso);
+		IPassageiroDAO daoFalsoMockado = UtilTeste.getMockPassageiroDAO();
+		UtilTeste.prepararMockConsultarPassageiro(passageiroInstancializado, passageiroInserido, daoFalsoMockado);
 		
-		Passageiro passageiro = daoFalso.consultar(ticoSantaCruz);
+		Passageiro passageiroConsultado = daoFalsoMockado.consultar(passageiroInstancializado);
 		
-		assertEquals(ticoSantaCruz.getChavePrimaria(), passageiro.getChavePrimaria());
+		assertEquals(passageiroInstancializado.getChavePrimaria(), passageiroConsultado.getChavePrimaria());
 	}
 
 }

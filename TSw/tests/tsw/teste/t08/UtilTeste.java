@@ -1,7 +1,6 @@
 package tsw.teste.t08;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import tsw.t08.entidades.Passageiro;
 import tsw.t08.persistencia.IPassageiroDAO;
