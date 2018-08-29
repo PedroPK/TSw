@@ -11,10 +11,10 @@ import tsw.util.BibliotecaFuncoes;
 /**
  * Dependencias do Mockito:
  *  - Byte-Buddy
- *  	= Vers√£o em uso: 1.8.11
+ *  	= Vers„o em uso: 1.8.11
  *  - Objenesis
  *  	= http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
- *  	= Vers√£o em uso: 2.6
+ *  	= Vers„o em uso: 2.6
  *  
  * @author pedro.f-santos
  *
@@ -39,6 +39,10 @@ public class PassageiroDAOTest {
 		Passageiro passageiroConsultado = daoFalsoMockado.consultar(passageiroInstancializado);
 		
 		assertEquals(passageiroInstancializado.getChavePrimaria(), passageiroConsultado.getChavePrimaria());
+	}
+	
+	@Test void testarExclusaoDAO() {
+		Passageiro passageiroInstancializado = UtilTeste.instancializarNovoPassageiro();
 	}
 
 }

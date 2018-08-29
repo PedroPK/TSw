@@ -22,7 +22,7 @@ import tsw.t11.TecladoT9;
  *  WXYZ   ->  9
  *  Espaco, Ponto, Virgula -> 0
  *  
- * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a seqüência de números que precisa ser digitada. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, deve ser indicada como _.
+ * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a sequência de números que precisa ser digitada. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, deve ser indicada como _.
  * Por exemplo, para digitar "SEMPRE ACESSO O DOJOPUZZLES", você precisa digitar:
  * 77773367_7773302_222337777_777766606660366656667889999_9999555337777
  * 
@@ -73,14 +73,14 @@ public class TecladoT9Test {
 	public void testeComMaiusculoEMinusculoMaisEspacoPedroCarlos() {
 		String numerico = 
 			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos");
-		assertEquals("7333777666022227775556667777", numerico);
+		assertEquals("7*3337776660*222*27775556667777", numerico);
 	}
 	
 	@Test
 	public void testeComMaiusculoEMinusculoMaisEspacoComPontuacaoPedroCarlos() {
 		String numerico = 
 			this.aT9.converterTextoParaTecladoNumerico("Pedro Carlos.");
-		assertEquals("73337776660222277755566677771", numerico);
+		assertEquals("7*3337776660*222*277755566677771", numerico);
 	}
 	
 	@Test

@@ -1,7 +1,9 @@
-package tsw.t15;
+package tsw.teste.t15;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import tsw.t15.Anagrama;
 
 public class AnagramaTest {
 	
