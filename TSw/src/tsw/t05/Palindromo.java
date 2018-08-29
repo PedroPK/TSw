@@ -2,7 +2,7 @@ package tsw.t05;
 
 public class Palindromo {
 	
-	public boolean isPalindromo(String pFrase) {
+	public static boolean isPalindromo(String pFrase) {
 		String fraseTratada = 
 			pFrase.toUpperCase().replace(" ", "").replace("-", "");
 		

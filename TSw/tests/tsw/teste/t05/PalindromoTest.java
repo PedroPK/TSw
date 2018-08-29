@@ -13,9 +13,7 @@ public class PalindromoTest {
 	public void isPalindromoMarrocos() {
 		String frase = "Socorram-me subi no onibus em Marrocos";
 		
-		Palindromo palindromo = new Palindromo();
-		
-		boolean resultado = palindromo.isPalindromo(frase);
+		boolean resultado = Palindromo.isPalindromo(frase);
 		
 		assertTrue(resultado);
 	}
@@ -24,9 +22,7 @@ public class PalindromoTest {
 	public void isPalindromoFalsoMarrocos() {
 		String frase = "Socorram-me subi no onibus lá em Marrocos";
 		
-		Palindromo palindromo = new Palindromo();
-		
-		boolean resultado = palindromo.isPalindromo(frase);
+		boolean resultado = Palindromo.isPalindromo(frase);
 		
 		assertFalse(resultado);
 	}
@@ -35,9 +31,7 @@ public class PalindromoTest {
 	public void isPalindromoMaratona() {
 		String frase = "Anotaram a data da maratona";
 		
-		Palindromo palindromo = new Palindromo();
-		
-		boolean resultado = palindromo.isPalindromo(frase);
+		boolean resultado = Palindromo.isPalindromo(frase);
 		
 		assertTrue(resultado);
 	}
@@ -46,9 +40,7 @@ public class PalindromoTest {
 	public void isPalindromoFalsoMaratona() {
 		String frase = "Anotara a data da maratona";
 		
-		Palindromo palindromo = new Palindromo();
-		
-		boolean resultado = palindromo.isPalindromo(frase);
+		boolean resultado = Palindromo.isPalindromo(frase);
 		
 		assertFalse(resultado);
 	}
