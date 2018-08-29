@@ -11,15 +11,9 @@ import tsw.util.UtilJPA;
 
 public abstract class AbstractDAO implements InterfaceDAO {
 	
-	/*
-	 * Versï¿½o anterior do mï¿½todo abaixo
-	 * 
-	 * 
-	public void inserir(Entidade pEntidade) {
-		EntityManager manager = UtilJPA.getEntityManager();
-		inserir(pObject, manager, true);
-	}
-	*/
+	/**
+	 * Métodos para Inserir uma Entidade 
+	 */
 	public void inserir(Entidade pEntidade) {
 		inserir(pEntidade, UtilJPA.getEntityManager(), true);
 	}
@@ -37,20 +31,9 @@ public abstract class AbstractDAO implements InterfaceDAO {
 		}
 	}
 	
-	/*
-	 * Versï¿½o anterior do mï¿½todo abaixo
-	 * 
-	 * 
-	public void alterar(Entidade pEntidade) {
-		EntityManager manager = UtilJPA.getEntityManager();
-		EntityTransaction transacao = manager.getTransaction();
-		transacao.begin();
-		
-		manager.merge(pObject);
-		
-		transacao.commit();
-		manager.close();
-	}*/
+	/**
+	 * Métodos para Alterar uma Entidade
+	 */
 	public void alterar(Entidade pEntidade) {
 		alterar(pEntidade, UtilJPA.getEntityManager(), true);
 	}
@@ -68,22 +51,9 @@ public abstract class AbstractDAO implements InterfaceDAO {
 		}
 	}
 	
-	/*
-	 * Versï¿½o anterior do mï¿½todo abaixo
-	 * 
-	 * 
-	public void excluirPorObjeto(Class pClasse, Entidade pEntidade) {
-		EntityManager manager = UtilJPA.getEntityManager();
-		EntityTransaction transacao = manager.getTransaction();
-		transacao.begin();
-		
-		Object registro = manager.find(pClasse, pEntidade.getChavePrimaria());
-		manager.remove(registro);
-		
-		transacao.commit();
-		manager.close();
-	}
-	/*/
+	/**
+	 * Métodos para Excluir uma Entidade
+	 */
 	public void excluirPorObjeto(Entidade pEntidade) {
 		excluirPorObjeto(pEntidade, UtilJPA.getEntityManager(), true);
 	}
@@ -130,22 +100,9 @@ public abstract class AbstractDAO implements InterfaceDAO {
 		}
 	}
 	
-	/*
-	 * Versï¿½o anterior do mï¿½todo abaixo
-	 * 
-	 * 
-	public void excluirPorChavePrimaria(Class pClasse, Object pChavePrimaria) {
-		EntityManager manager = UtilJPA.getEntityManager();
-		EntityTransaction transacao = manager.getTransaction();
-		transacao.begin();
-		
-		Object registro = manager.find(pClasse, pChavePrimaria);
-		manager.remove(registro);
-		
-		transacao.commit();
-		manager.close();
-	}
-	*/
+	/**
+	 * Métodos para ExclusÃ£o por Chave PrimÃ¡ria
+	 */
 	public void excluirPorChavePrimaria(Class pClasse, Object pChavePrimaria) {
 		excluirPorChavePrimaria(pClasse, pChavePrimaria, UtilJPA.getEntityManager(), true);
 	}
@@ -185,19 +142,9 @@ public abstract class AbstractDAO implements InterfaceDAO {
 		}
 	}
 	
-	/*
-	 * Versï¿½o anterior do mï¿½todo abaixo
-	 * 
-	 * 
-	public Object consultar(Class pClasse, Object pPrimaryKey) {
-		EntityManager manager = UtilJPA.getEntityManager();
-		
-		Object registro = manager.find(pClasse, pPrimaryKey);
-		
-		manager.close();
-		return registro;
-	}
-	*/
+	/**
+	 * Métodos para Consultar uma Entidade por Chave-PrimÃ¡ria
+	 */
 	public Entidade consultarPorChavePrimaria(Class pClasse, Object pPrimaryKey) {
 		return consultarPorChavePrimaria(pClasse, pPrimaryKey, UtilJPA.getEntityManager(), true);
 	}

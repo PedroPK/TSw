@@ -9,4 +9,9 @@ public interface IPassageiroDAO extends InterfaceDAO {
 	public Passageiro consultar(Object pChavePrimaria);
 	
 	public Collection<Passageiro> consultar();
+	
+	public static String getStringTeste() {
+		String resultado = "teste";
+		return resultado;
+	}
 }

@@ -22,7 +22,7 @@ import tsw.t11.TecladoT9;
  *  WXYZ   ->  9
  *  Espaco, Ponto, Virgula -> 0
  *  
- * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a sequência de números que precisa ser digitada. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, deve ser indicada como _.
+ * Desenvolva um programa que, dada uma mensagem de texto limitada a 255 caracteres, retorne a sequência de némeros que precisa ser digitada. Uma pausa, para ser possível obter duas letras referenciadas pelo mesmo número, deve ser indicada como _.
  * Por exemplo, para digitar "SEMPRE ACESSO O DOJOPUZZLES", você precisa digitar:
  * 77773367_7773302_222337777_777766606660366656667889999_9999555337777
  * 
