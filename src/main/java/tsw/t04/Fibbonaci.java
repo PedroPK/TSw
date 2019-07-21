@@ -10,7 +10,7 @@ public class Fibbonaci {
 	/**
 	 * A Rainbow table Map to store the Fibonacci Numbers already computed.
 	 */
-	private Map<Integer, Integer> aFibonacciNumbersMap;
+	private Map<Integer, Long> aFibonacciNumbersMap;
 	
 	/**
 	 * Using a rainbow table to avoid the necessity to recompute the same Fibonacci number multiple
@@ -27,8 +27,8 @@ public class Fibbonaci {
 	 * @return
 	 * @throws ParametroInvalidoException
 	 */
-	public int getFibbonaciNumber( int pNumber ) throws ParametroInvalidoException {
-		int result = 0;
+	public long getFibbonaciNumber( int pNumber ) throws ParametroInvalidoException {
+		long result = 0;
 		
 		if ( pNumber < 0 ) {
 			throw new ParametroInvalidoException();
@@ -81,7 +81,7 @@ public class Fibbonaci {
 	 */
 	private void initiateMapIfNeeded() {
 		if ( this.aFibonacciNumbersMap == null ) {
-			this.aFibonacciNumbersMap = new HashMap<Integer, Integer>();
+			this.aFibonacciNumbersMap = new HashMap<Integer, Long>();
 		}
 	}
 	
