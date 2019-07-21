@@ -7,38 +7,82 @@ import tsw.excecoes.ParametroInvalidoException;
 
 public class Fibbonaci {
 	
-	private Map<Integer, Integer> aNumerosFibonacci;
+	/**
+	 * A Rainbow table Map to store the Fibonacci Numbers already computed.
+	 */
+	private Map<Integer, Integer> aFibonacciNumbersMap;
 	
-	public int getNumeroFibbonaci( int pNumero ) throws ParametroInvalidoException {
-		int resultado = 0;
+	/**
+	 * Using a rainbow table to avoid the necessity to recompute the same Fibonacci number multiple
+	 * times.
+	 * 
+	 * Once a specifical Fibonacci Number is computed, it is stored in a Map. 
+	 * When it is needed, it is get from there.
+	 * 
+	 * It a Fibonacci Number is needed, but not computed yet, it is computed, ant its value is
+	 * stored in the Map.
+	 * 
+	 * 
+	 * @param pNumber
+	 * @return
+	 * @throws ParametroInvalidoException
+	 */
+	public int getFibbonaciNumber( int pNumber ) throws ParametroInvalidoException {
+		int result = 0;
 		
-		if ( pNumero < 0 ) {
+		if ( pNumber < 0 ) {
 			throw new ParametroInvalidoException();
 		}
 		
-		if ( pNumero == 0 || pNumero == 1 ) {
-			resultado = pNumero;
+		if ( pNumber == 0 || pNumber == 1 ) {
+			// Special cases of Fibonacci Numbers, when the result is the number itself
+			result = pNumber;
 		} else {
-			if ( 
-					this.aNumerosFibonacci != null					&&
-					!this.aNumerosFibonacci.isEmpty()				&&
-					this.aNumerosFibonacci.containsKey(pNumero)
-			) {
-				resultado = this.aNumerosFibonacci.get(pNumero);
+			if (	isFibonacciNumberAlreadyComputedAndStored(pNumber)		) {
+				// Fibonacci Number was already computed and stored in the Map
+				result = this.aFibonacciNumbersMap.get(pNumber);
 			} else {
-				resultado = 
-					getNumeroFibbonaci(pNumero - 1) +
-					getNumeroFibbonaci(pNumero - 2);
+				// When the Fibonacci Number needs to be computed and stored in the Map
 				
-				if ( this.aNumerosFibonacci == null ) {
-					this.aNumerosFibonacci = new HashMap<Integer, Integer>();
-				}
+				// Compute the Fibonacci Number
+				result = 
+					getFibbonaciNumber(pNumber - 1) +
+					getFibbonaciNumber(pNumber - 2);
 				
-				this.aNumerosFibonacci.put(pNumero, resultado);
+				initiateMapIfNeeded();
+				
+				// Store the new Fibonacci Number computed in the Map
+				this.aFibonacciNumbersMap.put(pNumber, result);
 			}
 		}
 		
-		return resultado;
+		return result;
+	}
+	
+	/**
+	 * This method will result True if all this conditions is true:
+	 *  - The Map that stores the Fibonacci Numbers were already initiated;
+	 *  - The Map is not empty;
+	 *  - The Map contains the Fibonacci Number that is been looked for.
+	 * 
+	 * @param pNumber		Fibonacci Number that is been lloked for
+	 * 
+	 * @return
+	 */
+	private boolean isFibonacciNumberAlreadyComputedAndStored(int pNumber) {
+		return 
+			 this.aFibonacciNumbersMap != null					&&
+			!this.aFibonacciNumbersMap.isEmpty()				&&
+			 this.aFibonacciNumbersMap.containsKey(pNumber);
+	}
+	
+	/**
+	 * If the Map that stores the Fibonacci Numbers is null, it will be initiated.
+	 */
+	private void initiateMapIfNeeded() {
+		if ( this.aFibonacciNumbersMap == null ) {
+			this.aFibonacciNumbersMap = new HashMap<Integer, Integer>();
+		}
 	}
 	
 }

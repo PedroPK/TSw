@@ -20,7 +20,7 @@ public class FibbonaciTest {
 	@Test
 	public void getNumeroFibbonaciZeroTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(0);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(0);
 			
 			Assert.assertEquals(0, resultado);
 		} catch ( ParametroInvalidoException pie ) {
@@ -31,7 +31,7 @@ public class FibbonaciTest {
 	@Test
 	public void getNumeroFibbonaciNegativoTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(-1);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(-1);
 			
 			Assert.fail();
 		} catch ( ParametroInvalidoException pie ) {
@@ -42,7 +42,7 @@ public class FibbonaciTest {
 	@Test
 	public void getQuintoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(5);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(5);
 			
 			Assert.assertEquals(5, resultado);
 		} catch ( ParametroInvalidoException pie ) {
@@ -53,7 +53,7 @@ public class FibbonaciTest {
 	@Test
 	public void getOitavoNumeroFibbonaciTest() {
 		try{
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(8);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(8);
 			
 			Assert.assertEquals(21, resultado);
 		} catch ( ParametroInvalidoException pie ) {
@@ -64,7 +64,7 @@ public class FibbonaciTest {
 	@Test
 	public void getDecimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(10);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(10);
 			
 			Assert.assertEquals(55, resultado);
 		} catch ( ParametroInvalidoException pie ) {
@@ -75,7 +75,7 @@ public class FibbonaciTest {
 	@Test
 	public void getVigezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(20);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(20);
 			
 			Assert.assertEquals(6765, resultado);
 		} catch ( ParametroInvalidoException pie ) {
@@ -86,7 +86,7 @@ public class FibbonaciTest {
 	@Test
 	public void getVigezimoQuintoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(25);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(25);
 			
 			Assert.assertEquals(75025, resultado);
 			System.out.println("25: "+ resultado);
@@ -98,7 +98,7 @@ public class FibbonaciTest {
 	@Test
 	public void getTrigezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(30);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(30);
 			
 			Assert.assertEquals(832040, resultado);
 			System.out.println("30: "+ resultado);
@@ -110,7 +110,7 @@ public class FibbonaciTest {
 	@Test
 	public void getTrigezimoQuintoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(35);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(35);
 			
 			Assert.assertEquals(9227465, resultado);
 			
@@ -123,7 +123,7 @@ public class FibbonaciTest {
 	@Test
 	public void getQuadragezimoNumeroFibbonaciTest() {
 		try{ 
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(40);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(40);
 			
 			Assert.assertEquals(102334155, resultado);
 			
@@ -136,7 +136,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getQuadragezimoQuintoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(45);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(45);
 			
 			Assert.assertEquals(1134903170, resultado);
 			System.out.println("45: "+ resultado);
@@ -148,7 +148,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getQuadragezimoSextoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(46);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(46);
 			
 			Assert.assertEquals(1836311903, resultado);
 			
@@ -162,7 +162,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getQuadragezimoSetimoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(47);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(47);
 			
 			//Assert.assertEquals(2971215073, resultado);
 			System.out.println("47: "+ resultado);
@@ -175,7 +175,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getQuiquagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(50);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(50);
 			
 			System.out.println("50: "+ resultado);
 			
@@ -189,7 +189,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getSexaagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(60);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(60);
 			
 			System.out.println("60: "+ resultado);
 			
@@ -203,7 +203,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getSeptagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(70);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(70);
 			
 			System.out.println("70: "+ resultado);
 			
@@ -217,7 +217,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getOctagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(80);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(80);
 			
 			System.out.println(resultado);
 			
@@ -231,7 +231,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getNonagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(90);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(90);
 			
 			System.out.println(resultado);
 			
@@ -245,7 +245,7 @@ public class FibbonaciTest {
 	@Test(timeout=1000)
 	public void getCentezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getNumeroFibbonaci(100);
+			int resultado = this.aFibbonaci.getFibbonaciNumber(100);
 			
 			System.out.println(resultado);
 			
