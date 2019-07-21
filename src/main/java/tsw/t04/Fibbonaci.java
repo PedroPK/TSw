@@ -1,5 +1,6 @@
 package tsw.t04;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class Fibbonaci {
 	/**
 	 * A Rainbow table Map to store the Fibonacci Numbers already computed.
 	 */
-	private Map<Integer, Long> aFibonacciNumbersMap;
+	private Map<Integer, BigInteger> aFibonacciNumbersMap;
 	
 	/**
 	 * Using a rainbow table to avoid the necessity to recompute the same Fibonacci number multiple
@@ -27,8 +28,8 @@ public class Fibbonaci {
 	 * @return
 	 * @throws ParametroInvalidoException
 	 */
-	public long getFibbonaciNumber( int pNumber ) throws ParametroInvalidoException {
-		long result = 0;
+	public BigInteger getFibbonaciNumber( int pNumber ) throws ParametroInvalidoException {
+		BigInteger result = BigInteger.ZERO;
 		
 		if ( pNumber < 0 ) {
 			throw new ParametroInvalidoException();
@@ -36,7 +37,7 @@ public class Fibbonaci {
 		
 		if ( pNumber == 0 || pNumber == 1 ) {
 			// Special cases of Fibonacci Numbers, when the result is the number itself
-			result = pNumber;
+			result = BigInteger.valueOf(pNumber);
 		} else {
 			if (	isFibonacciNumberAlreadyComputedAndStored(pNumber)		) {
 				// Fibonacci Number was already computed and stored in the Map
@@ -46,8 +47,9 @@ public class Fibbonaci {
 				
 				// Compute the Fibonacci Number
 				result = 
-					getFibbonaciNumber(pNumber - 1) +
-					getFibbonaciNumber(pNumber - 2);
+					getFibbonaciNumber(pNumber - 1)		.add(
+					getFibbonaciNumber(pNumber - 2)
+				);
 				
 				initiateMapIfNeeded();
 				
@@ -81,7 +83,7 @@ public class Fibbonaci {
 	 */
 	private void initiateMapIfNeeded() {
 		if ( this.aFibonacciNumbersMap == null ) {
-			this.aFibonacciNumbersMap = new HashMap<Integer, Long>();
+			this.aFibonacciNumbersMap = new HashMap<Integer, BigInteger>();
 		}
 	}
 	
