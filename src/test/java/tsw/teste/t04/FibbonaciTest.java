@@ -1,8 +1,7 @@
 package tsw.teste.t04;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import tsw.excecoes.ParametroInvalidoException;
@@ -22,9 +21,9 @@ public class FibbonaciTest {
 		try {
 			int resultado = this.aFibbonaci.getFibbonaciNumber(0);
 			
-			Assert.assertEquals(0, resultado);
+			assertEquals(0, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			// Exce��o lan�ada corretamente
+			// Exception thrown correctly
 		}
 	}
 	
@@ -33,9 +32,9 @@ public class FibbonaciTest {
 		try {
 			int resultado = this.aFibbonaci.getFibbonaciNumber(-1);
 			
-			Assert.fail();
+			fail();
 		} catch ( ParametroInvalidoException pie ) {
-			// Exce��o lan�ada corretamente
+			// Exception thrown correctly
 		}
 	}
 	
@@ -44,9 +43,9 @@ public class FibbonaciTest {
 		try {
 			int resultado = this.aFibbonaci.getFibbonaciNumber(5);
 			
-			Assert.assertEquals(5, resultado);
+			assertEquals(5, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
@@ -55,9 +54,9 @@ public class FibbonaciTest {
 		try{
 			int resultado = this.aFibbonaci.getFibbonaciNumber(8);
 			
-			Assert.assertEquals(21, resultado);
+			assertEquals(21, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
@@ -66,9 +65,9 @@ public class FibbonaciTest {
 		try {
 			int resultado = this.aFibbonaci.getFibbonaciNumber(10);
 			
-			Assert.assertEquals(55, resultado);
+			assertEquals(55, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
@@ -77,181 +76,305 @@ public class FibbonaciTest {
 		try {
 			int resultado = this.aFibbonaci.getFibbonaciNumber(20);
 			
-			Assert.assertEquals(6765, resultado);
+			assertEquals(6765, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
 	@Test
 	public void getVigezimoQuintoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(25);
+			// Arrange
+			int number = 25;
 			
-			Assert.assertEquals(75025, resultado);
-			System.out.println("25: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Assert
+			assertEquals(75025, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
+	}
+
+	private void printNumberAndResult(int pNumber, int pResultado) {
+		System.out.println(pNumber + ": " + pResultado);
 	}
 	
 	@Test
 	public void getTrigezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(30);
+			// Arrange
+			int number = 30;
 			
-			Assert.assertEquals(832040, resultado);
-			System.out.println("30: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Asert
+			assertEquals(832040, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
 	@Test
 	public void getTrigezimoQuintoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(35);
+			// Arrange
+			int number = 35;
 			
-			Assert.assertEquals(9227465, resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			System.out.println("35: "+ resultado);
+			// Assert
+			assertEquals(9227465, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
 	@Test
 	public void getQuadragezimoNumeroFibbonaciTest() {
 		try{ 
-			int resultado = this.aFibbonaci.getFibbonaciNumber(40);
+			// Arrange
+			int number = 40;
 			
-			Assert.assertEquals(102334155, resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			System.out.println("40: "+ resultado);
+			// Assert
+			assertEquals(102334155, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
 	@Test(timeout=1000)
 	public void getQuadragezimoQuintoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(45);
+			// Arrange
+			int number = 45;
 			
-			Assert.assertEquals(1134903170, resultado);
-			System.out.println("45: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Assert
+			assertEquals(1134903170, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
 	@Test(timeout=1000)
 	public void getQuadragezimoSextoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(46);
+			// Arrange
+			int number = 46;
 			
-			Assert.assertEquals(1836311903, resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			System.out.println("46: "+ resultado);
+			// Assert
+			assertEquals(1836311903, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
 	public void getQuadragezimoSetimoNumeroFibbonaciEmMenosDe1SegundoTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(47);
+			// Arrange
+			int number = 47;
 			
-			//Assert.assertEquals(2971215073, resultado);
-			System.out.println("47: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(2971215073, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
-	public void getQuiquagezimoNumeroFibbonaciTest() {
+	public void getFitftyFibbonaciNumberTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(50);
+			// Arrange
+			int number = 50;
 			
-			System.out.println("50: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(12586269025, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(12586269025, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
-	public void getSexaagezimoNumeroFibbonaciTest() {
+	public void getSixtyFibbonaciNumberTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(60);
+			// Arrange
+			int number = 60;
 			
-			System.out.println("60: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(1548008755920, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(1548008755920, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
 	public void getSeptagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(70);
+			// Arrange
+			int number = 70;
 			
-			System.out.println("70: "+ resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(190392490709135, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(190392490709135, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
 	public void getOctagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(80);
+			// Arrange
+			int number = 80;
 			
-			System.out.println(resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(23416728348467685, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(23416728348467685, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	@Ignore
 	@Test(timeout=1000)
 	public void getNonagezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(90);
+			// Arrange
+			int number = 90;
 			
-			System.out.println(resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(2880067194370816120, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(2880067194370816120, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
 		}
 	}
 	
-	//@Ignore
 	@Test(timeout=1000)
 	public void getCentezimoNumeroFibbonaciTest() {
 		try {
-			int resultado = this.aFibbonaci.getFibbonaciNumber(100);
+			// Arrange
+			int number = 100;
 			
-			System.out.println(resultado);
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
-			//Assert.assertEquals(354224848179261915075, resultado);
+			// Assert
+			assertTrue(resultado > 0);
+			//assertEquals(354224848179261915075, resultado);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
 		} catch ( ParametroInvalidoException pie ) {
-			Assert.fail();
+			fail();
+		}
+	}
+	
+	@Test(timeout=1000)
+	public void getTwoHundredAndFiftyFibbonaciNumberTest() {
+		try {
+			// Arrange
+			int number = 250;
+			
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Assert
+			assertTrue(resultado > 0);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
+		} catch ( ParametroInvalidoException pie ) {
+			fail();
+		}
+	}
+	
+	@Test(timeout=1000)
+	public void getFiveHundredFibbonaciNumberTest() {
+		try {
+			// Arrange
+			int number = 500;
+			
+			// Act
+			int resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			
+			// Assert
+			assertTrue(resultado > 0);
+			
+			// Logging
+			printNumberAndResult(number, resultado);
+		} catch ( ParametroInvalidoException pie ) {
+			fail();
 		}
 	}
 	
