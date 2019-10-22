@@ -35,6 +35,14 @@
 	</build>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/javax.activation/javax.activation-api -->
 		<dependency>
 			<groupId>javax.activation</groupId>
@@ -62,7 +70,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-		
+
 		<!-- https://search.maven.org/artifact/org.mockito/mockito-core/2.28.2/jar -->
 		<dependency>
 			<groupId>org.mockito</groupId>
