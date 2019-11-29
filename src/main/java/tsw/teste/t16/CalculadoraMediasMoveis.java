@@ -1,4 +1,4 @@
-package tsw.t16;
+package tsw.teste.t16;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -38,7 +38,7 @@ public class CalculadoraMediasMoveis implements CalculadoraMediasMoveisInterface
 					// Divisor
 					new BigDecimal(pQuantidadeValores),
 					
-					// Escala / Precisão / Quantidade de Casos Decimais
+					// Escala / Precisï¿½o / Quantidade de Casos Decimais
 					3,
 					
 					// Modo de Arredondamento

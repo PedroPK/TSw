@@ -1,4 +1,4 @@
-package tsw.t16;
+package tsw.teste.t16;
 
 import static org.junit.Assert.assertEquals;
 
