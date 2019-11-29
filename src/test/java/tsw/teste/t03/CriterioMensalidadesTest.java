@@ -32,7 +32,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSNegativoTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade(new Double(-1) );
+			this.aCriterioMensalidades.definirMensalidade(Double.valueOf(-1) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -41,7 +41,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSMaiorQueDezTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(10.1) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(10.1) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -50,7 +50,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSMenorQueSeteTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(6.99) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(6.99) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -59,7 +59,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSIgualSeteTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(7.0) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(7.0) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -68,7 +68,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSMaiorQueSeteTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(7.1) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(7.1) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -77,7 +77,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSMenorQueOitoTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(7.99) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(7.99) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -86,7 +86,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSIgualOitoTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(8.0) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(8.0) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
@@ -95,7 +95,7 @@ public class CriterioMensalidadesTest {
 	//@Test
 	public void definirMensalidadeADSMaiorQueOitoTest() {
 		try {
-			this.aCriterioMensalidades.definirMensalidade( new Double(8.1) );
+			this.aCriterioMensalidades.definirMensalidade( Double.valueOf(8.1) );
 		} catch ( ParametroInvalidoException pie ) {
 			Assert.fail();
 		}
