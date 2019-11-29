@@ -38,5 +38,19 @@ public class CalculadoraMediasMoveisTest {
 		//Assert
 		assertEquals(new BigDecimal(13.666), media);
 	}
+	
+	@Test
+	public void testCalcularMediaMovel_4UltimosValores() {
+		// Arrange
+		List<BigDecimal> lista = getLista();
+		CalculadoraMediasMoveisInterface calculadora = new CalculadoraMediasMoveis();
+		int quantidadeValores = 4;
+		
+		// Act
+		BigDecimal media = calculadora.calcular(lista, quantidadeValores);
+		
+		//Assert
+		assertEquals(new BigDecimal(14), media);
+	}
 
 }
