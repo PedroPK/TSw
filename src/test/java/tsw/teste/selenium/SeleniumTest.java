@@ -35,11 +35,6 @@ public class SeleniumTest {
 	@Test
 	public void doNothing() {
 		
-		
-		
-		
-		
-		
 	}
 	
 	@AfterClass
