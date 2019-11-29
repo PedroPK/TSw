@@ -201,15 +201,15 @@ public class OrdenadorTest {
 	
 	@Test
 	public void getInstanciaTest() {
-		Ordenador ord1 = aOrdenador.getInstancia();
-		Ordenador ord2 = aOrdenador.getInstancia();
+		Ordenador ord1 = Ordenador.getInstancia();
+		Ordenador ord2 = Ordenador.getInstancia();
 		
 		Assert.assertSame(ord1, ord2);
 	}
 	
 	@Test
 	public void getInstanciaNaoNulaTest() {
-		Ordenador ord1 = aOrdenador.getInstancia();
+		Ordenador ord1 = Ordenador.getInstancia();
 		Assert.assertNotNull(ord1);
 	}
 	
