@@ -18,7 +18,7 @@ public class CalculadoraMediasMoveis implements CalculadoraMediasMoveisInterface
 		int indiceInicial = pLista.size() - pQuantidadeValores;
 		
 		while ( indiceInicial < pLista.size() ) {
-			lista.add(pLista.get(indiceInicial));
+			lista.add( pLista.get(indiceInicial) );
 			
 			indiceInicial = indiceInicial + 1;
 		}
@@ -27,17 +27,23 @@ public class CalculadoraMediasMoveis implements CalculadoraMediasMoveisInterface
 		
 		Iterator<BigDecimal>	iterator	=		lista.iterator();
 		while ( iterator.hasNext() ) {
-			soma = soma.add(iterator.next());
+			soma = soma.add( iterator.next() );
 		}
 		
-		BigDecimal dividendo	= soma.setScale(3);
-		BigDecimal divisor		= new BigDecimal(pQuantidadeValores).setScale(3);
-		
-		BigDecimal resultado = dividendo.divide(divisor, RoundingMode.HALF_EVEN);
-		
 		// To Solve the ArithmeticException
-		resultado = resultado.setScale(3);
-		
+		BigDecimal resultado =
+			// Dividendo
+			soma
+				.divide(
+					// Divisor
+					new BigDecimal(pQuantidadeValores),
+					
+					// Escala / Precisão / Quantidade de Casos Decimais
+					3,
+					
+					// Modo de Arredondamento
+					RoundingMode.HALF_EVEN
+		);
 		
 		return resultado;
 	}
