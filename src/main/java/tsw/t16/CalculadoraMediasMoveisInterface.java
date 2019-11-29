@@ -18,9 +18,10 @@ public interface CalculadoraMediasMoveisInterface {
 	 * 		= Resultado: Deverão ser ultilizados apenas os últimos 3 valores, no caso 06, 07 e 08.
 	 * 			-=-	Valor gerado	=	(06	+	07	+	08)		/		03		=	07
 	 * 
-	 * @param pLista
-	 * @param pQuantidadeValores
-	 * @return
+	 * @param pLista				Lista de Valores a serem utilizados no Cálculo da Média Móvel
+	 * @param pQuantidadeValores	Quantidade de Valores (a contar dos últimos) a serem utilizados no Cálculo da Média Móvel
+	 * 
+	 * @return	Média Móvel
 	 */
 	public BigDecimal calcular(
 		List<BigDecimal>	pLista, 
