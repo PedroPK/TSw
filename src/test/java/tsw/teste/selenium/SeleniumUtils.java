@@ -36,10 +36,10 @@ public class SeleniumUtils {
 			path + relativePath + chromeDriver);
 	}
 	
-	private static String getWebDriverPath() {
+	/*private static String getWebDriverPath() {
 		Path path = Paths.get("." + File.separator + "libs" + File.separator + "chromedriver");
 		String pathString = path.toString();
 		return pathString;
-	}
+	}*/
 	
 }
