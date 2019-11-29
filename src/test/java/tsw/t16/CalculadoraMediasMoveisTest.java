@@ -1,9 +1,8 @@
 package tsw.t16;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +46,7 @@ public class CalculadoraMediasMoveisTest {
 		BigDecimal media = calculadora.calcular(lista, quantidadeValores);
 		
 		//Assert
-		BigDecimal expected = new BigDecimal(13.667).setScale(3, RoundingMode.HALF_EVEN);
+		BigDecimal expected = CalculadoraMediasMoveis.newBigDecimal(13.667);
 		assertEquals(expected, media);
 	}
 	
@@ -72,7 +71,7 @@ public class CalculadoraMediasMoveisTest {
 		BigDecimal media = calculadora.calcular(lista, quantidadeValores);
 		
 		//Assert
-		BigDecimal expected = new BigDecimal(14).setScale(3);
+		BigDecimal expected = CalculadoraMediasMoveis.newBigDecimal(14);
 		assertEquals(expected, media);
 	}
 	
@@ -97,9 +96,9 @@ public class CalculadoraMediasMoveisTest {
 		BigDecimal media = calculadora.calcular(lista, quantidadeValores);
 		
 		//Assert
-		BigDecimal expected = new BigDecimal(14.8).setScale(3, RoundingMode.HALF_EVEN);
+		BigDecimal expected = CalculadoraMediasMoveis.newBigDecimal(14.8);
 		
 		assertEquals(expected, media);
 	}
-
+	
 }

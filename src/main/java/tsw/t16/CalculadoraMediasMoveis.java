@@ -47,5 +47,9 @@ public class CalculadoraMediasMoveis implements CalculadoraMediasMoveisInterface
 		
 		return resultado;
 	}
-
+	
+	public static BigDecimal newBigDecimal(double pDouble) {
+		return new BigDecimal(pDouble)		.setScale(3, RoundingMode.HALF_EVEN);
+	}
+	
 }
