@@ -47,6 +47,9 @@ public class FibbonaciTest {
 			// Act
 			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
 			
+			// Assert
+			assertTrue( resultado.compareTo(BigInteger.ZERO) >= 0 );
+			
 			fail();
 		} catch ( ParametroInvalidoException pie ) {
 			// Exception thrown correctly
