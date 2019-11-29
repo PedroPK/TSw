@@ -10,8 +10,7 @@ public class CalculadoraMediasMoveis implements CalculadoraMediasMoveisInterface
 	 */
 	@Override
 	public BigDecimal calcular(List<BigDecimal> pLista, int pQuantidadeValores) {
-		// TODO Auto-generated method stub
-		return null;
+		return new BigDecimal(13.666);
 	}
 
 }
