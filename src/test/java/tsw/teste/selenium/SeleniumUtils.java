@@ -1,9 +1,5 @@
 package tsw.teste.selenium;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class SeleniumUtils {
 	
 	private static final String CHROME_DRIVER_WINDOWS		=	"chromedriver.exe";

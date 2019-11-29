@@ -37,6 +37,10 @@ public class SeleniumTest {
 		
 	}
 	
+	public void accessURL(String pURL) {
+		driver.get(pURL);
+	}
+	
 	@AfterClass
 	public static void closeChrome() {
 		if ( driver != null ) {
