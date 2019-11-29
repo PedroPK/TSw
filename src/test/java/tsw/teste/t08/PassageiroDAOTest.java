@@ -11,10 +11,10 @@ import tsw.util.BibliotecaFuncoes;
 /**
  * Dependencias do Mockito:
  *  - Byte-Buddy
- *  	= Versï¿½o em uso: 1.8.11
+ *  	= Versão em uso: 1.8.11
  *  - Objenesis
  *  	= http://central.maven.org/maven2/org/mockito/mockito-core/2.0.28-beta/mockito-core-2.0.28-beta.pom
- *  	= Versï¿½o em uso: 2.6
+ *  	= Versão em uso: 2.6
  *  
  * @author pedro.f-santos
  *
@@ -26,7 +26,7 @@ public class PassageiroDAOTest {
 		Passageiro passageiroInstancializado = UtilTeste.instancializarNovoPassageiro();
 		
 		Passageiro passageiroInserido = 
-			/* A Serializacao do mÃ©todo Clone() equivalente a invocar as instrucoes abaixo
+			/* A Serializacao do método Clone() equivalente a invocar as instrucoes abaixo
 			 * 
 			 * PassageiroDAO dao = new PassageiroDAO();
 			 * dao.inserir(passageiroInstancializado);
@@ -41,8 +41,8 @@ public class PassageiroDAOTest {
 		assertEquals(passageiroInstancializado.getChavePrimaria(), passageiroConsultado.getChavePrimaria());
 	}
 	
-	@Test void testarExclusaoDAO() {
+	/*@Test void testarExclusaoDAO() {
 		Passageiro passageiroInstancializado = UtilTeste.instancializarNovoPassageiro();
-	}
+	}*/
 
 }
