@@ -6,7 +6,7 @@ import java.util.Map;
 
 import tsw.excecoes.ParametroInvalidoException;
 
-public class Fibbonaci {
+public class Fibonacci {
 	
 	/**
 	 * A Rainbow table Map to store the Fibonacci Numbers already computed.
@@ -17,7 +17,7 @@ public class Fibbonaci {
 	 * Using a rainbow table to avoid the necessity to recompute the same Fibonacci number multiple
 	 * times.
 	 * 
-	 * Once a specifical Fibonacci Number is computed, it is stored in a Map. 
+	 * Once a specific Fibonacci Number is computed, it is stored in a Map. 
 	 * When it is needed, it is get from there.
 	 * 
 	 * It a Fibonacci Number is needed, but not computed yet, it is computed, ant its value is

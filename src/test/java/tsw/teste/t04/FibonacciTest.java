@@ -8,15 +8,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 import tsw.excecoes.ParametroInvalidoException;
-import tsw.t04.Fibbonaci;
+import tsw.t04.Fibonacci;
 
-public class FibbonaciTest {
+public class FibonacciTest {
 	
-	Fibbonaci aFibbonaci;
+	Fibonacci aFibonacci;
 	
 	@Before
 	public void inicializarFibbonaci() {
-		this.aFibbonaci = new Fibbonaci();
+		this.aFibonacci = new Fibonacci();
 	}
 	
 	@Test
@@ -26,7 +26,7 @@ public class FibbonaciTest {
 			int number = 0;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.ZERO, resultado);
@@ -45,7 +45,7 @@ public class FibbonaciTest {
 			int number = -1;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue( resultado.compareTo(BigInteger.ZERO) >= 0 );
@@ -63,7 +63,7 @@ public class FibbonaciTest {
 			int number = 5;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(5), resultado);
@@ -82,7 +82,7 @@ public class FibbonaciTest {
 			int number = 8;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(21), resultado);
@@ -101,7 +101,7 @@ public class FibbonaciTest {
 			int number = 10;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(55), resultado);
@@ -120,7 +120,7 @@ public class FibbonaciTest {
 			int number = 20;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(6765), resultado);
@@ -139,7 +139,7 @@ public class FibbonaciTest {
 			int number = 25;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(75025), resultado);
@@ -162,7 +162,7 @@ public class FibbonaciTest {
 			int number = 30;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Asert
 			assertEquals(BigInteger.valueOf(832040), resultado);
@@ -181,7 +181,7 @@ public class FibbonaciTest {
 			int number = 35;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(9227465), resultado);
@@ -200,7 +200,7 @@ public class FibbonaciTest {
 			int number = 40;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(102334155), resultado);
@@ -219,7 +219,7 @@ public class FibbonaciTest {
 			int number = 45;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(1134903170), resultado);
@@ -238,7 +238,7 @@ public class FibbonaciTest {
 			int number = 46;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertEquals(BigInteger.valueOf(1836311903), resultado);
@@ -257,7 +257,7 @@ public class FibbonaciTest {
 			int number = 47;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -277,7 +277,7 @@ public class FibbonaciTest {
 			int number = 50;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -297,7 +297,7 @@ public class FibbonaciTest {
 			int number = 60;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -317,7 +317,7 @@ public class FibbonaciTest {
 			int number = 70;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -337,7 +337,7 @@ public class FibbonaciTest {
 			int number = 80;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -357,7 +357,7 @@ public class FibbonaciTest {
 			int number = 90;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -377,7 +377,7 @@ public class FibbonaciTest {
 			int number = 100;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
@@ -397,7 +397,7 @@ public class FibbonaciTest {
 			int number = 150;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -416,7 +416,7 @@ public class FibbonaciTest {
 			int number = 160;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -435,7 +435,7 @@ public class FibbonaciTest {
 			int number = 161;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -454,7 +454,7 @@ public class FibbonaciTest {
 			int number = 162;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -473,7 +473,7 @@ public class FibbonaciTest {
 			int number = 165;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -492,7 +492,7 @@ public class FibbonaciTest {
 			int number = 175;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -512,7 +512,7 @@ public class FibbonaciTest {
 			int number = 250;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Logging
 			printNumberAndResult(number, resultado);
@@ -531,7 +531,7 @@ public class FibbonaciTest {
 			int number = 500;
 			
 			// Act
-			BigInteger resultado = this.aFibbonaci.getFibbonaciNumber(number);
+			BigInteger resultado = this.aFibonacci.getFibbonaciNumber(number);
 			
 			// Assert
 			assertTrue(resultado.signum() > 0);
