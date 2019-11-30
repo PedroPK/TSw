@@ -11,9 +11,9 @@ public class Triangulo implements iTriangulo {
 	}
 	
 	public Triangulo(double a, double b, double c) {
-		this.aLadoA =	new Double(	a	);
-		this.aLadoB =	new Double(	b	);
-		this.aLadoC =	new Double(	c	);
+		this.aLadoA =	Double.valueOf(	a	);
+		this.aLadoB =	Double.valueOf(	b	);
+		this.aLadoC =	Double.valueOf(	c	);
 		
 		this.validarTresLadosTriangulo();
 	}
