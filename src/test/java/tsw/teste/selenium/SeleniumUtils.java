@@ -1,5 +1,12 @@
 package tsw.teste.selenium;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class SeleniumUtils {
 	
 	private static final String OS_NAME						= "os.name";
@@ -13,6 +20,42 @@ public class SeleniumUtils {
 	private static final String CHROME_DRIVER_MAC_77		=	"chromedriver_77";
 	private static final String WEBDRIVER_CHROME_DRIVER		=	"webdriver.chrome.driver";
 	private static final String OS_MAC_OS_X					=	"Mac OS X";
+	
+	private static WebDriver aDriver;
+	
+	public static WebDriver getWebDriver() {
+		if ( aDriver == null ) {
+			aDriver = new ChromeDriver();
+		}
+		
+		return aDriver;
+	}
+	
+	public static void setWebDriver( WebDriver pWebDriver ) {
+		if ( aDriver != null ) {
+			aDriver.close();
+		}
+		
+		aDriver = pWebDriver;
+	}
+	
+	public static void closeWebDriver() {
+		if ( aDriver != null ) {
+			aDriver.close();
+		}
+	}
+	
+	public static WebElement findElementById(String pId) {
+		return aDriver.findElement(By.id(pId));
+	}
+	
+	public static List<WebElement> getElementsByName(String pNomeRadioButtons) {
+		return aDriver.findElements(By.name(pNomeRadioButtons));
+	}
+	
+	public static WebElement getElementByCssSelector(String pCssSelector) {
+		return aDriver.findElement(By.cssSelector(pCssSelector));
+	}
 	
 	public static void setSystemPropertyChromeWebDriverOriginal() {
 		// Get the Project Directory
@@ -41,6 +84,10 @@ public class SeleniumUtils {
 		}
 		
 		return chromeDriver;
+	}
+	
+	public static WebElement findElementByName(String pNome) {
+		return aDriver.findElement(By.name(pNome));
 	}
 	
 	/*private static String getWebDriverPath() {
