@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -47,9 +48,15 @@ public class SeleniumWebDriverTest {
 		options();
 	}
 
-	private void setupEdgeDriver() {
+	private void setupEdgeDriver(boolean pHeadLess) {
 		WebDriverManager.edgedriver().setup();
-		driver = new EdgeDriver();
+
+		EdgeOptions edgeOptions = new EdgeOptions();
+		if ( pHeadLess ) {
+			edgeOptions.addArguments("--headless");
+		}
+		
+		driver = new EdgeDriver(edgeOptions);
 		options();
 	}
 
@@ -79,7 +86,7 @@ public class SeleniumWebDriverTest {
 	
 	@Test
 	public void givenEdgeDriver_whenNavigateToGoogle_thenFindSeachButton_IsSuccessful() {
-		setupEdgeDriver();
+		setupEdgeDriver(false);
 		driver.get(GOOGLE_URL);
 		final WebElement title = driver.findElement(By.xpath(GOOGLE_SEACH_BUTTON_XPATH));
 
@@ -92,7 +99,7 @@ public class SeleniumWebDriverTest {
 	
 	@Test
 	public void givenEdgeDriver_whenNavigateToGoogle_thenFindSearchInput_thenFillAccentureBrasil_thenSubmitSearch_IsSuccessful() {
-		setupEdgeDriver();
+		setupEdgeDriver(false);
 		driver.get(GOOGLE_URL);
 		final WebElement searchInput = driver.findElement(By.xpath(GOOGLE_SEACH_EDGE_INPUT_XPATH));
 		searchInput.sendKeys("Accenture Brasil");
